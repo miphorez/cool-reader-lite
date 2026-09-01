@@ -1,6 +1,7 @@
 /*
  * CoolReader for Android
  * Copyright (C) 2021 Aleksey Chernov <valexlin@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -33,6 +34,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 
+import org.coolreader.BuildConfig;
 import org.coolreader.R;
 import org.coolreader.crengine.BookInfo;
 import org.coolreader.crengine.FileInfo;
@@ -106,14 +108,14 @@ public class SyncService extends BaseService {
 	}
 
 	private static final int NOTIFICATION_ID = 2;
-	private static final String NOTIFICATION_CHANNEL_ID = "CoolReader Sync2 C1";
+	private static final String NOTIFICATION_CHANNEL_ID = BuildConfig.APPLICATION_ID + ".sync";
 
-	public static final String SYNC_ACTION_SYNCTO = "org.coolreader.sync2.syncto";
-	public static final String SYNC_ACTION_SYNCTO_ONLY = "org.coolreader.sync2.syncto.only";
-	public static final String SYNC_ACTION_SYNCFROM = "org.coolreader.sync2.syncfrom";
-	public static final String SYNC_ACTION_SYNCFROM_ONLY = "org.coolreader.sync2.syncfrom.only";
-	public static final String SYNC_ACTION_CANCEL = "org.coolreader.sync2.cancel";
-	public static final String SYNC_ACTION_NOOP = "org.coolreader.sync2.noop";
+	public static final String SYNC_ACTION_SYNCTO = BuildConfig.APPLICATION_ID + ".sync2.syncto";
+	public static final String SYNC_ACTION_SYNCTO_ONLY = BuildConfig.APPLICATION_ID + ".sync2.syncto.only";
+	public static final String SYNC_ACTION_SYNCFROM = BuildConfig.APPLICATION_ID + ".sync2.syncfrom";
+	public static final String SYNC_ACTION_SYNCFROM_ONLY = BuildConfig.APPLICATION_ID + ".sync2.syncfrom.only";
+	public static final String SYNC_ACTION_CANCEL = BuildConfig.APPLICATION_ID + ".sync2.cancel";
+	public static final String SYNC_ACTION_NOOP = BuildConfig.APPLICATION_ID + ".sync2.noop";
 
 	private final List<SyncCommand> mSyncCommands = Collections.synchronizedList(new ArrayList<SyncCommand>());
 	private SyncCommand mCurrentCommand = null;
@@ -585,8 +587,8 @@ public class SyncService extends BaseService {
 				builder = new Notification.Builder(this, NOTIFICATION_CHANNEL_ID);
 				// create notification channel
 				if (!mChannelCreated) {
-					NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "CoolReader TTS", NotificationManager.IMPORTANCE_LOW);
-					channel.setDescription("CoolReader TTS control");
+					NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, getString(R.string.app_name) + " Sync", NotificationManager.IMPORTANCE_LOW);
+					channel.setDescription("Book synchronization");
 					channel.setSound(null, null);
 					// Register the channel with the system; you can't change the importance
 					// or other notification behaviors after this

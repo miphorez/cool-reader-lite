@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">Cool Reader</string>
+    <string name="app_name">Cool Reader Lite</string>
     <string name="mi_search">Найти</string>
     <string name="mi_exit">Закрыть</string>
     <string name="mi_goto">Перейти</string>
@@ -8,7 +8,7 @@
     <string name="mi_file_open">Открыть файл</string>
     <string name="mi_options">Настройки</string>
     <string name="progress_please_wait">Подождите, пожалуйста</string>
-    <string name="progress_starting_cool_reader">Запускается Cool Reader</string>
+    <string name="progress_starting_cool_reader">Запускается Cool Reader Lite</string>
     <string name="progress_loading">Загрузка книги</string>
     <string name="progress_formatting">Форматирование книги</string>
     <string name="progress_scanning">Сканирование директории</string>

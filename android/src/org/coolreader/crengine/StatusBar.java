@@ -3,6 +3,7 @@
  * Copyright (C) 2012 Vadim Lopatin <coolreader.org@gmail.com>
  * Copyright (C) 2012 Jeff Doozan <jeff@doozan.com>
  * Copyright (C) 2021 Aleksey Chernov <valexlin@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -104,7 +105,7 @@ public class StatusBar extends LinearLayout implements Settings {
 			lblTitle = (TextView)content.findViewById(R.id.title);
 			lblPosition = (TextView)content.findViewById(R.id.position);
 
-			lblTitle.setText("Cool Reader " + activity.getVersion());
+			lblTitle.setText(activity.getString(R.string.app_name) + " " + activity.getVersion());
 			lblTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
 			lblTitle.setTextColor(0xFF000000 | color);
 

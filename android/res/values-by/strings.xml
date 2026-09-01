@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8" standalone="no"?>
 <resources>
-<string name="app_name">CoolReader 3</string>
+<string name="app_name">Cool Reader Lite</string>
 <string name="mi_search">Знайсці</string>
 <string name="mi_exit">Выйсці</string>
 <string name="mi_goto">Перайсці</string>
@@ -8,7 +8,7 @@
 <string name="mi_file_open">Адкрыць файл</string>
 <string name="mi_options">Налады</string>
 <string name="progress_please_wait">Пачакайце ...</string>
-<string name="progress_starting_cool_reader">CoolReader запускаецца</string>
+<string name="progress_starting_cool_reader">Cool Reader Lite запускаецца</string>
 <string name="progress_loading">Адкрыццё дакументу</string>
 <string name="progress_formatting">Фарматаванне дакумента</string>
 <string name="progress_scanning">Сканаванне тэчкі</string>

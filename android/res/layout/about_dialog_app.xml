@@ -9,7 +9,7 @@
 			android:src="@mipmap/cr3_logo" android:layout_gravity="center_vertical|left">
 		</ImageView>
 		<LinearLayout android:orientation="vertical" android:id="@+id/LinearLayout03" android:layout_height="wrap_content" android:layout_width="fill_parent">
-			<TextView android:text="Cool Reader 3.1" android:id="@+id/version" android:layout_width="fill_parent" 
+			<TextView android:text="Cool Reader Lite" android:id="@+id/version" android:layout_width="fill_parent"
 	            style="@style/TextAppearance.Medium"
 		        android:gravity="left"
 		        android:layout_margin="4dip"
@@ -31,10 +31,10 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-			<TextView android:text="coolreader.org@gmail.com" android:id="@+id/email"
+			<TextView android:text="https://github.com/miphorez" android:id="@+id/maintainer"
             	style="@style/TextAppearance.Medium"
-				android:layout_margin="4dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="email"/>
-			<TextView android:text="http://www.coolreader.org/" android:id="@+id/www"
+				android:layout_margin="4dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web"/>
+			<TextView android:text="https://github.com/miphorez/cool-reader-lite" android:id="@+id/www"
             	style="@style/TextAppearance.Medium"
 				android:layout_margin="4dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web"/>
 			<TextView android:text="http://sourceforge.net/projects/crengine" android:id="@+id/sourceforge"

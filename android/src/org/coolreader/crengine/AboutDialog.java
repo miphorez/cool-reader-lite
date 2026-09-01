@@ -3,6 +3,7 @@
  * Copyright (C) 2011,2012 Vadim Lopatin <coolreader.org@gmail.com>
  * Copyright (C) 2018 Yuri Plotnikov <plotnikovya@gmail.com>
  * Copyright (C) 2018,2021 Aleksey Chernov <valexlin@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -101,7 +102,7 @@ public class AboutDialog extends BaseDialog implements TabContentFactory {
 		LayoutInflater inflater = LayoutInflater.from(getContext());
 		TabHost tabs = (TabHost)inflater.inflate(R.layout.about_dialog, null);
 		mAppTab = inflater.inflate(R.layout.about_dialog_app, null);
-		((TextView)mAppTab.findViewById(R.id.version)).setText("Cool Reader " + mCoolReader.getVersion());
+		((TextView)mAppTab.findViewById(R.id.version)).setText(mCoolReader.getString(R.string.app_name) + " " + mCoolReader.getVersion());
 
 		mDirsTab = inflater.inflate(R.layout.about_dialog_dirs, null);
 		TextView fonts_dir = mDirsTab.findViewById(R.id.fonts_dirs);

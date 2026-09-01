@@ -1,6 +1,7 @@
 /*
  * CoolReader for Android
  * Copyright (C) 2020,2021 Aleksey Chernov <valexlin@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -49,6 +50,7 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
 
+import org.coolreader.BuildConfig;
 import org.coolreader.CoolReader;
 import org.coolreader.R;
 import org.coolreader.crengine.L;
@@ -91,13 +93,13 @@ public class TTSControlService extends BaseService {
 	private static final int MAX_CONTINUOUS_ERRORS = 3;
 	private static final long INIT_TTS_TIMEOUT = 10000;		// 10 sec.
 	private static final int NOTIFICATION_ID = 1;
-	private static final String NOTIFICATION_CHANNEL_ID = "CoolReader TTS C9";
+	private static final String NOTIFICATION_CHANNEL_ID = BuildConfig.APPLICATION_ID + ".tts";
 
-	public static final String TTS_CONTROL_ACTION_PREPARE = "org.coolreader.tts.prepare";
-	public static final String TTS_CONTROL_ACTION_PLAY_PAUSE = "org.coolreader.tts.tts_play_pause";
-	public static final String TTS_CONTROL_ACTION_NEXT = "org.coolreader.tts.tts_next";
-	public static final String TTS_CONTROL_ACTION_PREV = "org.coolreader.tts.tts_prev";
-	public static final String TTS_CONTROL_ACTION_STOP = "org.coolreader.tts.tts_stop";
+	public static final String TTS_CONTROL_ACTION_PREPARE = BuildConfig.APPLICATION_ID + ".tts.prepare";
+	public static final String TTS_CONTROL_ACTION_PLAY_PAUSE = BuildConfig.APPLICATION_ID + ".tts.tts_play_pause";
+	public static final String TTS_CONTROL_ACTION_NEXT = BuildConfig.APPLICATION_ID + ".tts.tts_next";
+	public static final String TTS_CONTROL_ACTION_PREV = BuildConfig.APPLICATION_ID + ".tts.tts_prev";
+	public static final String TTS_CONTROL_ACTION_STOP = BuildConfig.APPLICATION_ID + ".tts.tts_stop";
 
 	private boolean useAudioBook = false;
 	private File audioFile = null;
@@ -483,7 +485,7 @@ public class TTSControlService extends BaseService {
 					sendBroadcast(new Intent(TTSControlService.TTS_CONTROL_ACTION_PREV));
 				}
 			};
-			mMediaSession = new MediaSession(this, "CoolReader TTS");
+			mMediaSession = new MediaSession(this, getString(R.string.app_name) + " TTS");
 			if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
 				// This constant was deprecated in API level 26.
 				// https://developer.android.com/reference/android/media/session/MediaSession#FLAG_HANDLES_MEDIA_BUTTONS
@@ -1443,7 +1445,7 @@ public class TTSControlService extends BaseService {
 			}
 		}
 		if (0 == title.length())
-			title = "CoolReader";
+			title = getString(R.string.app_name);
 		Notification notification;
 		Intent notificationIntent = new Intent(this, CoolReader.class);
 		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
@@ -1453,8 +1455,8 @@ public class TTSControlService extends BaseService {
 				builder = new Notification.Builder(this, NOTIFICATION_CHANNEL_ID);
 				// create notification channel
 				if (!mChannelCreated) {
-					NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "CoolReader TTS", NotificationManager.IMPORTANCE_DEFAULT);
-					channel.setDescription("CoolReader TTS control");
+					NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, getString(R.string.app_name) + " TTS", NotificationManager.IMPORTANCE_DEFAULT);
+					channel.setDescription("Text-to-speech controls");
 					channel.setSound(null, null);
 					// Register the channel with the system; you can't change the importance
 					// or other notification behaviors after this
