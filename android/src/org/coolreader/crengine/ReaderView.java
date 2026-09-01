@@ -12,6 +12,7 @@
  * Copyright (C) 2018 Yuri Plotnikov <plotnikovya@gmail.com>
  * Copyright (C) 2018 S-trace <S-trace@list.ru>
  * Copyright (C) 2018-2021 Aleksey Chernov <valexlin@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -1905,7 +1906,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 	public void showBookInfo() {
 		final ArrayList<String> items = new ArrayList<String>();
 		items.add("section=section.system");
-		items.add("system.version=Cool Reader " + mActivity.getVersion());
+		items.add("system.version=" + mActivity.getString(R.string.app_name) + " " + mActivity.getVersion());
 		items.add("system.battery=" + mBatteryChargeLevel + "%");
 		items.add("system.time=" + Utils.formatTime(mActivity, System.currentTimeMillis()));
 		final BookInfo bi = mBookInfo;

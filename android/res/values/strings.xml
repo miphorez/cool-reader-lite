@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">Cool Reader</string>
+    <string name="app_name">Cool Reader Lite</string>
     <string name="mi_search">Search</string>
     <string name="mi_exit">Exit</string>
     <string name="mi_goto">Go to</string>
@@ -12,7 +12,7 @@
     <string name="mi_font_previous">Previous font</string>
     <string name="mi_font_next">Next font</string>
     <string name="progress_please_wait">Please wait</string>
-    <string name="progress_starting_cool_reader">Starting Cool Reader</string>
+    <string name="progress_starting_cool_reader">Starting Cool Reader Lite</string>
     <string name="progress_loading">Loading document</string>
     <string name="progress_formatting">Formatting document</string>
     <string name="progress_scanning">Scanning directory</string>
@@ -215,7 +215,7 @@
     <string name="options_selection_action_copy">Copy to clipboard</string>
     <string name="options_app_browser_hide_empty_dirs">Hide directories without books</string>
     <string name="options_app_browser_hide_empty_genres">Hide genres without books</string>
-    <string name="dlg_about">About CoolReader</string>
+    <string name="dlg_about">About Cool Reader Lite</string>
     <string name="dlg_book_info">Book Info</string>
     <string name="mi_book_styles_enable">Enable document internal styles</string>
     <string name="mi_book_styles_disable">Disable document internal styles</string>
@@ -278,8 +278,8 @@
     <string name="dlg_about_textures_dirs">Textures directories:</string>
     <string name="dlg_about_backgrounds_dirs">Backgrounds directories:</string>
     <string name="dlg_about_hyphenations_dirs">Hyphenation dictionaries directories:</string>
-    <string name="dlg_about_copyright">© Vadim Lopatin, 1998–2020</string>
-    <string name="dlg_about_contributors_">and contributors…</string>
+    <string name="dlg_about_copyright">© Vadim Lopatin and CoolReader contributors, 1998–2026</string>
+    <string name="dlg_about_contributors_">Cool Reader Lite fork maintained by Dmitry</string>
     <string name="mi_book_browser_normal_mode">Normal mode</string>
     <string name="mi_book_browser_simple_mode">Simple file list</string>
     <string name="options_page_animation_slide_2_pages">Slide (2 pages)</string>

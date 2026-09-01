@@ -1,6 +1,7 @@
 /*
  * CoolReader for Android
  * Copyright (C) 2015 Vadim Lopatin <coolreader.org@gmail.com>
+ * Copyright (C) 2026 Dmitry <13149058+miphorez@users.noreply.github.com>
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -50,7 +51,7 @@ public class CRDonationService {
 	
 	public CRDonationService(Activity activity) {
 		mActivity = activity;
-		PACKAGE_NAME = mActivity.getPackageName();
+		mPackageName = mActivity.getPackageName();
 		connect();
 	}
 	
@@ -95,7 +96,7 @@ public class CRDonationService {
 				log.d("CRDonationService.onServiceConnected()");
 			    mService = IInAppBillingService.Stub.asInterface(service);
 			    try {
-					mBillingSupported = mService.isBillingSupported(API_VERSION, PACKAGE_NAME, "inapp") == RESULT_OK;
+					mBillingSupported = mService.isBillingSupported(API_VERSION, mPackageName, "inapp") == RESULT_OK;
 					mProducts = getProducts(SKUS);
 					mPurchases = getPurchases();
 					log.d("Product list: " + mProducts);
@@ -134,7 +135,7 @@ public class CRDonationService {
 		}
 		try {
 			Bundle skuDetails = mService.getSkuDetails(API_VERSION,
-					   PACKAGE_NAME, "inapp", querySkus);
+					   mPackageName, "inapp", querySkus);
 			int response = skuDetails.getInt("RESPONSE_CODE");
 			if (response == 0) {
 				ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
@@ -168,7 +169,7 @@ public class CRDonationService {
 		ArrayList<PurchaseInfo> mPurchases = new ArrayList<PurchaseInfo>();
 		try {
 			Bundle ownedItems = mService.getPurchases(API_VERSION,
-					   PACKAGE_NAME, "inapp", null);
+					   mPackageName, "inapp", null);
 			int response = ownedItems.getInt("RESPONSE_CODE");
 			if (response == 0) {
 				ArrayList<String> ownedSkus =
@@ -199,7 +200,7 @@ public class CRDonationService {
 		} 
 		try {
 			mCurrentListener = listener;
-			Bundle buyIntentBundle = mService.getBuyIntent(API_VERSION, PACKAGE_NAME,
+			Bundle buyIntentBundle = mService.getBuyIntent(API_VERSION, mPackageName,
 					productId, "inapp", "NO_PAYLOAD");
 			PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
 			mActivity.startIntentSenderForResult(pendingIntent.getIntentSender(),
@@ -267,7 +268,7 @@ public class CRDonationService {
 	}
 	
 	private final static int API_VERSION = 3;
-	private String PACKAGE_NAME = "org.coolreader";
+	private String mPackageName;
 	private final static int RESULT_OK = 0;
 	
 	public boolean isBillingSupported() {

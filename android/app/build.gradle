@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+    // Keep the source namespace while JNI entry points still use org.coolreader class names.
     namespace 'org.coolreader'
     compileSdkVersion 35
     buildToolsVersion "35.0.0"
     defaultConfig {
-        applicationId "org.coolreader"
+        applicationId "io.github.miphorez.coolreaderlite"
         minSdkVersion 4
         targetSdkVersion 35
         // When new version released, version code must be incremented at least by 8
