@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a reproducible problem in Cool Reader Lite
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Do not disclose unpatched security vulnerabilities here. Follow SECURITY.md instead.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Cool Reader Lite version or commit hash
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Book format
+      options:
+        - FB2
+        - FB2.ZIP
+        - EPUB
+        - TXT
+        - RTF
+        - HTML
+        - CHM
+        - DOC
+        - Other or not applicable
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use a non-confidential sample book when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and additional context
+      description: Remove personal data, book contents, tokens, and credentials before attaching logs.

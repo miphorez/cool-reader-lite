@@ -1,5 +1,20 @@
+Cool Reader Lite
+================
+
+Cool Reader Lite is an independent, lightweight modernization fork of
+[CoolReader](https://github.com/buggins/coolreader). The project focuses on
+essential offline e-book reading, a smaller feature surface, current Android
+support, and maintainable release engineering.
+
+This repository is not an official release of the upstream CoolReader project.
+The original authors retain copyright in their contributions. New work in this
+fork is distributed under the same GPL-2.0-or-later terms. See [FORK.md](FORK.md)
+for project scope and provenance.
+
+Upstream project history and documentation continue below.
+
 CoolReader 3 - cross platform open source e-book reader
-=======================================================
+-------------------------------------------------------
 
 (c) Vadim Lopatin, 1998-2026
 
