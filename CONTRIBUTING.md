@@ -1,4 +1,19 @@
 
+## Cool Reader Lite workflow
+
+Cool Reader Lite is maintained at
+<https://github.com/miphorez/cool-reader-lite>. Create a focused branch from
+`master`, submit changes through a pull request, and keep unrelated changes in
+separate pull requests.
+
+The `master` branch must remain buildable. Changes that affect Android runtime
+behavior require proportionate verification and a short record of the tested
+scenario. Security-sensitive findings should follow [SECURITY.md](SECURITY.md)
+instead of being disclosed in a public issue.
+
+Upstream synchronization is documented in
+[docs/UPSTREAM_SYNC.md](docs/UPSTREAM_SYNC.md).
+
 ## GitHub docs contributing guide
 
 [GitHub docs contributing guide](https://github.com/github/docs/blob/main/CONTRIBUTING.md)

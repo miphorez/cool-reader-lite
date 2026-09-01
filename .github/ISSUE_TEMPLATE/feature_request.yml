@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a focused improvement for Cool Reader Lite
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain the reading problem or maintenance cost this proposal addresses.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed outcome
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Lite scope
+      options:
+        - label: This proposal keeps or reduces the product feature surface.
+          required: true
