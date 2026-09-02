@@ -1584,6 +1584,9 @@ public class Engine {
 
 	private static String[] findFonts() {
 		ArrayList<File> dirs = new ArrayList<File>();
+		File bundledFontsDir = BundledFonts.getDirectory();
+		if (bundledFontsDir != null)
+			dirs.add(bundledFontsDir);
 		File[] dataDirs = getDataDirectories("fonts", false, false);
 		for (File dir : dataDirs)
 			dirs.add(dir);
