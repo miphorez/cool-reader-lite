@@ -2560,7 +2560,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 					showTOC();
 				break;
 			case DCMD_FILE_BROWSER:
-				mActivity.openBookFromDownloads();
+				mActivity.showBrowser(!mActivity.isBrowserCreated() ? getOpenedFileInfo() : null);
 				break;
 			case DCMD_CURRENT_BOOK_DIRECTORY:
 				mActivity.showBrowser(getOpenedFileInfo());
