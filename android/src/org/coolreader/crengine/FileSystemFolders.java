@@ -63,7 +63,7 @@ public class FileSystemFolders extends FileInfoChangeSource {
         }
         dirs.addAll(filter(favoriteFolders));
         if (Services.getScanner() != null) {
-            FileInfo downloadDirectory = mScanner.getDownloadDirectory();
+            FileInfo downloadDirectory = mScanner.getDefaultBooksDirectory();
             if (downloadDirectory != null) {
             	downloadDirectory.setType(FileInfo.TYPE_DOWNLOAD_DIR);
             	dirs.add(downloadDirectory);

@@ -21,6 +21,7 @@
 
 package org.coolreader.crengine;
 
+import android.os.Environment;
 import android.util.Log;
 
 import org.coolreader.R;
@@ -933,6 +934,15 @@ public class Scanner extends FileInfoChangeSource {
 		result.add(pathToFileInfo(FileInfo.STATE_READING_TAG));
 		result.add(pathToFileInfo(FileInfo.STATE_FINISHED_TAG));
 		return result;
+	}
+
+	public FileInfo getDefaultBooksDirectory() {
+		File downloads = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+		FileInfo directory = new FileInfo(downloads);
+		directory.filename = "Downloads";
+		directory.title = "Downloads";
+		directory.isDirectory = true;
+		return directory;
 	}
 	
 	public FileInfo getDownloadDirectory() {
