@@ -41,6 +41,7 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
+import android.provider.DocumentsContract;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.View;
@@ -150,6 +151,7 @@ public class CoolReader extends BaseActivity {
 	private static final int REQUEST_CODE_READ_PHONE_STATE_PERM = 2;
 	private static final int REQUEST_CODE_GOOGLE_DRIVE_SIGN_IN = 3;
 	private static final int REQUEST_CODE_OPEN_DOCUMENT_TREE = 11;
+	private static final int REQUEST_CODE_OPEN_BOOK = 12;
 
 	// open document tree activity commands
 	private static final int ODT_CMD_NO_SPEC = -1;
@@ -1597,7 +1599,27 @@ public class CoolReader extends BaseActivity {
 
 	public void showDirectory(FileInfo path) {
 		log.d("Activities.showDirectory(" + path + ") is called");
+		if (path != null && path.getType() == FileInfo.TYPE_DOWNLOAD_DIR) {
+			openBookFromDownloads();
+			return;
+		}
 		showBrowser(path);
+	}
+
+	public void openBookFromDownloads() {
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+			showBrowser(Services.getScanner().getDefaultBooksDirectory());
+			return;
+		}
+		Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+		intent.addCategory(Intent.CATEGORY_OPENABLE);
+		intent.setType("*/*");
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			Uri downloads = DocumentsContract.buildDocumentUri("com.android.externalstorage.documents", "primary:Download");
+			intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, downloads);
+		}
+		startActivityForResult(intent, REQUEST_CODE_OPEN_BOOK);
 	}
 
 	public void showCatalog(final FileInfo path) {
@@ -1656,6 +1678,29 @@ public class CoolReader extends BaseActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		if (requestCode == REQUEST_CODE_OPEN_BOOK) {
+			if (resultCode == Activity.RESULT_OK && intent != null) {
+				Uri uri = intent.getData();
+				if (uri != null) {
+					int takeFlags = intent.getFlags() & Intent.FLAG_GRANT_READ_URI_PERMISSION;
+					if (takeFlags != 0) {
+						try {
+							getContentResolver().takePersistableUriPermission(uri, takeFlags);
+						} catch (SecurityException e) {
+							log.w("Cannot persist read permission for " + uri);
+						}
+					}
+					final String uriString = uri.toString();
+					mFileToOpenFromExt = uriString;
+					loadDocumentFromUri(uri, null, () -> BackgroundThread.instance().postGUI(() -> {
+						ErrorDialog errDialog = new ErrorDialog(CoolReader.this, CoolReader.this.getString(R.string.error), CoolReader.this.getString(R.string.cant_open_file, uriString));
+						errDialog.setOnDismissListener(dialog -> showRootWindow());
+						errDialog.show();
+					}, 500));
+				}
+			}
+			return;
+		}
 		try {
 			mDictionaries.onActivityResult(requestCode, resultCode, intent);
 		} catch (DictionaryException e) {
