@@ -284,7 +284,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		}
 		mListView.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 		mListView.setCacheColorHint(0);
-		//mListView.setBackgroundResource(R.drawable.background_tiled_light);
 		removeAllViews();
 		addView(mListView);
 		mListView.setVisibility(VISIBLE);

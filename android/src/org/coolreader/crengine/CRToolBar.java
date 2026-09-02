@@ -442,10 +442,8 @@ public class CRToolBar extends ViewGroup {
 //		View divider = new View(getContext());
 //		addView(divider);
 //		if (isVertical()) {
-//			divider.setBackgroundResource(R.drawable.divider_light_vertical_tiled);
 //			divider.layout(right - 8, top, right, bottom);
 //		} else {
-//			divider.setBackgroundResource(R.drawable.divider_light_tiled);
 //			divider.layout(left, bottom - 8, right, bottom);
 //		}
 

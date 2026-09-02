@@ -25,19 +25,17 @@
     <style name="ListView">
     </style>
     <style name="ListView.Dark" parent="@style/Theme.Dark">
-        <!--item name="android:background">@drawable/background_tiled_dark</item-->
         <item name="android:scrollbars">vertical</item>
         <item name="android:fadingEdge">vertical</item>
         <item name="android:listSelector">@null</item>
-        <item name="android:divider">@drawable/divider_dark_tiled</item>
+        <item name="android:divider">@drawable/divider_solid_dark</item>
     </style>
         
     <style name="ListView.Light" parent="@style/Theme.Light">
-        <!--item name="android:background">@drawable/background_tiled_light</item-->
         <item name="android:scrollbars">vertical</item>
         <item name="android:fadingEdge">vertical</item>
         <item name="android:listSelector">@null</item>
-        <item name="android:divider">@drawable/divider_light_tiled</item>
+        <item name="android:divider">@drawable/divider_solid_light</item>
     </style>
         
     <style name="ListView.Black" parent="@style/Theme.Black">
@@ -102,8 +100,8 @@
     </style>
 
     <style name="Theme.Light" parent="@style/Theme.White">
-        <item name="android:windowBackground">@drawable/background_tiled_light</item>
-        <item name="android:colorBackground">#ffe0e0e0</item>
+        <item name="android:windowBackground">@color/crl_background_light</item>
+        <item name="android:colorBackground">@color/crl_background_light</item>
         <!-- item name="android:textColor">@android:color/black</item-->
         <item name="android:listViewStyle">@style/ListView.Light</item>
         <item name="android:listViewWhiteStyle">@style/ListView.Light</item>
@@ -111,8 +109,8 @@
         <item name="textColorOptionValue">@color/value_light</item>
     </style>
     <style name="Theme.Dark" parent="@style/Theme.Black">
-        <item name="android:windowBackground">@drawable/background_tiled_dark</item>
-        <item name="android:colorBackground">#ff302030</item>
+        <item name="android:windowBackground">@color/crl_background_dark</item>
+        <item name="android:colorBackground">@color/crl_background_dark</item>
         <!-- item name="android:textColor">@android:color/white</item-->
         <item name="android:listViewStyle">@style/ListView.Dark</item>
         <item name="android:listViewWhiteStyle">@style/ListView.Dark</item>
@@ -735,17 +733,17 @@
     <style name="RootDelimiter">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">8dip</item>
-        <item name="android:background">@drawable/divider_light_tiled</item>
+        <item name="android:background">@drawable/divider_solid_light</item>
         <!-- item name="android:background">?android:attr/windowBackground</item-->
     </style>
 
     <!--
     <style name="RootDelimiter.Dark" parent="@style/Theme.Dark">
-        <item name="android:background">@drawable/divider_light_tiled</item>
+        <item name="android:background">@drawable/divider_solid_light</item>
     </style>
 
     <style name="RootDelimiter.Light" parent="@style/Theme.Light">
-        <item name="android:background">@drawable/divider_light_tiled</item>
+        <item name="android:background">@drawable/divider_solid_light</item>
     </style>
 
     <style name="RootDelimiter.Black" parent="@style/Theme.Black">
