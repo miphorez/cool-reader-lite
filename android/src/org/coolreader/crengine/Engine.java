@@ -1724,10 +1724,6 @@ public class Engine {
 					R.drawable.bg_paper2),
 			new BackgroundTextureInfo("bg_paper2_dark", "Paper 2 (dark)",
 					R.drawable.bg_paper2_dark),
-			new BackgroundTextureInfo("tx_wood", "Wood",
-					R.drawable.tx_wood),
-			new BackgroundTextureInfo("tx_wood_dark", "Wood (dark)",
-					R.drawable.tx_wood_dark),
 			new BackgroundTextureInfo("tx_fabric", "Fabric",
 					R.drawable.tx_fabric),
 			new BackgroundTextureInfo("tx_fabric_dark", "Fabric (dark)",
@@ -1778,9 +1774,6 @@ public class Engine {
 					R.drawable.tx_stones),
 			new BackgroundTextureInfo("tx_stones_dark", "Stones (dark)",
 					R.drawable.tx_stones_dark),};
-	public static final String DEF_DAY_BACKGROUND_TEXTURE = "bg_paper1";
-	public static final String DEF_NIGHT_BACKGROUND_TEXTURE = "bg_paper1_dark";
-
 	public BackgroundTextureInfo[] getAvailableTextures() {
 		ArrayList<BackgroundTextureInfo> list = new ArrayList<BackgroundTextureInfo>(
 				internalTextures.length);

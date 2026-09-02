@@ -1551,6 +1551,9 @@ public class BaseActivity extends Activity implements Settings {
 	private static class SettingsManager {
 
 		public static final Logger log = L.create("cr");
+		private static final String PROP_SOLID_BACKGROUNDS_MIGRATED = "app.coolreaderlite.solid.backgrounds.v1";
+		private static final int SOLID_BACKGROUND_DAY = 0xECE3CB;
+		private static final int SOLID_BACKGROUND_NIGHT = 0x101010;
 
 		private final BaseActivity mActivity;
 		private Properties mSettings;
@@ -1830,6 +1833,28 @@ public class BaseActivity extends Activity implements Settings {
 				props.applyDefault(ReaderView.PROP_FONT_BASE_WEIGHT, flg ? 700 : 400);
 				props.remove(PROP_FONT_WEIGHT_EMBOLDEN_OBSOLETED);
 			}
+			if (!props.getBool(PROP_SOLID_BACKGROUNDS_MIGRATED, false)) {
+				migrateLegacyBackground(props, ReaderView.PROP_PAGE_BACKGROUND_IMAGE,
+						ReaderView.PROP_BACKGROUND_COLOR);
+				migrateLegacyBackground(props, ReaderView.PROP_PAGE_BACKGROUND_IMAGE_DAY,
+						ReaderView.PROP_BACKGROUND_COLOR_DAY);
+				migrateLegacyBackground(props, ReaderView.PROP_PAGE_BACKGROUND_IMAGE_NIGHT,
+						ReaderView.PROP_BACKGROUND_COLOR_NIGHT);
+				props.setBool(PROP_SOLID_BACKGROUNDS_MIGRATED, true);
+			}
+		}
+
+		private void migrateLegacyBackground(Properties props, String imageProperty, String colorProperty) {
+			String texture = props.getProperty(imageProperty);
+			int color = props.getColor(colorProperty, 0);
+			if ("bg_paper1".equals(texture) && color == 0xFFFFFFFF) {
+				props.setProperty(imageProperty, Engine.NO_TEXTURE.id);
+				props.setColor(colorProperty, SOLID_BACKGROUND_DAY);
+			} else if ("bg_paper1_dark".equals(texture) && color == (0xFF000000 | SOLID_BACKGROUND_NIGHT)) {
+				props.setProperty(imageProperty, Engine.NO_TEXTURE.id);
+			} else if ("tx_wood".equals(texture) || "tx_wood_dark".equals(texture)) {
+				props.setProperty(imageProperty, Engine.NO_TEXTURE.id);
+			}
 		}
 
 		public Properties loadSettings(BaseActivity activity, File file) {
@@ -1936,8 +1961,8 @@ public class BaseActivity extends Activity implements Settings {
 			props.applyDefault(ReaderView.PROP_FONT_COLOR, "#000000");
 			props.applyDefault(ReaderView.PROP_FONT_COLOR_DAY, "#000000");
 			props.applyDefault(ReaderView.PROP_FONT_COLOR_NIGHT, !DeviceInfo.EINK_SCREEN ? "#D0B070" : "#FFFFFF");
-			props.applyDefault(ReaderView.PROP_BACKGROUND_COLOR, "#FFFFFF");
-			props.applyDefault(ReaderView.PROP_BACKGROUND_COLOR_DAY, "#FFFFFF");
+			props.applyDefault(ReaderView.PROP_BACKGROUND_COLOR, "#ECE3CB");
+			props.applyDefault(ReaderView.PROP_BACKGROUND_COLOR_DAY, "#ECE3CB");
 			props.applyDefault(ReaderView.PROP_BACKGROUND_COLOR_NIGHT, !DeviceInfo.EINK_SCREEN ? "#101010" : "#000000");
 			props.applyDefault(ReaderView.PROP_STATUS_FONT_COLOR, "#FF000000"); // don't use separate color
 			props.applyDefault(ReaderView.PROP_STATUS_FONT_COLOR_DAY, "#FF000000"); // don't use separate color
@@ -1995,16 +2020,9 @@ public class BaseActivity extends Activity implements Settings {
 			props.applyDefault(ReaderView.PROP_APP_SCREEN_UPDATE_INTERVAL, "10");
 
 			props.applyDefault(ReaderView.PROP_NIGHT_MODE, "0");
-			if (DeviceInfo.FORCE_HC_THEME) {
-				props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE, Engine.NO_TEXTURE.id);
-			} else {
-				if (props.getBool(ReaderView.PROP_NIGHT_MODE, false))
-					props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE, Engine.DEF_NIGHT_BACKGROUND_TEXTURE);
-				else
-					props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE, Engine.DEF_DAY_BACKGROUND_TEXTURE);
-			}
-			props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE_DAY, !DeviceInfo.EINK_SCREEN ? Engine.DEF_DAY_BACKGROUND_TEXTURE : Engine.NO_TEXTURE.id);
-			props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE_NIGHT, !DeviceInfo.EINK_SCREEN ? Engine.DEF_NIGHT_BACKGROUND_TEXTURE : Engine.NO_TEXTURE.id);
+			props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE, Engine.NO_TEXTURE.id);
+			props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE_DAY, Engine.NO_TEXTURE.id);
+			props.applyDefault(ReaderView.PROP_PAGE_BACKGROUND_IMAGE_NIGHT, Engine.NO_TEXTURE.id);
 
 			props.applyDefault(ReaderView.PROP_FONT_GAMMA, DeviceInfo.EINK_SCREEN ? "1.5" : "1.0");
 
