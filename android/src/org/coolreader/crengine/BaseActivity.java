@@ -138,6 +138,7 @@ public class BaseActivity extends Activity implements Settings {
 	}
 
 	protected void startServices() {
+		BundledFonts.install(this);
 		if (DeviceInfo.EINK_NOOK)
 			mEinkScreen = new EinkScreenNook();
 		else if (DeviceInfo.EINK_TOLINO)
@@ -1551,6 +1552,8 @@ public class BaseActivity extends Activity implements Settings {
 	private static class SettingsManager {
 
 		public static final Logger log = L.create("cr");
+		private static final String BUNDLED_READER_FONT_FACE = "Vollkorn";
+		private static final String PROP_VOLLKORN_DEFAULT_MIGRATED = "app.coolreaderlite.vollkorn.default.v1";
 		private static final String PROP_SOLID_BACKGROUNDS_MIGRATED = "app.coolreaderlite.solid.backgrounds.v1";
 		private static final int SOLID_BACKGROUND_DAY = 0xECE3CB;
 		private static final int SOLID_BACKGROUND_NIGHT = 0x101010;
@@ -1804,7 +1807,7 @@ public class BaseActivity extends Activity implements Settings {
 
 		public boolean fixFontSettings(Properties props) {
 			boolean res = false;
-			res = applyDefaultFont(props, ReaderView.PROP_FONT_FACE, DeviceInfo.DEF_FONT_FACE) || res;
+			res = applyDefaultFont(props, ReaderView.PROP_FONT_FACE, BUNDLED_READER_FONT_FACE) || res;
 			res = applyDefaultFont(props, ReaderView.PROP_STATUS_FONT_FACE, DeviceInfo.DEF_FONT_FACE) || res;
 			res = applyDefaultFallbackFontList(props, ReaderView.PROP_FALLBACK_FONT_FACES, "Noto Color Emoji; Droid Sans Fallback; Noto Sans CJK SC; Noto Sans Arabic UI; Noto Sans Devanagari UI; Roboto; FreeSans; FreeSerif; Noto Serif; Noto Sans; Arial Unicode MS") || res;
 			return res;
@@ -1841,6 +1844,15 @@ public class BaseActivity extends Activity implements Settings {
 				migrateLegacyBackground(props, ReaderView.PROP_PAGE_BACKGROUND_IMAGE_NIGHT,
 						ReaderView.PROP_BACKGROUND_COLOR_NIGHT);
 				props.setBool(PROP_SOLID_BACKGROUNDS_MIGRATED, true);
+			}
+			if (!props.getBool(PROP_VOLLKORN_DEFAULT_MIGRATED, false)
+					&& isValidFontFace(BUNDLED_READER_FONT_FACE)) {
+				String currentFontFace = props.getProperty(ReaderView.PROP_FONT_FACE);
+				if (currentFontFace == null || DeviceInfo.DEF_FONT_FACE.equals(currentFontFace)
+						|| "Roboto".equals(currentFontFace) || "Droid Sans".equals(currentFontFace)) {
+					props.setProperty(ReaderView.PROP_FONT_FACE, BUNDLED_READER_FONT_FACE);
+				}
+				props.setBool(PROP_VOLLKORN_DEFAULT_MIGRATED, true);
 			}
 		}
 
