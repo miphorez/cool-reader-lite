@@ -15,6 +15,13 @@
 		        android:layout_margin="4dip"
 				android:layout_height="wrap_content">
 			</TextView>
+			<TextView android:id="@+id/version_details"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="4dip"
+				android:layout_marginRight="4dip"
+				android:layout_marginBottom="4dip"
+				style="@style/TextAppearance.Small"/>
 			<TextView android:text="@string/dlg_about_copyright" android:id="@+id/copyright"
 		            style="@style/TextAppearance.Medium"
                     android:gravity="left"

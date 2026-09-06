@@ -33,6 +33,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
 import android.widget.TextView;
 
+import org.coolreader.BuildConfig;
 import org.coolreader.CoolReader;
 import org.coolreader.R;
 
@@ -103,6 +104,10 @@ public class AboutDialog extends BaseDialog implements TabContentFactory {
 		TabHost tabs = (TabHost)inflater.inflate(R.layout.about_dialog, null);
 		mAppTab = inflater.inflate(R.layout.about_dialog_app, null);
 		((TextView)mAppTab.findViewById(R.id.version)).setText(mCoolReader.getString(R.string.app_name) + " " + mCoolReader.getVersion());
+		String versionDetails = mCoolReader.getString(R.string.dlg_about_based_on_version, BuildConfig.UPSTREAM_VERSION_NAME)
+				+ "\n"
+				+ mCoolReader.getString(R.string.dlg_about_build_details, BuildConfig.VERSION_CODE, BuildConfig.GIT_COMMIT, BuildConfig.BUILD_TYPE);
+		((TextView)mAppTab.findViewById(R.id.version_details)).setText(versionDetails);
 
 		mDirsTab = inflater.inflate(R.layout.about_dialog_dirs, null);
 		TextView fonts_dir = mDirsTab.findViewById(R.id.fonts_dirs);
