@@ -22,6 +22,8 @@
 
 package org.coolreader.crengine;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
@@ -61,6 +63,15 @@ public class AboutDialog extends BaseDialog implements TabContentFactory {
 		imageView.setImageResource(imageDrawable);
 		return tabIndicator;
 	}
+
+	private int getInstalledVersionCode() {
+		try {
+			PackageInfo packageInfo = mCoolReader.getPackageManager().getPackageInfo(mCoolReader.getPackageName(), 0);
+			return packageInfo.versionCode;
+		} catch (NameNotFoundException e) {
+			return BuildConfig.VERSION_CODE;
+		}
+	}
 	
 	public AboutDialog( CoolReader activity)
 	{
@@ -74,7 +85,7 @@ public class AboutDialog extends BaseDialog implements TabContentFactory {
 		((TextView)mAppTab.findViewById(R.id.version)).setText(mCoolReader.getString(R.string.app_name) + " " + mCoolReader.getVersion());
 		String versionDetails = mCoolReader.getString(R.string.dlg_about_based_on_version, BuildConfig.UPSTREAM_VERSION_NAME)
 				+ "\n"
-				+ mCoolReader.getString(R.string.dlg_about_build_details, BuildConfig.VERSION_CODE, BuildConfig.GIT_COMMIT, BuildConfig.BUILD_TYPE);
+				+ mCoolReader.getString(R.string.dlg_about_build_details, getInstalledVersionCode(), BuildConfig.GIT_COMMIT, BuildConfig.BUILD_TYPE);
 		((TextView)mAppTab.findViewById(R.id.version_details)).setText(versionDetails);
 		setupLink(mAppTab.findViewById(R.id.maintainer), R.string.dlg_about_link_github_maintainer, "https://github.com/miphorez");
 		setupLink(mAppTab.findViewById(R.id.www), R.string.dlg_about_link_github_lite, "https://github.com/miphorez/cool-reader-lite");
