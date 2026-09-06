@@ -1,5 +1,33 @@
 apply plugin: 'com.android.application'
 
+def resolveGitCommit = {
+    String revision = System.getenv('GITHUB_SHA')
+    if (revision)
+        return revision.take(8)
+    try {
+        def process = new ProcessBuilder('git', 'rev-parse', '--short=8', 'HEAD')
+                .directory(rootProject.projectDir.parentFile)
+                .redirectErrorStream(true)
+                .start()
+        String output = process.inputStream.getText('UTF-8').trim()
+        if (process.waitFor() == 0 && output) {
+            def statusProcess = new ProcessBuilder('git', 'status', '--porcelain', '--untracked-files=no')
+                    .directory(rootProject.projectDir.parentFile)
+                    .redirectErrorStream(true)
+                    .start()
+            String status = statusProcess.inputStream.getText('UTF-8').trim()
+            if (statusProcess.waitFor() == 0 && status)
+                output += '-dirty'
+            return output
+        }
+    } catch (Exception ignored) {
+        // Source archives may not contain Git metadata.
+    }
+    return 'unknown'
+}
+
+def gitCommit = resolveGitCommit()
+
 android {
     // Keep the source namespace while JNI entry points still use org.coolreader class names.
     namespace 'org.coolreader'
@@ -11,8 +39,10 @@ android {
         targetSdkVersion 35
         // When new version released, version code must be incremented at least by 8
         // for compatibility with ABI versioning of split apk (see below).
-        versionCode 32570
-        versionName "3.2.59-1"
+        versionCode 32578
+        versionName "0.2.0-preview.1"
+        buildConfigField "String", "UPSTREAM_VERSION_NAME", '"3.2.59-1"'
+        buildConfigField "String", "GIT_COMMIT", "\"${gitCommit}\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
