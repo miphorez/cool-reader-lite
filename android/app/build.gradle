@@ -7,7 +7,7 @@ android {
     buildToolsVersion "35.0.0"
     defaultConfig {
         applicationId "io.github.miphorez.coolreaderlite"
-        minSdkVersion 4
+        minSdkVersion 21
         targetSdkVersion 35
         // When new version released, version code must be incremented at least by 8
         // for compatibility with ABI versioning of split apk (see below).

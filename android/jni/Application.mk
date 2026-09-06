@@ -18,7 +18,6 @@ APP_ABI := arm64-v8a
 #mips mips-r2
 #x86
 #armeabi-v7a
-APP_PLATFORM := android-8
-#APP_PLATFORM := android-3
+APP_PLATFORM := android-21
 
 APP_STL := c++_static
