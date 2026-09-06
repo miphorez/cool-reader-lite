@@ -268,6 +268,8 @@ public class BookInfoEditDialog extends BaseDialog {
         mainView = (LinearLayout) mInflater.inflate(R.layout.book_info_edit_dialog, null);
 
         ImageButton btnBack = mainView.findViewById(R.id.base_dlg_btn_back);
+		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
+		Utils.tintPatchedIcon(btnBack, backIconResId, R.attr.textColorToolBarLabel);
         btnBack.setOnClickListener(v -> onNegativeButtonClick());
         ImageButton btnOpenBook = mainView.findViewById(R.id.btn_open_book);
         btnOpenBook.setOnClickListener(v -> onPositiveButtonClick());

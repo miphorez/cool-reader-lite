@@ -635,7 +635,7 @@ public class SyncService extends BaseService {
 					// add actions
 					// cancel
 					PendingIntent cancelIntent = PendingIntent.getBroadcast(this, 0, new Intent(SYNC_ACTION_CANCEL), 0);
-					Notification.Action.Builder actionBld = new Notification.Action.Builder(android.R.drawable.ic_menu_close_clear_cancel, getString(R.string.dlg_button_cancel), cancelIntent);
+					Notification.Action.Builder actionBld = new Notification.Action.Builder(R.drawable.ic_menu_close_clear_cancel, getString(R.string.dlg_button_cancel), cancelIntent);
 					Notification.Action actionCancel = actionBld.build();
 					builder = builder.addAction(actionCancel);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

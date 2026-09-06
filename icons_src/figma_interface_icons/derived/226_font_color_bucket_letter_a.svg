@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g transform="translate(3.2 2.5) scale(.58)">
+    <path d="M6.9.7L16.35 9.35Q17 10 16.35 10.65L10.65 16.35Q10 17 9.35 16.35L3.65 10.65Q3 10 3.65 9.35L8.55 4.45" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M5.225 10H14.775L10 14.775L5.225 10Z" fill="white"/>
+  </g>
+  <path transform="translate(5 2.5) scale(.58)" d="M17.5875 16.4125Q17 15.825 17 15Q17 14.475 17.3125 13.875T18 12.75Q18.275 12.375 19 11.5Q19.725 12.375 20 12.75Q20.6875 13.725 20.6875 15Q20.6875 15.825 20.1 16.4125T18.84375 17Q18.175 17 17.5875 16.4125Z" fill="white"/>
+  <path d="M10.4 20.5L14 14.2L17.6 20.5M11.65 18.3H16.35" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

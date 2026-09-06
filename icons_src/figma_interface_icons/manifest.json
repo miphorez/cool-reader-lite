@@ -1,0 +1,4436 @@
+[
+  {
+    "label": "icon:001:accounts",
+    "name": "accounts",
+    "file": "icons/001_accounts.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.105,
+      "y": 1.677,
+      "width": 19.792,
+      "height": 20.292
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:002:crypto",
+    "name": "crypto",
+    "file": "icons/002_crypto.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.583,
+      "y": 1.583,
+      "width": 20.833,
+      "height": 20.833
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:003:activity",
+    "name": "activity",
+    "file": "icons/003_activity.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.5,
+      "y": 2.0,
+      "width": 19.0,
+      "height": 20.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:004:cards",
+    "name": "cards",
+    "file": "icons/004_cards.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.583,
+      "y": 3.041,
+      "width": 20.833,
+      "height": 17.917
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:005:center",
+    "name": "center",
+    "file": "icons/005_center.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.584,
+      "y": 1.588,
+      "width": 20.833,
+      "height": 21.052
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:006:settings",
+    "name": "settings",
+    "file": "icons/006_settings.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.825,
+      "y": 1.583,
+      "width": 20.353,
+      "height": 20.833
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:007:edit",
+    "name": "edit",
+    "file": "icons/007_edit.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.241,
+      "y": 3.25,
+      "width": 17.509,
+      "height": 17.508
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:008:hide",
+    "name": "hide",
+    "file": "icons/008_hide.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.746,
+      "y": 1.928,
+      "width": 20.52,
+      "height": 20.07
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:009:show",
+    "name": "show",
+    "file": "icons/009_show.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.75,
+      "y": 3.435,
+      "width": 20.5,
+      "height": 17.13
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:010:error",
+    "name": "error",
+    "file": "icons/010_error.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:011:warning",
+    "name": "warning",
+    "file": "icons/011_warning.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.01,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:012:global",
+    "name": "global",
+    "file": "icons/012_global.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.167,
+      "y": 1.167,
+      "width": 21.666,
+      "height": 21.666
+    },
+    "elementCount": 9
+  },
+  {
+    "label": "icon:013:arrow-left-small",
+    "name": "arrow-left-small",
+    "file": "icons/013_arrow-left-small.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 8.47,
+      "y": 6.42,
+      "width": 7.146,
+      "height": 11.159
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:014:arrow-up-small",
+    "name": "arrow-up-small",
+    "file": "icons/014_arrow-up-small.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 6.421,
+      "y": 8.47,
+      "width": 11.159,
+      "height": 7.146
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:015:arrow_down_small",
+    "name": "arrow_down_small",
+    "file": "icons/015_arrow_down_small.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 6.42,
+      "y": 8.384,
+      "width": 11.159,
+      "height": 7.146
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:016:arrow_left_large",
+    "name": "arrow_left_large",
+    "file": "icons/016_arrow_left_large.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 5.0,
+      "y": 3.012,
+      "width": 10.261,
+      "height": 17.976
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:017:arrow_right_arge",
+    "name": "arrow_right_arge",
+    "file": "icons/017_arrow_right_arge.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 6.825,
+      "y": 3.012,
+      "width": 10.261,
+      "height": 17.976
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:018:arrow_right_small",
+    "name": "arrow_right_small",
+    "file": "icons/018_arrow_right_small.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 8.384,
+      "y": 6.42,
+      "width": 7.146,
+      "height": 11.159
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:019:account_status",
+    "name": "account_status",
+    "file": "icons/019_account_status.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:020:security_stroke",
+    "name": "security_stroke",
+    "file": "icons/020_security_stroke.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.485,
+      "y": 1.263,
+      "width": 19.03,
+      "height": 21.361
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:021:language",
+    "name": "language",
+    "file": "icons/021_language.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:022:notifications",
+    "name": "notifications",
+    "file": "icons/022_notifications.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 20,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.1,
+      "y": 1.19,
+      "width": 18.178,
+      "height": 21.62
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:023:payment_methods",
+    "name": "payment_methods",
+    "file": "icons/023_payment_methods.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 2.905,
+      "width": 21.199,
+      "height": 18.194
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:024:support",
+    "name": "support",
+    "file": "icons/024_support.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.37,
+      "width": 21.199,
+      "height": 21.26
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:025:features",
+    "name": "features",
+    "file": "icons/025_features.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:026:rate_us",
+    "name": "rate_us",
+    "file": "icons/026_rate_us.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 2.5,
+      "width": 21.2,
+      "height": 19.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:027:whish_desk",
+    "name": "whish_desk",
+    "file": "icons/027_whish_desk.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:028:pricing",
+    "name": "pricing",
+    "file": "icons/028_pricing.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:029:legal_bases_stroke",
+    "name": "legal_bases_stroke",
+    "file": "icons/029_legal_bases_stroke.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.4,
+      "y": 1.381,
+      "width": 19.2,
+      "height": 21.219
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:030:app_update",
+    "name": "app_update",
+    "file": "icons/030_app_update.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.4,
+      "y": 1.4,
+      "width": 21.2,
+      "height": 21.199
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:031:loader",
+    "name": "loader",
+    "file": "icons/031_loader.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 24.0,
+      "height": 24.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:032:cursor",
+    "name": "cursor",
+    "file": "icons/032_cursor.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 64,
+      "width": 4,
+      "height": 20
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 3.0,
+      "width": 0.0,
+      "height": 18.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:033:search",
+    "name": "search",
+    "file": "icons/033_search.svg",
+    "sourceBounds": {
+      "x": 440,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 4.185,
+      "y": 4.11,
+      "width": 15.63,
+      "height": 15.78
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:034:close_small",
+    "name": "close_small",
+    "file": "icons/034_close_small.svg",
+    "sourceBounds": {
+      "x": 484,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 7.936,
+      "y": 7.933,
+      "width": 8.129,
+      "height": 8.129
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:035:close_large",
+    "name": "close_large",
+    "file": "icons/035_close_large.svg",
+    "sourceBounds": {
+      "x": 528,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 5.905,
+      "y": 5.9,
+      "width": 12.192,
+      "height": 12.193
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:036:add_small",
+    "name": "add_small",
+    "file": "icons/036_add_small.svg",
+    "sourceBounds": {
+      "x": 572,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 7.0,
+      "y": 7.0,
+      "width": 10.0,
+      "height": 10.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:037:add_large",
+    "name": "add_large",
+    "file": "icons/037_add_large.svg",
+    "sourceBounds": {
+      "x": 616,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 6.0,
+      "y": 6.0,
+      "width": 12.0,
+      "height": 12.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:038:checkbox",
+    "name": "checkbox",
+    "file": "icons/038_checkbox.svg",
+    "sourceBounds": {
+      "x": 660,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 5.426,
+      "y": 7.347,
+      "width": 13.15,
+      "height": 9.307
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:039:checkbox_large",
+    "name": "checkbox_large",
+    "file": "icons/039_checkbox_large.svg",
+    "sourceBounds": {
+      "x": 704,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.138,
+      "y": 5.02,
+      "width": 19.725,
+      "height": 13.96
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:040:three_dots_horizontal",
+    "name": "three_dots_horizontal",
+    "file": "icons/040_three_dots_horizontal.svg",
+    "sourceBounds": {
+      "x": 748,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 11.0,
+      "y": 4.0,
+      "width": 3.0,
+      "height": 16.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:041:three_dots_vertical",
+    "name": "three_dots_vertical",
+    "file": "icons/041_three_dots_vertical.svg",
+    "sourceBounds": {
+      "x": 792,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 4.0,
+      "y": 10.5,
+      "width": 16.0,
+      "height": 3.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:042:info_circle",
+    "name": "info_circle",
+    "file": "icons/042_info_circle.svg",
+    "sourceBounds": {
+      "x": 836,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:043:face_id",
+    "name": "face_id",
+    "file": "icons/043_face_id.svg",
+    "sourceBounds": {
+      "x": 880,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 24.0,
+      "height": 24.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:044:checkbox_circle",
+    "name": "checkbox_circle",
+    "file": "icons/044_checkbox_circle.svg",
+    "sourceBounds": {
+      "x": 924,
+      "y": 64,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 24.0,
+      "height": 24.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:045:lock_stroke",
+    "name": "lock_stroke",
+    "file": "icons/045_lock_stroke.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:046:email",
+    "name": "email",
+    "file": "icons/046_email.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 2.75,
+      "width": 21.5,
+      "height": 18.5
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:047:handle",
+    "name": "handle",
+    "file": "icons/047_handle.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 4.0,
+      "y": 8.0,
+      "width": 16.792,
+      "height": 8.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:048:filters_default",
+    "name": "filters_default",
+    "file": "icons/048_filters_default.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 6.0,
+      "width": 21.6,
+      "height": 12.237
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:049:filters_indicator",
+    "name": "filters_indicator",
+    "file": "icons/049_filters_indicator.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 6.0,
+      "width": 23.0,
+      "height": 18.0
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:050:add_circle_stroke",
+    "name": "add_circle_stroke",
+    "file": "icons/050_add_circle_stroke.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.998,
+      "y": 1.0,
+      "width": 22.003,
+      "height": 22.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:051:chart",
+    "name": "chart",
+    "file": "icons/051_chart.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.584,
+      "y": 2.983,
+      "width": 20.833,
+      "height": 18.033
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:052:snowflake",
+    "name": "snowflake",
+    "file": "icons/052_snowflake.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.888,
+      "y": 1.0,
+      "width": 20.223,
+      "height": 22.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:053:snowflake_cross",
+    "name": "snowflake_cross",
+    "file": "icons/053_snowflake_cross.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.515,
+      "y": 1.0,
+      "width": 21.668,
+      "height": 22.0
+    },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:054:pus_slider",
+    "name": "pus_slider",
+    "file": "icons/054_pus_slider.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 24.0,
+      "height": 24.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:055:add_rectangle_filled",
+    "name": "add_rectangle_filled",
+    "file": "icons/055_add_rectangle_filled.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:056:add_circle_filled",
+    "name": "add_circle_filled",
+    "file": "icons/056_add_circle_filled.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 1.0,
+      "width": 22.0,
+      "height": 22.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:057:minus_circle_filled",
+    "name": "minus_circle_filled",
+    "file": "icons/057_minus_circle_filled.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 1.0,
+      "width": 22.0,
+      "height": 22.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:058:send_square",
+    "name": "send_square",
+    "file": "icons/058_send_square.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.5,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:059:convert",
+    "name": "convert",
+    "file": "icons/059_convert.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.75,
+      "y": 2.5,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:060:more",
+    "name": "more",
+    "file": "icons/060_more.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:061:receipt_stroke",
+    "name": "receipt_stroke",
+    "file": "icons/061_receipt_stroke.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.505,
+      "y": 2.009,
+      "width": 17.0,
+      "height": 20.25
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:062:statement",
+    "name": "statement",
+    "file": "icons/062_statement.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:063:all_accounts",
+    "name": "all_accounts",
+    "file": "icons/063_all_accounts.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.771,
+      "y": 2.0,
+      "width": 18.458,
+      "height": 20.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:064:copy-stroke",
+    "name": "copy-stroke",
+    "file": "icons/064_copy-stroke.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:065:copy-filled",
+    "name": "copy-filled",
+    "file": "icons/065_copy-filled.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:066:details_default",
+    "name": "details_default",
+    "file": "icons/066_details_default.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 108,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.5,
+      "y": 1.8,
+      "width": 19.2,
+      "height": 20.2
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:067:details_indicator",
+    "name": "details_indicator",
+    "file": "icons/067_details_indicator.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.5,
+      "y": 1.801,
+      "width": 21.5,
+      "height": 22.199
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:068:list",
+    "name": "list",
+    "file": "icons/068_list.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.25,
+      "y": 6.25,
+      "width": 19.5,
+      "height": 11.5
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:069:triangle_stroke",
+    "name": "triangle_stroke",
+    "file": "icons/069_triangle_stroke.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.5,
+      "y": 2.482,
+      "width": 21.0,
+      "height": 19.037
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:070:triangle_filled",
+    "name": "triangle_filled",
+    "file": "icons/070_triangle_filled.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.34,
+      "y": 2.0,
+      "width": 21.32,
+      "height": 19.63
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:071:history",
+    "name": "history",
+    "file": "icons/071_history.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": -0.176,
+      "y": 1.049,
+      "width": 24.176,
+      "height": 21.901
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:072:loader_header",
+    "name": "loader_header",
+    "file": "icons/072_loader_header.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.877,
+      "y": 3.0,
+      "width": 21.2,
+      "height": 19.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:073:archive_filled",
+    "name": "archive_filled",
+    "file": "icons/073_archive_filled.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:074:archive_stroke",
+    "name": "archive_stroke",
+    "file": "icons/074_archive_stroke.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:075:share",
+    "name": "share",
+    "file": "icons/075_share.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.25,
+      "y": 3.22,
+      "width": 17.5,
+      "height": 17.559
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:076:help",
+    "name": "help",
+    "file": "icons/076_help.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.686,
+      "width": 21.5,
+      "height": 21.103
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:077:delete_stroke",
+    "name": "delete_stroke",
+    "file": "icons/077_delete_stroke.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.213,
+      "y": 1.25,
+      "width": 19.573,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:078:delete_filled",
+    "name": "delete_filled",
+    "file": "icons/078_delete_filled.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.21,
+      "y": 1.25,
+      "width": 19.58,
+      "height": 21.51
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:079:activity_stroke",
+    "name": "activity_stroke",
+    "file": "icons/079_activity_stroke.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.25,
+      "y": 1.245,
+      "width": 19.5,
+      "height": 21.51
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:080:comment",
+    "name": "comment",
+    "file": "icons/080_comment.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:081:calendar_filled",
+    "name": "calendar_filled",
+    "file": "icons/081_calendar_filled.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.0,
+      "y": 1.25,
+      "width": 18.0,
+      "height": 20.75
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:082:favorites_filled",
+    "name": "favorites_filled",
+    "file": "icons/082_favorites_filled.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.815,
+      "y": 2.039,
+      "width": 20.37,
+      "height": 20.1
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:083:favorites_stroke",
+    "name": "favorites_stroke",
+    "file": "icons/083_favorites_stroke.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.033,
+      "y": 1.331,
+      "width": 21.935,
+      "height": 21.628
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:084:card-list",
+    "name": "card-list",
+    "file": "icons/084_card-list.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 2.252,
+      "width": 21.5,
+      "height": 19.497
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:085:eye",
+    "name": "eye",
+    "file": "icons/085_eye.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.465,
+      "y": 2.975,
+      "width": 21.07,
+      "height": 18.049
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:086:eye_cross",
+    "name": "eye_cross",
+    "file": "icons/086_eye_cross.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.177,
+      "y": 1.177,
+      "width": 21.646,
+      "height": 21.646
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:087:img",
+    "name": "img",
+    "file": "icons/087_img.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:088:photo",
+    "name": "photo",
+    "file": "icons/088_photo.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 152,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.334,
+      "y": 1.25,
+      "width": 21.333,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:089:file",
+    "name": "file",
+    "file": "icons/089_file.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.486,
+      "y": 1.266,
+      "width": 21.032,
+      "height": 21.469
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:090:scanner_stroke",
+    "name": "scanner_stroke",
+    "file": "icons/090_scanner_stroke.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:091:scanner_filled",
+    "name": "scanner_filled",
+    "file": "icons/091_scanner_filled.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:092:marketing",
+    "name": "marketing",
+    "file": "icons/092_marketing.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.2,
+      "y": 1.242,
+      "width": 21.602,
+      "height": 21.515
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:093:salary",
+    "name": "salary",
+    "file": "icons/093_salary.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 2.75,
+      "width": 21.5,
+      "height": 18.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:094:educational_service",
+    "name": "educational_service",
+    "file": "icons/094_educational_service.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.236,
+      "y": 1.248,
+      "width": 21.046,
+      "height": 21.497
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:095:medical",
+    "name": "medical",
+    "file": "icons/095_medical.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:096:crypto_stroke",
+    "name": "crypto_stroke",
+    "file": "icons/096_crypto_stroke.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 22.5,
+      "height": 21.51
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:097:travel",
+    "name": "travel",
+    "file": "icons/097_travel.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.24,
+      "y": 1.387,
+      "width": 19.52,
+      "height": 21.459
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:098:development",
+    "name": "development",
+    "file": "icons/098_development.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:099:other",
+    "name": "other",
+    "file": "icons/099_other.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:100:info",
+    "name": "info",
+    "file": "icons/100_info.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 9.183,
+      "y": 4.617,
+      "width": 5.635,
+      "height": 14.766
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:101:repeat",
+    "name": "repeat",
+    "file": "icons/101_repeat.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:102:calendar",
+    "name": "calendar",
+    "file": "icons/102_calendar.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.0,
+      "y": 1.623,
+      "width": 18.0,
+      "height": 20.754
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:103:apple_pay",
+    "name": "apple_pay",
+    "file": "icons/103_apple_pay.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.972,
+      "y": 1.5,
+      "width": 19.032,
+      "height": 22.052
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:104:refresh",
+    "name": "refresh",
+    "file": "icons/104_refresh.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:105:arrange",
+    "name": "arrange",
+    "file": "icons/105_arrange.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.667,
+      "y": 2.691,
+      "width": 17.666,
+      "height": 18.618
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:106:edit_stroke",
+    "name": "edit_stroke",
+    "file": "icons/106_edit_stroke.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.25,
+      "y": 1.219,
+      "width": 19.5,
+      "height": 21.449
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:107:edit_filled",
+    "name": "edit_filled",
+    "file": "icons/107_edit_filled.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.25,
+      "y": 1.487,
+      "width": 19.5,
+      "height": 20.51
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:108:limits_default",
+    "name": "limits_default",
+    "file": "icons/108_limits_default.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 3.5,
+      "width": 22.016,
+      "height": 17.001
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:109:limits_indicator",
+    "name": "limits_indicator",
+    "file": "icons/109_limits_indicator.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.0,
+      "y": 3.5,
+      "width": 23.0,
+      "height": 20.5
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:110:active_card",
+    "name": "active_card",
+    "file": "icons/110_active_card.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 196,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.5,
+      "y": 2.2,
+      "width": 21.0,
+      "height": 19.6
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:111:on_the_way",
+    "name": "on_the_way",
+    "file": "icons/111_on_the_way.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.5,
+      "y": 1.436,
+      "width": 21.0,
+      "height": 21.048
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:112:warning_2",
+    "name": "warning_2",
+    "file": "icons/112_warning_2.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.915,
+      "y": 1.86,
+      "width": 18.17,
+      "height": 20.28
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:113:forbidden",
+    "name": "forbidden",
+    "file": "icons/113_forbidden.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:114:under_activation",
+    "name": "under_activation",
+    "file": "icons/114_under_activation.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.5,
+      "y": 2.2,
+      "width": 21.0,
+      "height": 19.6
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:115:card_expired",
+    "name": "card_expired",
+    "file": "icons/115_card_expired.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.9,
+      "height": 19.63
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:116:card_closed",
+    "name": "card_closed",
+    "file": "icons/116_card_closed.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.93,
+      "y": 1.93,
+      "width": 20.15,
+      "height": 20.07
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:117:lock_filled",
+    "name": "lock_filled",
+    "file": "icons/117_lock_filled.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 1.25,
+      "width": 20.0,
+      "height": 20.75
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:118:replace",
+    "name": "replace",
+    "file": "icons/118_replace.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:119:folder",
+    "name": "folder",
+    "file": "icons/119_folder.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:120:outcome",
+    "name": "outcome",
+    "file": "icons/120_outcome.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.25,
+      "y": 2.5,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:121:income",
+    "name": "income",
+    "file": "icons/121_income.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.24,
+      "y": 2.5,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:122:crypto_transfer",
+    "name": "crypto_transfer",
+    "file": "icons/122_crypto_transfer.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.255,
+      "y": 0.25,
+      "width": 23.5,
+      "height": 23.5
+    },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:123:arrow_rigth-circle_filled",
+    "name": "arrow_rigth-circle_filled",
+    "file": "icons/123_arrow_rigth-circle_filled.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:124:arrow_down-circle_filled",
+    "name": "arrow_down-circle_filled",
+    "file": "icons/124_arrow_down-circle_filled.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:125:card",
+    "name": "card",
+    "file": "icons/125_card.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 3.4,
+      "width": 20.0,
+      "height": 17.2
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:126:copy-filled",
+    "name": "copy-filled",
+    "file": "icons/126_copy-filled.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:127:info_filled",
+    "name": "info_filled",
+    "file": "icons/127_info_filled.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:128:bank_transfer",
+    "name": "bank_transfer",
+    "file": "icons/128_bank_transfer.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 0.25,
+      "y": 1.65,
+      "width": 23.5,
+      "height": 20.68
+    },
+    "elementCount": 7
+  },
+  {
+    "label": "icon:129:microphone_stroke",
+    "name": "microphone_stroke",
+    "file": "icons/129_microphone_stroke.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.6,
+      "y": 1.25,
+      "width": 16.799,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:130:security_filled",
+    "name": "security_filled",
+    "file": "icons/130_security_filled.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.09,
+      "y": 1.88,
+      "width": 17.82,
+      "height": 20.14
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:131:pin_code",
+    "name": "pin_code",
+    "file": "icons/131_pin_code.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.94,
+      "y": 1.27,
+      "width": 20.8,
+      "height": 20.79
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:132:source_of_funds",
+    "name": "source_of_funds",
+    "file": "icons/132_source_of_funds.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 240,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.125,
+      "y": 1.25,
+      "width": 21.75,
+      "height": 21.5
+    },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:133:card_design",
+    "name": "card_design",
+    "file": "icons/133_card_design.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:134:help_desk",
+    "name": "help_desk",
+    "file": "icons/134_help_desk.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.5,
+      "y": 1.8,
+      "width": 19.2,
+      "height": 20.2
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:135:close_circle",
+    "name": "close_circle",
+    "file": "icons/135_close_circle.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:136:money",
+    "name": "money",
+    "file": "icons/136_money.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.71,
+      "y": 3.52,
+      "width": 20.59,
+      "height": 16.96
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:137:tariffs",
+    "name": "tariffs",
+    "file": "icons/137_tariffs.svg",
+    "sourceBounds": {
+      "x": 196,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 3.86,
+      "width": 20.0,
+      "height": 16.29
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:138:empty_list",
+    "name": "empty_list",
+    "file": "icons/138_empty_list.svg",
+    "sourceBounds": {
+      "x": 240,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.75,
+      "y": 1.5,
+      "width": 20.5,
+      "height": 21.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:139:no_search_result",
+    "name": "no_search_result",
+    "file": "icons/139_no_search_result.svg",
+    "sourceBounds": {
+      "x": 284,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.5,
+      "y": 2.0,
+      "width": 17.0,
+      "height": 20.25
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:140:legal_bases_filled",
+    "name": "legal_bases_filled",
+    "file": "icons/140_legal_bases_filled.svg",
+    "sourceBounds": {
+      "x": 328,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.29,
+      "y": 2.0,
+      "width": 17.42,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:141:supported_countries",
+    "name": "supported_countries",
+    "file": "icons/141_supported_countries.svg",
+    "sourceBounds": {
+      "x": 372,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.501,
+      "y": 1.5,
+      "width": 21.07,
+      "height": 21.0
+    },
+    "elementCount": 9
+  },
+  {
+    "label": "icon:142:archived_cards",
+    "name": "archived_cards",
+    "file": "icons/142_archived_cards.svg",
+    "sourceBounds": {
+      "x": 416,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.25,
+      "y": 1.25,
+      "width": 21.5,
+      "height": 21.5
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:143:user",
+    "name": "user",
+    "file": "icons/143_user.svg",
+    "sourceBounds": {
+      "x": 460,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.0,
+      "y": 2.0,
+      "width": 18.0,
+      "height": 20.18
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:144:balance",
+    "name": "balance",
+    "file": "icons/144_balance.svg",
+    "sourceBounds": {
+      "x": 504,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 3.5,
+      "width": 20.0,
+      "height": 17.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:145:checkbox_circle_filled",
+    "name": "checkbox_circle_filled",
+    "file": "icons/145_checkbox_circle_filled.svg",
+    "sourceBounds": {
+      "x": 548,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:146:clock",
+    "name": "clock",
+    "file": "icons/146_clock.svg",
+    "sourceBounds": {
+      "x": 592,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:147:wallet",
+    "name": "wallet",
+    "file": "icons/147_wallet.svg",
+    "sourceBounds": {
+      "x": 636,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.249,
+      "y": 1.25,
+      "width": 21.502,
+      "height": 21.5
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:148:google_pay",
+    "name": "google_pay",
+    "file": "icons/148_google_pay.svg",
+    "sourceBounds": {
+      "x": 680,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.034,
+      "y": 1.0,
+      "width": 21.557,
+      "height": 22.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:149:google_wallet",
+    "name": "google_wallet",
+    "file": "icons/149_google_wallet.svg",
+    "sourceBounds": {
+      "x": 724,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.226,
+      "y": 1.25,
+      "width": 21.607,
+      "height": 21.5
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:150:mobile",
+    "name": "mobile",
+    "file": "icons/150_mobile.svg",
+    "sourceBounds": {
+      "x": 768,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 4.0,
+      "y": 2.0,
+      "width": 16.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:151:users",
+    "name": "users",
+    "file": "icons/151_users.svg",
+    "sourceBounds": {
+      "x": 812,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.979,
+      "y": 2.0,
+      "width": 20.12,
+      "height": 20.0
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:152:user_search",
+    "name": "user_search",
+    "file": "icons/152_user_search.svg",
+    "sourceBounds": {
+      "x": 856,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.077,
+      "height": 20.0
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:153:search_crypto",
+    "name": "search_crypto",
+    "file": "icons/153_search_crypto.svg",
+    "sourceBounds": {
+      "x": 900,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.5,
+      "y": 2.0,
+      "width": 21.082,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:154:upload",
+    "name": "upload",
+    "file": "icons/154_upload.svg",
+    "sourceBounds": {
+      "x": 944,
+      "y": 284,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:155:business",
+    "name": "business",
+    "file": "icons/155_business.svg",
+    "sourceBounds": {
+      "x": 20,
+      "y": 328,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.919,
+      "y": 1.77,
+      "width": 20.13,
+      "height": 20.46
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:156:lamp_charge",
+    "name": "lamp_charge",
+    "file": "icons/156_lamp_charge.svg",
+    "sourceBounds": {
+      "x": 64,
+      "y": 328,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 3.97,
+      "y": 1.66,
+      "width": 17.26,
+      "height": 20.41
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:157:delivery_address",
+    "name": "delivery_address",
+    "file": "icons/157_delivery_address.svg",
+    "sourceBounds": {
+      "x": 108,
+      "y": 328,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 2.0,
+      "width": 20.0,
+      "height": 20.0
+    },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:158:edit_email",
+    "name": "edit_email",
+    "file": "icons/158_edit_email.svg",
+    "sourceBounds": {
+      "x": 152,
+      "y": 328,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 2.0,
+      "y": 3.0,
+      "width": 21.0,
+      "height": 20.0
+    },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:159:home_library_iconsax",
+    "name": "home_library_iconsax",
+    "file": "derived/159_home_library_iconsax_refined.svg",
+    "sourceBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 24,
+      "height": 24
+    },
+    "size": {
+      "width": 24,
+      "height": 24
+    },
+    "contentBounds": {
+      "x": 1.75,
+      "y": 3.55,
+      "width": 20.5,
+      "height": 18.7
+    },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:160:minus_circle",
+    "name": "minus_circle",
+    "file": "derived/160_minus_circle.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:161:add_circle",
+    "name": "add_circle",
+    "file": "derived/161_add_circle.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:162:folder_go_arrow",
+    "name": "folder_go_arrow",
+    "file": "derived/162_folder_go_arrow_v2.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.2, "y": 2.7, "width": 19.6, "height": 19.1 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:163:document_text_mono",
+    "name": "document_text_mono",
+    "file": "derived/163_document_text_mono.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.53, "y": 3.53, "width": 16.94, "height": 16.94 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:164:smallcaps",
+    "name": "smallcaps",
+    "file": "derived/164_smallcaps.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.52, "y": 3.97, "width": 16.96, "height": 16.06 },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:165:list_alt",
+    "name": "list_alt",
+    "file": "derived/165_list_alt.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 120, "y": -840, "width": 720, "height": 720 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:166:features_tab_weight",
+    "name": "features_tab_weight",
+    "file": "derived/166_features_tab_weight.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.46, "y": 3.68, "width": 15.09, "height": 16.63 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:167:list_alt_compact",
+    "name": "list_alt_compact",
+    "file": "derived/167_list_alt_compact.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.768, "y": 3.768, "width": 16.464, "height": 16.464 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:168:top_bottom_grid",
+    "name": "top_bottom_grid",
+    "file": "derived/168_top_bottom_grid.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.53, "y": 3.53, "width": 16.94, "height": 16.94 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:169:folder_open_material",
+    "name": "folder_open_material",
+    "file": "derived/169_folder_open_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.16, "y": 4.425, "width": 20.025, "height": 15.344 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:170:collections_bookmark_material",
+    "name": "collections_bookmark_material",
+    "file": "derived/170_collections_bookmark_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.16, "y": 4.425, "width": 20.025, "height": 15.344 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:171:bookmark_stacks_material",
+    "name": "bookmark_stacks_material",
+    "file": "derived/171_bookmark_stacks_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1, "y": 2, "width": 22, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:172:globe_book_thin",
+    "name": "globe_book_thin",
+    "file": "derived/172_globe_book_thin.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.025, "y": 2.425, "width": 19.95, "height": 19.15 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:173:change_circle_thin_ring",
+    "name": "change_circle_thin_ring",
+    "file": "derived/173_change_circle_thin_ring.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:174:globe_book_add",
+    "name": "globe_book_add",
+    "file": "derived/174_globe_book_add.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.025, "y": 2.425, "width": 20.8, "height": 20.4 },
+    "elementCount": 7
+  },
+  {
+    "label": "icon:175:info_circle_compact",
+    "name": "info_circle_compact",
+    "file": "derived/175_info_circle_compact.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:176:sort_by_alpha_material",
+    "name": "sort_by_alpha_material",
+    "file": "derived/176_sort_by_alpha_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 19, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:177:sd_card_material",
+    "name": "sd_card_material",
+    "file": "derived/177_sd_card_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4, "y": 2, "width": 16, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:178:radio_button_unchecked_material",
+    "name": "radio_button_unchecked_material",
+    "file": "derived/178_radio_button_unchecked_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:179:radio_button_checked_material",
+    "name": "radio_button_checked_material",
+    "file": "derived/179_radio_button_checked_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:180:settings_material",
+    "name": "settings_material",
+    "file": "derived/180_settings_material.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.95, "y": 2, "width": 20.1, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:181:settings_outline_rounded",
+    "name": "settings_outline_rounded",
+    "file": "derived/181_settings_outline_rounded.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.23, "y": 2.23, "width": 19.54, "height": 19.54 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:182:settings_outline_original_teeth",
+    "name": "settings_outline_original_teeth",
+    "file": "derived/182_settings_outline_original_teeth.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.95, "y": 2, "width": 20.1, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:183:sort_by_alpha_outline_letters",
+    "name": "sort_by_alpha_outline_letters",
+    "file": "derived/183_sort_by_alpha_outline_letters.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 19, "height": 20 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:184:settings_moon_outline",
+    "name": "settings_moon_outline",
+    "file": "derived/184_settings_moon_outline.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.95, "y": 2, "width": 20.1, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:185:settings_moon_mirrored_rotated",
+    "name": "settings_moon_mirrored_rotated",
+    "file": "derived/185_settings_moon_mirrored_rotated.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.95, "y": 2, "width": 20.1, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:186:document_return_arrow",
+    "name": "document_return_arrow",
+    "file": "derived/186_document_return_arrow.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.7, "y": 2.95, "width": 19.35, "height": 18.1 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:187:share_material",
+    "name": "share_material",
+    "file": "derived/187_share_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.075, "y": 4.075, "width": 15.85, "height": 15.85 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:188:more_square",
+    "name": "more_square",
+    "file": "derived/188_more_square.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.25, "y": 1.25, "width": 21.5, "height": 21.5 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:189:check_circle_material",
+    "name": "check_circle_material",
+    "file": "derived/189_check_circle_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:190:emoji_objects_material",
+    "name": "emoji_objects_material",
+    "file": "derived/190_emoji_objects_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.75, "y": 2, "width": 14.5, "height": 20 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:191:paper",
+    "name": "paper",
+    "file": "derived/191_paper.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.425, "y": 1.425, "width": 21.15, "height": 21.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:192:auto_stories_material",
+    "name": "auto_stories_material",
+    "file": "derived/192_auto_stories_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1, "y": 1.175, "width": 22, "height": 19.4 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:193:document_go_page",
+    "name": "document_go_page",
+    "file": "derived/193_document_go_page.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.7, "y": 2.95, "width": 19.35, "height": 18.1 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:194:document_go_percent",
+    "name": "document_go_percent",
+    "file": "derived/194_document_go_percent.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.7, "y": 2.95, "width": 19.35, "height": 18.1 },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:195:document_headphones",
+    "name": "document_headphones",
+    "file": "derived/195_document_headphones.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.53, "y": 3.53, "width": 18.945, "height": 18.945 },
+    "elementCount": 8
+  },
+  {
+    "label": "icon:196:document_css",
+    "name": "document_css",
+    "file": "derived/196_document_css.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.53, "y": 3.53, "width": 16.94, "height": 16.94 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:197:gesture_select_material",
+    "name": "gesture_select_material",
+    "file": "derived/197_gesture_select_material.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.425, "y": 3.425, "width": 21.15, "height": 19.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:198:paper_scroll_vertical",
+    "name": "paper_scroll_vertical",
+    "file": "derived/198_paper_scroll_vertical.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.425, "y": 1.425, "width": 21.15, "height": 21.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:199:cloud_tab_weight",
+    "name": "cloud_tab_weight",
+    "file": "derived/199_cloud_tab_weight.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.53, "y": 5.85, "width": 16.94, "height": 13.08 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:200:toc_material_normalized",
+    "name": "toc_material_normalized",
+    "file": "derived/200_toc_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 5.75, "width": 17.825, "height": 12.5 },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:201:move_item_material_normalized",
+    "name": "move_item_material_normalized",
+    "file": "derived/201_move_item_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.425, "width": 18.65, "height": 19.15 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:202:fast_forward_material_normalized",
+    "name": "fast_forward_material_normalized",
+    "file": "derived/202_fast_forward_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.925, "y": 5.425, "width": 20.15, "height": 13.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:203:pause_circle_material_normalized",
+    "name": "pause_circle_material_normalized",
+    "file": "derived/203_pause_circle_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:204:play_circle_material_normalized",
+    "name": "play_circle_material_normalized",
+    "file": "derived/204_play_circle_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:205:fast_rewind_material_normalized",
+    "name": "fast_rewind_material_normalized",
+    "file": "derived/205_fast_rewind_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.925, "y": 5.425, "width": 20.15, "height": 13.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:206:stop_circle_material_normalized",
+    "name": "stop_circle_material_normalized",
+    "file": "derived/206_stop_circle_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:207:check_box_material_normalized",
+    "name": "check_box_material_normalized",
+    "file": "derived/207_check_box_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3, "y": 3, "width": 18, "height": 18 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:208:file_open_material_normalized",
+    "name": "file_open_material_normalized",
+    "file": "derived/208_file_open_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.425, "y": 1.425, "width": 19.925, "height": 21.525 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:209:sentiment_satisfied_material_normalized",
+    "name": "sentiment_satisfied_material_normalized",
+    "file": "derived/209_sentiment_satisfied_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:210:folder_current_book",
+    "name": "folder_current_book",
+    "file": "derived/210_folder_current_book.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.675, "y": 2.675, "width": 19.7, "height": 19.65 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:211:shelves_catalog_drawer",
+    "name": "shelves_catalog_drawer",
+    "file": "derived/211_shelves_material_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.175, "y": 1.925, "width": 17.65, "height": 20.15 },
+    "elementCount": 3
+  },
+  {
+    "label": "icon:212:wallpaper_material_original",
+    "name": "wallpaper_material_original",
+    "file": "derived/212_wallpaper_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3, "y": 3, "width": 18, "height": 18 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:213:wallpaper_outer_normalized",
+    "name": "wallpaper_outer_normalized",
+    "file": "derived/213_wallpaper_outer_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.925, "width": 18.15, "height": 18.15 },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:214:keyboard_command_key_normalized",
+    "name": "keyboard_command_key_normalized",
+    "file": "derived/214_keyboard_command_key_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:215:grid_on_normalized",
+    "name": "grid_on_normalized",
+    "file": "derived/215_grid_on_normalized.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.925, "width": 18.15, "height": 18.15 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:216:brand_family_material_original",
+    "name": "brand_family_material_original",
+    "file": "derived/216_brand_family_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 19.5, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:217:format_size_material_original",
+    "name": "format_size_material_original",
+    "file": "derived/217_format_size_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 4, "width": 20, "height": 16 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:218:open_with_material_original",
+    "name": "open_with_material_original",
+    "file": "derived/218_open_with_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 2, "width": 20, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:219:line_spacing_inner",
+    "name": "line_spacing_inner",
+    "file": "derived/219_line_spacing_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.75, "y": 4, "width": 15.25, "height": 16 },
+    "elementCount": 6
+  },
+  {
+    "label": "icon:220:format_color_fill_material_original",
+    "name": "format_color_fill_material_original",
+    "file": "derived/220_format_color_fill_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 0, "width": 20, "height": 24 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:221:format_color_fill_framed",
+    "name": "format_color_fill_framed",
+    "file": "derived/221_format_color_fill_framed.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.925, "width": 18.15, "height": 18.15 },
+    "elementCount": 7
+  },
+  {
+    "label": "icon:222:format_color_fill_framed_triangle_down",
+    "name": "format_color_fill_framed_triangle_down",
+    "file": "derived/222_format_color_fill_framed_triangle_down.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.925, "width": 18.15, "height": 18.15 },
+    "elementCount": 7
+  },
+  {
+    "label": "icon:223:format_color_fill_framed_triangle_base_flip",
+    "name": "format_color_fill_framed_triangle_base_flip",
+    "file": "derived/223_format_color_fill_framed_triangle_base_flip.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.925, "y": 2.925, "width": 18.15, "height": 18.15 },
+    "elementCount": 7
+  },
+  {
+    "label": "icon:224:keyboard_command_key_centered_connectors",
+    "name": "keyboard_command_key_centered_connectors",
+    "file": "derived/224_keyboard_command_key_centered_connectors.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:225:keyboard_command_key_continuous_loops",
+    "name": "keyboard_command_key_continuous_loops",
+    "file": "derived/225_keyboard_command_key_continuous_loops.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.425, "y": 2.425, "width": 19.15, "height": 19.15 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:226:font_color_bucket_letter_a",
+    "name": "font_color_bucket_letter_a",
+    "file": "derived/226_font_color_bucket_letter_a.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.775, "y": 2.33, "width": 13.225, "height": 18.745 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:227:font_color_bucket_brand_a",
+    "name": "font_color_bucket_brand_a",
+    "file": "derived/227_font_color_bucket_brand_a.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.775, "y": 2.33, "width": 13.675, "height": 18.67 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:228:font_color_bucket_brand_a_drop_down",
+    "name": "font_color_bucket_brand_a_drop_down",
+    "file": "derived/228_font_color_bucket_brand_a_drop_down.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.775, "y": 2.33, "width": 13.675, "height": 18.67 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:229:custom_typography_material_original",
+    "name": "custom_typography_material_original",
+    "file": "derived/229_custom_typography_material_original.svg",
+    "sourceBounds": { "x": 0, "y": -960, "width": 960, "height": 960 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3, "y": 2, "width": 18, "height": 20 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:230:format_size_serif_tT",
+    "name": "format_size_serif_tT",
+    "file": "derived/230_format_size_serif_tT.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.25, "y": 4, "width": 17.75, "height": 16.5 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:231:format_size_serif_TT",
+    "name": "format_size_serif_TT",
+    "file": "derived/231_format_size_serif_TT.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3, "y": 4, "width": 18, "height": 16.5 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:232:format_size_serif_TT_centered",
+    "name": "format_size_serif_TT_centered",
+    "file": "derived/232_format_size_serif_TT_centered.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5, "y": 4, "width": 14, "height": 16.5 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:233:format_size_serif_TT_centered_1_2",
+    "name": "format_size_serif_TT_centered_1_2",
+    "file": "derived/233_format_size_serif_TT_centered_1_2.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.2, "y": 4, "width": 15.6, "height": 16.5 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:234:format_size_serif_TT_small_bar_down",
+    "name": "format_size_serif_TT_small_bar_down",
+    "file": "derived/234_format_size_serif_TT_small_bar_down.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.2, "y": 4, "width": 15.6, "height": 16.5 },
+    "elementCount": 2
+  },
+  {
+    "label": "icon:235:open_with_framed_compact",
+    "name": "open_with_framed_compact",
+    "file": "derived/235_open_with_framed_compact.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.5, "y": 3.5, "width": 17, "height": 17 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:236:more_square_for_other",
+    "name": "more_square_for_other",
+    "file": "derived/236_more_square_for_other.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.25, "y": 1.25, "width": 21.5, "height": 21.5 },
+    "elementCount": 4
+  },
+  {
+    "label": "icon:237:page_orientation_landscape_hc_inner",
+    "name": "page_orientation_landscape_hc_inner",
+    "file": "derived/237_page_orientation_landscape_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2, "y": 4.25, "width": 20, "height": 15.5 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:238:pages_two_hc_inner",
+    "name": "pages_two_hc_inner",
+    "file": "derived/238_pages_two_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.5, "y": 4.25, "width": 21, "height": 15.5 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:239:text_align_hc_inner",
+    "name": "text_align_hc_inner",
+    "file": "derived/239_text_align_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5.5, "y": 5, "width": 13, "height": 13 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:240:text_antialias_hc_inner",
+    "name": "text_antialias_hc_inner",
+    "file": "derived/240_text_antialias_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5, "y": 3.75, "width": 13.75, "height": 16 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:241:text_bold_hc_inner",
+    "name": "text_bold_hc_inner",
+    "file": "derived/241_text_bold_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 7, "y": 6.25, "width": 10, "height": 11.5 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:242:text_floating_punct_hc_inner",
+    "name": "text_floating_punct_hc_inner",
+    "file": "derived/242_text_floating_punct_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4, "y": 6.5, "width": 16, "height": 11.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:243:text_hinting_hc_inner",
+    "name": "text_hinting_hc_inner",
+    "file": "derived/243_text_hinting_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4, "y": 7.5, "width": 16.25, "height": 9.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:244:text_hyphenation_hc_inner",
+    "name": "text_hyphenation_hc_inner",
+    "file": "derived/244_text_hyphenation_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.75, "y": 7.5, "width": 14.75, "height": 11 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:245:text_indent_hc_inner",
+    "name": "text_indent_hc_inner",
+    "file": "derived/245_text_indent_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.5, "y": 5, "width": 14.5, "height": 14 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:246:text_italic_hc_inner",
+    "name": "text_italic_hc_inner",
+    "file": "derived/246_text_italic_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 8, "y": 6.25, "width": 8, "height": 11.5 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:247:text_kerning_hc_inner",
+    "name": "text_kerning_hc_inner",
+    "file": "derived/247_text_kerning_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4, "y": 8, "width": 16, "height": 8.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:248:text_ligatures_hc_inner",
+    "name": "text_ligatures_hc_inner",
+    "file": "derived/248_text_ligatures_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5.5, "y": 5.5, "width": 11, "height": 13.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:249:text_margin_bottom_hc_inner",
+    "name": "text_margin_bottom_hc_inner",
+    "file": "derived/249_text_margin_bottom_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 7.25, "y": 4.5, "width": 9.5, "height": 18.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:250:text_margin_left_hc_inner",
+    "name": "text_margin_left_hc_inner",
+    "file": "derived/250_text_margin_left_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1, "y": 7, "width": 18.25, "height": 9.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:251:text_margin_right_hc_inner",
+    "name": "text_margin_right_hc_inner",
+    "file": "derived/251_text_margin_right_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.75, "y": 7, "width": 18.25, "height": 9.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:252:text_margin_top_hc_inner",
+    "name": "text_margin_top_hc_inner",
+    "file": "derived/252_text_margin_top_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 7.25, "y": 0.75, "width": 9.5, "height": 18.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:253:text_multilang_hc_inner",
+    "name": "text_multilang_hc_inner",
+    "file": "derived/253_text_multilang_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4, "y": 4, "width": 16, "height": 15.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:254:text_other_inner",
+    "name": "text_other_inner",
+    "file": "derived/254_text_other_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3.75, "y": 3.75, "width": 16.5, "height": 15.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:255:text_superscript_hc_inner",
+    "name": "text_superscript_hc_inner",
+    "file": "derived/255_text_superscript_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5.75, "y": 5, "width": 13.5, "height": 12.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:256:text_underline_hc_inner",
+    "name": "text_underline_hc_inner",
+    "file": "derived/256_text_underline_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 6.25, "y": 5.25, "width": 11.5, "height": 13.5 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:257:text_width_hc_inner",
+    "name": "text_width_hc_inner",
+    "file": "derived/257_text_width_hc_inner.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.5, "y": 5.5, "width": 15, "height": 13.75 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:258:text_hinting_hc_divided",
+    "name": "text_hinting_hc_divided",
+    "file": "derived/258_text_hinting_hc_divided.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 3, "y": 6, "width": 18.25, "height": 12.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:259:text_other_lines_only",
+    "name": "text_other_lines_only",
+    "file": "derived/259_text_other_lines_only.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 4.25, "y": 5.25, "width": 16, "height": 14.25 },
+    "elementCount": 1
+  },
+  {
+    "label": "icon:260:text_margin_bottom_hc_framed",
+    "name": "text_margin_bottom_hc_framed",
+    "file": "derived/260_text_margin_bottom_hc_framed.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5.54, "y": 3.29, "width": 12.92, "height": 19.96 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:261:text_margin_left_hc_framed",
+    "name": "text_margin_left_hc_framed",
+    "file": "derived/261_text_margin_left_hc_framed.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1, "y": 5.54, "width": 20.71, "height": 12.92 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:262:text_margin_right_hc_framed",
+    "name": "text_margin_right_hc_framed",
+    "file": "derived/262_text_margin_right_hc_framed.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.29, "y": 5.54, "width": 20.71, "height": 12.92 },
+    "elementCount": 5
+  },
+  {
+    "label": "icon:263:text_margin_top_hc_framed",
+    "name": "text_margin_top_hc_framed",
+    "file": "derived/263_text_margin_top_hc_framed.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 5.54, "y": 0.75, "width": 12.92, "height": 19.96 },
+    "elementCount": 5
+  }
+]

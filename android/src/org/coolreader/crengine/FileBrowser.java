@@ -1095,7 +1095,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			void setItem(FileInfo item, FileInfo parentItem)
 			{
 				if ( item==null ) {
-					image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_back_drawable, R.drawable.cr3_browser_back));
+					setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_back_drawable, R.drawable.cr3_browser_back));
 					String thisDir = "";
 					if ( parentItem!=null ) {
 						if ( parentItem.pathname.startsWith("@") )
@@ -1111,27 +1111,27 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 				}
 				if ( item.isDirectory ) {
 					if (item.isBooksByGenreRoot() || item.isBooksByGenreDir())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isBooksByAuthorRoot())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isBooksBySeriesRoot())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isBooksByTitleRoot())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isBooksByRatingRoot() || item.isBooksByStateReadingRoot() || item.isBooksByStateToReadRoot() || item.isBooksByStateFinishedRoot())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isOPDSRoot() || item.isOPDSDir())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_drawable, R.drawable.cr3_browser_folder_opds));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_drawable, R.drawable.cr3_browser_folder_opds));
 					else if (item.isOnlineCatalogPluginDir())
-						image.setImageResource(R.drawable.plugins_logo_litres);
+						setIconResource(R.drawable.plugins_logo_litres);
 					else if (item.isSearchShortcut())
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_find_drawable, R.drawable.cr3_browser_find));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_find_drawable, R.drawable.cr3_browser_find));
 					else if ( item.isRecentDir() )
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_recent_drawable, R.drawable.cr3_browser_folder_recent));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_recent_drawable, R.drawable.cr3_browser_folder_recent));
 					else if ( item.isArchive )
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_zip_drawable, R.drawable.cr3_browser_folder_zip));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_zip_drawable, R.drawable.cr3_browser_folder_zip));
 					else
-						image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_drawable, R.drawable.cr3_browser_folder));
+						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_drawable, R.drawable.cr3_browser_folder));
 
 					String title = item.filename;
 					
@@ -1183,9 +1183,10 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 					boolean isSimple = (viewType == VIEW_TYPE_FILE_SIMPLE);
 					if ( image!=null ) {
 						if ( isSimple ) {
-							image.setImageResource(item.format.getIconResourceId());
+							setIconResource(item.format.getIconResourceId());
 						} else {
 							if (coverPagesEnabled) {
+								image.clearColorFilter();
 								image.setImageDrawable(mCoverpageManager.getCoverpageDrawableFor(mActivity.getDB(), item));
 								image.setMinimumHeight(coverPageHeight);
 								image.setMinimumWidth(coverPageWidth);
@@ -1193,6 +1194,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 								image.setMaxWidth(coverPageWidth);
 								image.setTag(item);
 							} else {
+								image.clearColorFilter();
 								image.setImageDrawable(null);
 								image.setMinimumHeight(0);
 								image.setMinimumWidth(0);
@@ -1247,6 +1249,10 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 					} 
 					
 				}
+			}
+
+			private void setIconResource(int resId) {
+				Utils.setPatchedIcon(image, resId, R.attr.textColorOptionLabel);
 			}
 		}
 		

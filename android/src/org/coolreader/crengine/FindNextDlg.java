@@ -28,6 +28,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 
 import org.coolreader.R;
@@ -59,6 +60,9 @@ public class FindNextDlg {
 		mAnchor = readerView.getSurface();
 
 		View panel = (LayoutInflater.from(coolReader.getApplicationContext()).inflate(R.layout.search_popup, null));
+		Utils.tintPatchedIcon((ImageButton) panel.findViewById(R.id.search_btn_prev), R.drawable.cr3_find_prev, R.attr.textColorToolBarLabel);
+		Utils.tintPatchedIcon((ImageButton) panel.findViewById(R.id.search_btn_close), R.drawable.cr3_find_close, R.attr.textColorToolBarLabel);
+		Utils.tintPatchedIcon((ImageButton) panel.findViewById(R.id.search_btn_next), R.drawable.cr3_find_next, R.attr.textColorToolBarLabel);
 		panel.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		
 		//mReaderView.getS

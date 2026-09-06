@@ -611,6 +611,8 @@ public class TTSToolbarDlg implements Settings {
 		forwardButton = panel.findViewById(R.id.tts_forward);
 		stopButton = panel.findViewById(R.id.tts_stop);
 		optionsButton = panel.findViewById(R.id.tts_options);
+		int optionsIconResId = Utils.resolveResourceIdByAttr(mCoolReader, R.attr.cr3_viewer_settings_drawable, R.drawable.cr3_viewer_settings);
+		Utils.tintPatchedIcon(optionsButton, optionsIconResId, R.attr.textColorToolBarLabel);
 
 		mWindow = new PopupWindow( context );
 		mWindow.setBackgroundDrawable(new BitmapDrawable());

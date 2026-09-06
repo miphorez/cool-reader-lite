@@ -72,6 +72,8 @@ public class OnlineStoreLoginDialog extends BaseDialog {
         ViewGroup view = (ViewGroup)mInflater.inflate(R.layout.online_store_login_dialog, null);
         
         ImageButton btnBack = view.findViewById(R.id.base_dlg_btn_back);
+		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
+		Utils.tintPatchedIcon(btnBack, backIconResId, R.attr.textColorToolBarLabel);
         btnBack.setOnClickListener(v -> onNegativeButtonClick());
         btnLogin = view.findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(v -> onPositiveButtonClick());

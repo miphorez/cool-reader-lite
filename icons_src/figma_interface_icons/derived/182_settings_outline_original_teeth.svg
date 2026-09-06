@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960" fill="none">
+  <g transform="translate(480 -480) scale(0.942786) translate(-480 480)">
+    <path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Z" stroke="white" stroke-width="48.791" stroke-linecap="round" stroke-linejoin="miter"/>
+  </g>
+  <circle cx="480" cy="-480" r="120" stroke="white" stroke-width="46"/>
+</svg>

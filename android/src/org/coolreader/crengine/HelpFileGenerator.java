@@ -234,9 +234,9 @@ public class HelpFileGenerator {
 		new ImageRes("open_file", R.drawable.ic_menu_archive),
 		new ImageRes("goto", R.drawable.ic_menu_goto),
 		new ImageRes("bookmarks", R.drawable.ic_menu_mark),
-		new ImageRes("select", android.R.drawable.ic_menu_edit),
-		new ImageRes("options", android.R.drawable.ic_menu_preferences),
-		new ImageRes("search", android.R.drawable.ic_menu_search),
+		new ImageRes("select", R.drawable.ic_menu_edit),
+		new ImageRes("options", R.drawable.ic_menu_preferences),
+		new ImageRes("search", R.drawable.ic_menu_search),
 	};
 	
 	private static int findImageResIdByName(String name) {

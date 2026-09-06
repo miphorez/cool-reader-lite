@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <filter id="icon-color" color-interpolation-filters="sRGB">
+      <feFlood flood-color="white" result="color"/>
+      <feComposite in="color" in2="SourceAlpha" operator="in"/>
+    </filter>
+  </defs>
+  <image width="24" height="24" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAPoAAAD6AG1e1JrAAACwElEQVR4nO2cIW8UURSFn0MgSCpwiCZIkhUIEgRiEwSiv6FJRQUeh+M3rEA04R/gcIgKXAUJnn+AQ+A+ssm6bmfezLyZc3fOvcmXVOzcnnfOfW9nNtsWoCTIPEjz0Q5gBkAGUNQm5A5Ab0QeQXgiF4A5cgGYIxeAOXIBmCMXgDlyAZgjF4A5cgGYIxeAOXIBmCMXgDlyAZgjF4A5cgGYIxeAOXIBmCMXwDw8AbbAxeFntZ5VB/CP4fUlgO6TDmBLm7pTr0VtZBnBHJUB0M787eG1uwEBXOUOYLL5z45cczYghDyCGG/+2wZHVgbAcROuJpr3u+L6RxkAoyf4aY95H3uuf5Nvwjxo3suJ079n88B1FwHu6MLfhtaUWqN1ALsAGq0DKKeOXAD3+cCylQEAPxY2PQMYeNTMWbkD0NVNBsCohycafWStfr8L+SZcKqd3iR4ZQEdlAMId8CsDiP0BXKnoca0+fvbIBXCfbxXm9fW4bNDDNoCaWqJHBtBRGYBwB9w06PFXPflRj6DzCvNahLgJsNaQAfxpEECLp2jbAGpqiR4ZQEdlAMIdcN2gx6166qMeQZcV5rUI8XGAtYYMoKb6erxv0CMD6KglQswAJjw81ZTc9FM9gjYZwHzm7xpNbu6Amaafhn1eHHm9/RG0ZABT+jdHfe6XSuO+V/apuQ0N9U1ptfHl8GDUcjqH1nPl+tXml8OfirYMoDaEnwHWHiKAmhrb+/MR088CrPmkArgNoNE6gLJm1vAVlHLKqAWEvkPJANAbtOYd0Fdyc9YcwP5o6aqvamPWHMA7+qu4MPcvGFPFiUgBfFKbsbYAXuXUIw1g/w+Uuuq1evoiIBeAOXIBmCMXgDlyAZgjF4A5cgGYIxeAOXIBmCMXgDlyAZgjF4A5cgGYIxeAOXIBmCMXgDlyAZgjF4A5cgGYIxeAOf8BZQMFMJF1A7UAAAAASUVORK5CYII=" filter="url(#icon-color)"/>
+</svg>
