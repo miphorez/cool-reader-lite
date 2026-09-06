@@ -207,12 +207,14 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 			cover.setMaxHeight(coverHeight);
 			cover.setMaxWidth(coverWidth);
 			if (item.isRecentDir()) {
-				cover.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_next_drawable, R.drawable.cr3_button_next));
+				int iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_next_drawable, R.drawable.cr3_button_next);
+				Utils.setPatchedIcon(cover, iconResId, R.attr.textColorOptionLabel);
 				if (label != null) {
 					label.setText("More...");
 				}
 				view.setOnClickListener(v -> mActivity.showRecentBooks());
 			} else {
+				cover.clearColorFilter();
 				cover.setMinimumWidth(coverWidth);
 				cover.setTag(new CoverpageManager.ImageItem(item, coverWidth, coverHeight));
 				cover.setImageDrawable(mCoverpageManager.getCoverpageDrawableFor(mActivity.getDB(), item, coverWidth, coverHeight));
@@ -428,10 +430,13 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 			final View view = inflater.inflate(R.layout.root_item_library, null);
 			ImageView image = view.findViewById(R.id.item_icon);
 			TextView label = view.findViewById(R.id.item_name);
-			if (item.isSearchShortcut())
-				image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_find_drawable, R.drawable.cr3_browser_find));
-			else if (item.isBooksByGenreRoot() || item.isBooksByAuthorRoot() || item.isBooksByTitleRoot() || item.isBooksBySeriesRoot())
-				image.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
+			if (item.isSearchShortcut()) {
+				int iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_find_drawable, R.drawable.cr3_browser_find);
+				Utils.setPatchedIcon(image, iconResId, R.attr.textColorOptionLabel);
+			} else if (item.isBooksByGenreRoot() || item.isBooksByAuthorRoot() || item.isBooksByTitleRoot() || item.isBooksBySeriesRoot()) {
+				int iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors);
+				Utils.setPatchedIcon(image, iconResId, R.attr.textColorOptionLabel);
+			}
 			if (label != null) {
 				label.setText(item.filename);
 				label.setMinWidth(coverWidth);

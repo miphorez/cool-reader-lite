@@ -521,10 +521,12 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 				}
 			}
 			if (resId != 0) {
-				icon.setImageResource(resId);
+				icon.setEnabled(enabled);
+				Utils.setPatchedIcon(icon, resId, R.attr.textColorOptionLabel);
 				icon.setVisibility(View.VISIBLE);
 			} else {
 				icon.setImageResource(0);
+				icon.clearColorFilter();
 				icon.setVisibility(View.INVISIBLE);
 			}
 		}
@@ -3072,6 +3074,8 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 		setOnCancelListener(dialog -> onPositiveButtonClick());
 
 		ImageButton positiveButton = view.findViewById(R.id.options_btn_back);
+		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
+		Utils.tintPatchedIcon(positiveButton, backIconResId, R.attr.textColorToolBarLabel);
 		positiveButton.setOnClickListener(v -> onPositiveButtonClick());
 		
 //		ImageButton negativeButton = (ImageButton)mTabs.findViewById(R.id.options_btn_cancel);

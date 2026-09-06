@@ -81,6 +81,8 @@ public class OnlineStoreNewAccountDialog extends BaseDialog {
         ViewGroup view = (ViewGroup)mInflater.inflate(R.layout.online_store_new_account_dialog, null);
         
         ImageButton btnBack = view.findViewById(R.id.base_dlg_btn_back);
+		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
+		Utils.tintPatchedIcon(btnBack, backIconResId, R.attr.textColorToolBarLabel);
         btnBack.setOnClickListener(v -> onNegativeButtonClick());
         btnRegister = view.findViewById(R.id.btn_new_account);
         btnRegister.setOnClickListener(v -> onPositiveButtonClick());

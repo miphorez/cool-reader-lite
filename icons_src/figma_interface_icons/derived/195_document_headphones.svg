@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <mask id="pageCutout" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+      <rect width="24" height="24" fill="#ffffff"/>
+      <rect x="12" y="12" width="12" height="12" fill="#000000"/>
+    </mask>
+  </defs>
+  <g mask="url(#pageCutout)">
+    <g transform="translate(2.736 2.736) scale(0.772)">
+      <path d="M22 10V15C22 20 20 22 15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H14" stroke="white" stroke-width="1.943005" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 10H18C15 10 14 9 14 6V2L22 10Z" stroke="white" stroke-width="1.943005" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 13H13" stroke="white" stroke-width="1.943005" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17H11" stroke="white" stroke-width="1.943005" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(1.5 1.5)">
+    <path d="M13 16.5V16.1C13 13.8 14.55 12.25 16.7 12.25C18.85 12.25 20.4 13.8 20.4 16.1V16.5" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 16.1H15V20.4H14C13.45 20.4 13 19.95 13 19.4V16.1Z" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.4 16.1H20.4V19.4C20.4 19.95 19.95 20.4 19.4 20.4H18.4V16.1Z" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

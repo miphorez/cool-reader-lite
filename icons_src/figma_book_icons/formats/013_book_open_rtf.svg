@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none">
+  <path d="M15.5 3.575H7.25C5.8 3.575 5.075 4.3 5.075 5.75V17.25C5.075 16.05 6.05 15.075 7.25 15.075H15.5V3.575Z" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.925 3.575V20.425H7.25C6.05 20.425 5.075 19.45 5.075 18.25V17.25" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <style>
+    .main { font-family: "Segoe UI", Arial, sans-serif; font-size: 10px; font-weight: 700; fill: white; }
+    .exponent { font-family: "Segoe UI", Arial, sans-serif; font-size: 4px; font-weight: 700; fill: white; }
+  </style>
+  <text x="10.25" y="12.5" text-anchor="middle" class="main">R</text>
+</svg>

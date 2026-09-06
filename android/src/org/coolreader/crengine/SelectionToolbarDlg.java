@@ -33,6 +33,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -152,6 +153,10 @@ public class SelectionToolbarDlg {
 		mAnchor = readerView.getSurface();
 
 		View panel = (LayoutInflater.from(coolReader.getApplicationContext()).inflate(R.layout.selection_toolbar, null));
+		int searchIconResId = Utils.resolveResourceIdByAttr(coolReader, R.attr.ic_menu_search_drawable, R.drawable.ic_menu_search);
+		int closeIconResId = Utils.resolveResourceIdByAttr(coolReader, R.attr.ic_menu_close_clear_cancel_drawable, R.drawable.ic_menu_close_clear_cancel);
+		Utils.tintPatchedIcon((ImageButton) panel.findViewById(R.id.selection_find), searchIconResId, R.attr.textColorToolBarLabel);
+		Utils.tintPatchedIcon((ImageButton) panel.findViewById(R.id.selection_cancel), closeIconResId, R.attr.textColorToolBarLabel);
 		panel.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		
 		//mReaderView.getS

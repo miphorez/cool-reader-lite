@@ -1,0 +1,82 @@
+[
+  {
+    "label": "icon:002:book_open",
+    "name": "book_open",
+    "file": "002_book_open.svg",
+    "source": "https://github.com/Vuesax/iconsax/blob/main/assets/icons/outline/book-1.svg",
+    "size": { "width": 24, "height": 24 }
+  },
+  {
+    "label": "icon:003:book_format_generic",
+    "name": "book_format_generic",
+    "file": "formats/003_book_format_generic.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:004:book_closed_saved",
+    "name": "book_closed_saved",
+    "file": "004_book_closed_saved.svg",
+    "source": "https://github.com/Vuesax/iconsax/blob/main/assets/icons/outline/archive-book.svg",
+    "size": { "width": 24, "height": 24 }
+  },
+  {
+    "label": "icon:005:book_open_chm",
+    "name": "book_open_chm",
+    "file": "formats/005_book_open_chm.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:006:book_open_doc",
+    "name": "book_open_doc",
+    "file": "formats/006_book_open_doc.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:007:book_open_epub",
+    "name": "book_open_epub",
+    "file": "formats/007_book_open_epub.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:008:book_open_fb2",
+    "name": "book_open_fb2",
+    "file": "formats/008_book_open_fb2.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:009:book_open_fb3",
+    "name": "book_open_fb3",
+    "file": "formats/009_book_open_fb3.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:010:book_open_html",
+    "name": "book_open_html",
+    "file": "formats/010_book_open_html.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:011:book_open_odt",
+    "name": "book_open_odt",
+    "file": "formats/011_book_open_odt.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:012:book_open_pdb",
+    "name": "book_open_pdb",
+    "file": "formats/012_book_open_pdb.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:013:book_open_rtf",
+    "name": "book_open_rtf",
+    "file": "formats/013_book_open_rtf.svg",
+    "size": { "width": 72, "height": 72 }
+  },
+  {
+    "label": "icon:014:book_open_txt",
+    "name": "book_open_txt",
+    "file": "formats/014_book_open_txt.svg",
+    "size": { "width": 72, "height": 72 }
+  }
+]

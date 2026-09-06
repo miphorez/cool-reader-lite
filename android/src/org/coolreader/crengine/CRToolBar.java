@@ -116,7 +116,8 @@ public class CRToolBar extends ViewGroup {
 		final LinearLayout view = (LinearLayout)inflater.inflate(R.layout.popup_toolbar_item, null);
 		ImageView icon = view.findViewById(R.id.action_icon);
 		TextView label = view.findViewById(R.id.action_label);
-		icon.setImageResource(action != null ? action.iconId : Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more));
+		int iconResId = action != null ? action.iconId : Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
+		Utils.setPatchedIcon(icon, iconResId, R.attr.textColorToolBarLabel);
 		//icon.setMinimumHeight(buttonHeight);
 		icon.setMinimumWidth(buttonWidth);
 		Utils.setContentDescription(icon, activity.getString(action != null ? action.nameId : R.string.btn_toolbar_more));
@@ -275,7 +276,7 @@ public class CRToolBar extends ViewGroup {
 
 	private void setButtonImageResource(ImageButton ib, int resId) {
 		if (optionAppearance == Settings.VIEWER_TOOLBAR_100) {
-			ib.setImageResource(resId);
+			Utils.setPatchedIcon(ib, resId, R.attr.textColorToolBarLabel);
 			return;
 		}
 		Drawable dr = getResources().getDrawable(resId);
@@ -300,6 +301,7 @@ public class CRToolBar extends ViewGroup {
 		} else {
 			ib.setImageBitmap(bitmap);
 		}
+		Utils.tintPatchedIcon(ib, resId, R.attr.textColorToolBarLabel);
 	}
 	
 	private ImageButton addButton(Rect rect, final ReaderAction item, boolean left) {
@@ -662,10 +664,24 @@ public class CRToolBar extends ViewGroup {
 			}
 		}
 	}
+
+	private void refreshPatchedIconTints() {
+		for (int i = 0; i < getChildCount(); i++) {
+			View child = getChildAt(i);
+			if (!(child instanceof ImageButton))
+				continue;
+			Object tag = child.getTag();
+			int iconResId = tag instanceof ReaderAction
+					? ((ReaderAction) tag).iconId
+					: Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
+			Utils.tintPatchedIcon((ImageButton) child, iconResId, R.attr.textColorToolBarLabel);
+		}
+	}
 	
 	public void onThemeChanged(InterfaceTheme theme) {
 		//buttonAlpha = theme.getToolbarButtonAlpha();
 		//textColor = theme.getStatusTextColor();
+		refreshPatchedIconTints();
 		if (isShown()) {
 			requestLayout();
 			invalidate();

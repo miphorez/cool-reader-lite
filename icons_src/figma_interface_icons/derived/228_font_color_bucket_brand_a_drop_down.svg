@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g transform="translate(3.2 2.5) scale(.58)">
+    <path d="M6.9.7L16.35 9.35Q17 10 16.35 10.65L10.65 16.35Q10 17 9.35 16.35L3.65 10.65Q3 10 3.65 9.35L8.55 4.45" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    <path d="M5.225 10H14.775L10 14.775L5.225 10Z" fill="white"/>
+  </g>
+  <path transform="translate(3.575 1.64) scale(.58)" d="M17.5875 16.4125Q17 15.825 17 15Q17 14.475 17.3125 13.875T18 12.75Q18.275 12.375 19 11.5Q19.725 12.375 20 12.75Q20.6875 13.725 20.6875 15Q20.6875 15.825 20.1 16.4125T18.84375 17Q18.175 17 17.5875 16.4125Z" fill="white"/>
+  <path transform="translate(-2.5 23) scale(.025)" fill="white" fill-rule="evenodd" d="M559-80q-20 0-32.5-16.5T522-132l102-269q7-17 22-28t34-11q19 0 34 11t22 28l102 269q8 19-4.5 35.5T801-80q-12 0-22-7t-15-19l-20-58H616l-20 58q-4 11-14 18.5T559-80Zm83-154h77l-39-114-38 114Z"/>
+</svg>

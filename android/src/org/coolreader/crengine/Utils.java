@@ -24,10 +24,12 @@ package org.coolreader.crengine;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -36,6 +38,7 @@ import android.os.Build;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import org.coolreader.R;
 import org.coolreader.crengine.FileInfo.SortOrder;
@@ -57,6 +60,138 @@ import java.util.TimeZone;
 
 public class Utils {
 	public static final String[] AUDIO_FILE_EXTS = new String[]{"flac", "wav", "m4a", "ogg", "mp3"};
+	private static final int DEFAULT_ICON_TINT = 0xFF323232;
+
+	public static boolean isPatchedIconResource(int resId) {
+		return resId == R.drawable.cr3_browser_back
+				|| resId == R.drawable.cr3_browser_back_hc
+				|| resId == R.drawable.cr3_browser_book
+				|| resId == R.drawable.cr3_browser_book_hc
+				|| resId == R.drawable.cr3_browser_book_chm
+				|| resId == R.drawable.cr3_browser_book_doc
+				|| resId == R.drawable.cr3_browser_book_epub
+				|| resId == R.drawable.cr3_browser_book_fb2
+				|| resId == R.drawable.cr3_browser_book_fb3
+				|| resId == R.drawable.cr3_browser_book_html
+				|| resId == R.drawable.cr3_browser_book_odt
+				|| resId == R.drawable.cr3_browser_book_pdb
+				|| resId == R.drawable.cr3_browser_book_rtf
+				|| resId == R.drawable.cr3_browser_book_txt
+				|| resId == R.drawable.cr3_browser_find
+				|| resId == R.drawable.cr3_browser_find_hc
+				|| resId == R.drawable.cr3_browser_folder
+				|| resId == R.drawable.cr3_browser_folder_hc
+				|| resId == R.drawable.cr3_browser_folder_authors
+				|| resId == R.drawable.cr3_browser_folder_authors_hc
+				|| resId == R.drawable.cr3_browser_folder_current_book
+				|| resId == R.drawable.cr3_browser_folder_current_book_hc
+				|| resId == R.drawable.cr3_browser_folder_opds
+				|| resId == R.drawable.cr3_browser_folder_opds_hc
+				|| resId == R.drawable.cr3_browser_folder_opds_add
+				|| resId == R.drawable.cr3_browser_folder_opds_add_hc
+				|| resId == R.drawable.cr3_browser_folder_recent
+				|| resId == R.drawable.cr3_browser_folder_recent_hc
+				|| resId == R.drawable.cr3_browser_folder_root
+				|| resId == R.drawable.cr3_browser_folder_root_hc
+				|| resId == R.drawable.cr3_browser_folder_zip
+				|| resId == R.drawable.cr3_browser_folder_zip_hc
+				|| resId == R.drawable.cr3_btn_books_swap
+				|| resId == R.drawable.cr3_btn_books_swap_hc
+				|| resId == R.drawable.cr3_button_add
+				|| resId == R.drawable.cr3_button_add_hc
+				|| resId == R.drawable.cr3_button_book_open
+				|| resId == R.drawable.cr3_button_book_open_hc
+				|| resId == R.drawable.cr3_button_bookmarks
+				|| resId == R.drawable.cr3_button_bookmarks_hc
+				|| resId == R.drawable.cr3_button_book_delete
+				|| resId == R.drawable.cr3_button_cancel
+				|| resId == R.drawable.cr3_button_cancel_hc
+				|| resId == R.drawable.cr3_button_dec
+				|| resId == R.drawable.cr3_button_dec_dark
+				|| resId == R.drawable.cr3_button_dec_hc
+				|| resId == R.drawable.cr3_button_dec_light
+				|| resId == R.drawable.cr3_button_dec_white
+				|| resId == R.drawable.cr3_button_find
+				|| resId == R.drawable.cr3_button_folder_go
+				|| resId == R.drawable.cr3_button_folder_go_hc
+				|| resId == R.drawable.cr3_button_inc
+				|| resId == R.drawable.cr3_button_inc_dark
+				|| resId == R.drawable.cr3_button_inc_hc
+				|| resId == R.drawable.cr3_button_inc_light
+				|| resId == R.drawable.cr3_button_inc_white
+				|| resId == R.drawable.cr3_button_info
+				|| resId == R.drawable.cr3_button_info_hc
+				|| resId == R.drawable.cr3_button_more
+				|| resId == R.drawable.cr3_button_more_hc
+				|| resId == R.drawable.cr3_button_next
+				|| resId == R.drawable.cr3_button_next_hc
+				|| resId == R.drawable.cr3_button_prev
+				|| resId == R.drawable.cr3_button_prev_hc
+				|| resId == R.drawable.cr3_button_recent_book_delete
+				|| resId == R.drawable.cr3_button_remove
+				|| resId == R.drawable.cr3_button_remove_hc
+				|| resId == R.drawable.cr3_button_tts
+				|| resId == R.drawable.cr3_button_tts_hc
+				|| resId == R.drawable.cr3_find_close
+				|| resId == R.drawable.cr3_find_next
+				|| resId == R.drawable.cr3_find_prev
+				|| resId == R.drawable.cr3_option_images
+				|| resId == R.drawable.cr3_option_images_hc
+				|| resId == R.drawable.cr3_option_other
+				|| resId == R.drawable.cr3_option_other_hc
+				|| resId == R.drawable.cr3_tab_application
+				|| resId == R.drawable.cr3_tab_controls
+				|| resId == R.drawable.cr3_tab_page
+				|| resId == R.drawable.cr3_tab_style
+				|| resId == R.drawable.cr3_toc_item_collapsed
+				|| resId == R.drawable.cr3_toc_item_expanded
+				|| resId == R.drawable.cr3_viewer_find
+				|| resId == R.drawable.cr3_viewer_find_hc
+				|| resId == R.drawable.cr3_viewer_settings
+				|| resId == R.drawable.cr3_viewer_settings_hc
+				|| resId == R.drawable.cr3_viewer_toc
+				|| resId == R.drawable.cr3_viewer_toc_hc
+				|| resId == R.drawable.ic_menu_add
+				|| resId == R.drawable.ic_menu_archive
+				|| resId == R.drawable.ic_menu_back_to_reading
+				|| resId == R.drawable.ic_menu_close_clear_cancel
+				|| resId == R.drawable.ic_menu_close_clear_cancel_hc
+				|| resId == R.drawable.ic_menu_compose
+				|| resId == R.drawable.ic_menu_compose_hc
+				|| resId == R.drawable.ic_menu_copy
+				|| resId == R.drawable.ic_menu_copy_hc
+				|| resId == R.drawable.ic_menu_day_night
+				|| resId == R.drawable.ic_menu_edit
+				|| resId == R.drawable.ic_menu_preferences
+				|| resId == R.drawable.ic_menu_refresh
+				|| resId == R.drawable.ic_menu_search
+				|| resId == R.drawable.ic_menu_search_hc
+				|| resId == R.drawable.ic_menu_star
+				|| resId == R.drawable.ic_menu_star_hc;
+	}
+
+	public static void setPatchedIcon(ImageView imageView, int resId, int tintAttrId) {
+		imageView.setImageResource(resId);
+		tintPatchedIcon(imageView, resId, tintAttrId);
+	}
+
+	public static void tintPatchedIcon(ImageView imageView, int resId, int tintAttrId) {
+		if (!isPatchedIconResource(resId)) {
+			imageView.clearColorFilter();
+			return;
+		}
+		int tint = DEFAULT_ICON_TINT;
+		if (tintAttrId != 0) {
+			TypedArray values = imageView.getContext().getTheme().obtainStyledAttributes(new int[] { tintAttrId });
+			ColorStateList colors = values.getColorStateList(0);
+			if (colors != null)
+				tint = colors.getColorForState(imageView.getDrawableState(), colors.getDefaultColor());
+			else
+				tint = values.getColor(0, DEFAULT_ICON_TINT);
+			values.recycle();
+		}
+		imageView.setColorFilter(tint, PorterDuff.Mode.SRC_IN);
+	}
 
 	public static long timeStamp() {
 		return android.os.SystemClock.uptimeMillis();
