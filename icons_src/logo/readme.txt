@@ -1,31 +1,21 @@
-// -*- coding: utf-8 -*-
+Cool Reader Lite app icon sources
 
-Имеющееся лого приложения Android имеет низкое разрешение и на современных
-устройствах выглядит неаккуратно, размыто. Доступно максимум для экранов xhdpi
-(dpi=320) размером 96x96 и выглядит так будто её отмасштабировали с меньшего
-размера.
-Была найдена иконка с разрешением 300x300 (cr3icon.png), но по словам автора
-проекта она отмасштабирована с иконки меньшего размера и вручную почищена.
-Также в магазине приложений Google Play Store есть иконка с разрешением 180x180
-(cr3_logo-180x180-store.png), похоже, что создана похожим путем. Обе иконки
-находятся в подкаталоге source данного каталога.
-Была предпринята попытка воссоздать иконки приложений на основе иконки файла
-cr3icon.png. Данный файл еще немного подретуширован и сохранен под именем
-cr3_logo-base-300x300.png.
-С помощью ImageMagick немного программно повышена резкость:
+The canonical colored logo is `cr3_logo.svg`. It uses balanced sepia
+`#9C704A` on a transparent background.
 
-  magick convert cr3_logo-base-300x300.png -unsharp 3.0x1.0x0.2, cr3_logo-base-300x300-unsharp.png
+The adaptive launcher foreground is `cr3_logo_adaptive_foreground.svg`.
+Its additional padding keeps the complete mark inside Android launcher masks.
+The adaptive background uses the reader page color `#ECE3CB`.
 
-Таким образом получен файл cr3_logo-base-300x300-unsharp.png.
+Run `tools/icon_patch/generate_app_logo.ps1` from the repository to regenerate
+all launcher, adaptive foreground, toolbar, notification, and high-contrast PNG
+resources. The legacy `convert_all.pl` script uses the same canonical SVG files.
 
-Для устройств Android 7.1 и ниже данная иконка просто отмасштабирована до
-соответсвующего разрешения.
+Historical raster source files remain in `source/` for reference only.
 
-Для устройств Android 8.0 и выше создана адаптивная иконка
-(https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive).
-Для этого из файла cr3_logo-base-300x300-unsharp.png вырезана центральная
-(значащая) часть, её размер получился 290x290.
-Полученный файл называется "cr3_logo-inner-290x290.png".
-От этого получившегося файла путем масштабирования и наложения получены
-адаптивные иконки всех требуемых разрешений с помощью скрипта "convert_all.pl"
-и программы ImageMagick.
+Context color behavior:
+
+- Launcher, About dialog, help content, and large notification icons keep sepia.
+- Toolbar and popup menu icons receive the shared `textColorToolBarLabel` tint.
+- Small notification icons use the white monochrome high-contrast resource so
+  Android can apply the system notification tint.

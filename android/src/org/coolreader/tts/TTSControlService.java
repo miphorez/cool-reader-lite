@@ -1531,7 +1531,7 @@ public class TTSControlService extends BaseService {
 			else
 				notification = builder.getNotification();
 		} else {
-			notification = new Notification(R.drawable.cr3_logo_button, "CoolReader", System.currentTimeMillis());
+			notification = new Notification(R.drawable.cr3_logo_button_hc, "CoolReader", System.currentTimeMillis());
 			notification.contentIntent = pendingIntent;
 		}
 		return notification;

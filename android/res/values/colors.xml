@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="cr3_logo_background">#cfd8dc</color>
+    <color name="cr3_logo_background">#ECE3CB</color>
+    <color name="crl_system_background">#ECE3CB</color>
     <color name="crl_background_light">#ECE3CB</color>
     <color name="crl_background_dark">#101010</color>
     <color name="crl_divider_light">#D1C6AA</color>

@@ -1,5 +1,19 @@
 <resources>
 
+    <style name="Theme.CoolReaderLite" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/crl_system_background</item>
+        <item name="android:colorBackground">@color/crl_system_background</item>
+        <item name="android:statusBarColor">@color/crl_system_background</item>
+        <item name="android:navigationBarColor">@color/crl_system_background</item>
+        <item name="android:navigationBarDividerColor">@color/crl_system_background</item>
+        <item name="android:windowLightStatusBar">@bool/crl_light_system_bars</item>
+        <item name="android:windowLightNavigationBar">@bool/crl_light_system_bars</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="Theme.CoolReaderLite.Launch" parent="@style/Theme.CoolReaderLite" />
+
     <style name="TabWidget" parent="@android:style/Widget.TabWidget">
         <!-- item name="android:textAppearance">@style/TextAppearance.Small</item>
         <item name="ellipsize">marquee</item>

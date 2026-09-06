@@ -418,8 +418,6 @@
             <p>（将用外部浏览器打开）</p>
             <p><a href="http://sourceforge.net/projects/crengine/">SourceForge上的项目页</a></p>
             <p>SourceForge上的<a href="http://sourceforge.net/apps/mediawiki/crengine/index.php?title=Main_Page">项目Wiki</a></p>
-            <p>SourceForge上的<a href="https://sourceforge.net/project/project_donations.php?group_id=191284">项目捐赠页</a></p>
-            <p>要支持项目，你可进行赞助。赞助本项目的简单方法是在市场（Market）购买赞助包（“CoolReader金牌赞助”、“CoolReader银牌赞助”、“CoolReader铜牌赞助”），或直接在CoolReader内购买赞助项——在“关于CoolReader”菜单项的第三个标签内。</p>
             <p>发送软件问题报告到buggins@fromru.com，注明设备型号、安卓版本。如果程序崩溃，系统日志也许会提供非常多的帮助。你可使用“Android System Info”程序（市场有）获取系统日志。如果有些书打开失败，而其他书打开正常，或者你的书被以错误的编码显示，你可在问题报告邮件附上图书文件，以简化问题查找过程。</p>
         </section>
 	</body>

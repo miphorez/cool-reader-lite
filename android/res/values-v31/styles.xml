@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CoolReaderLite.Launch" parent="@style/Theme.CoolReaderLite">
+        <item name="android:windowSplashScreenBackground">@color/crl_system_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/cr3_logo_foreground</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/crl_system_background</item>
+    </style>
+</resources>
