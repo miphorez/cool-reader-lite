@@ -44,6 +44,7 @@ public class BaseDialog extends Dialog {
 	ViewGroup buttonsLayout;
 	ViewGroup contentsLayout;
 	BaseActivity activity;
+	private final boolean windowed;
 	String title;
 	boolean needCancelButton;
 	int positiveButtonImage;
@@ -86,12 +87,13 @@ public class BaseDialog extends Dialog {
 				));
 		setOwnerActivity(activity);
 		this.activity = activity;
+		this.windowed = windowed;
 		this.title = title;
 		this.needCancelButton = showNegativeButton;
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 //		requestWindowFeature(Window.FEATURE_OPTIONS_PANEL);
 		if (!DeviceInfo.EINK_SCREEN) {
-			WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+			WindowManager.LayoutParams lp = getWindow().getAttributes();
 			lp.alpha = 1.0f;
 			lp.dimAmount = 0.0f;
 			lp.format = DeviceInfo.PIXEL_FORMAT;
@@ -106,7 +108,17 @@ public class BaseDialog extends Dialog {
 		Log.i("cr3", "BaseDialog.window=" + getWindow());
         setCancelable(true);
         setOnDismissListener(dialog -> onClose());
-        onCreate();
+		onCreate();
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		applySystemBarColors();
+	}
+
+	void applySystemBarColors() {
+		activity.applyDialogSystemBarColors(getWindow(), windowed);
 	}
 
 	public void setView( View view )
