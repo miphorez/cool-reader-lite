@@ -28,6 +28,7 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -175,11 +176,36 @@ public class Utils {
 		tintPatchedIcon(imageView, resId, tintAttrId);
 	}
 
+	public static void setTintedIcon(ImageView imageView, int resId, int tintAttrId) {
+		imageView.setImageResource(resId);
+		tintIcon(imageView, tintAttrId);
+	}
+
+	public static void setTintedIcon(ImageView imageView, int resId, int tintAttrId, float alphaScale) {
+		imageView.setImageResource(resId);
+		int tint = resolveIconTint(imageView, tintAttrId);
+		float tintedAlphaScale = alphaScale * Color.alpha(tint) / 255.0f;
+		imageView.setColorFilter(new ColorMatrixColorFilter(new float[] {
+				0, 0, 0, 0, Color.red(tint),
+				0, 0, 0, 0, Color.green(tint),
+				0, 0, 0, 0, Color.blue(tint),
+				0, 0, 0, tintedAlphaScale, 0
+		}));
+	}
+
 	public static void tintPatchedIcon(ImageView imageView, int resId, int tintAttrId) {
 		if (!isPatchedIconResource(resId)) {
 			imageView.clearColorFilter();
 			return;
 		}
+		tintIcon(imageView, tintAttrId);
+	}
+
+	private static void tintIcon(ImageView imageView, int tintAttrId) {
+		imageView.setColorFilter(resolveIconTint(imageView, tintAttrId), PorterDuff.Mode.SRC_IN);
+	}
+
+	private static int resolveIconTint(ImageView imageView, int tintAttrId) {
 		int tint = DEFAULT_ICON_TINT;
 		if (tintAttrId != 0) {
 			TypedArray values = imageView.getContext().getTheme().obtainStyledAttributes(new int[] { tintAttrId });
@@ -190,7 +216,7 @@ public class Utils {
 				tint = values.getColor(0, DEFAULT_ICON_TINT);
 			values.recycle();
 		}
-		imageView.setColorFilter(tint, PorterDuff.Mode.SRC_IN);
+		return tint;
 	}
 
 	public static long timeStamp() {

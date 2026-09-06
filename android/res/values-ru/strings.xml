@@ -120,7 +120,7 @@
     <string name="options_app_trackball_disable">Отключить трэкболл</string>
     <string name="dir_sd_card_2">SD карта 2</string>
     <string name="mi_book_back_to_reading">Открытая книга</string>
-    <string name="mi_book_root">В корень</string>
+    <string name="mi_book_root">Домой</string>
     <string name="action_none">(нет действия)</string>
     <string name="action_pagedown">Следующая страница</string>
     <string name="action_pageup">Предыдущая страница</string>
@@ -146,6 +146,15 @@
     <string name="action_touch_screen_enabled_toast">Сенсорный экран включен</string>
     <string name="action_repeat">(автоповтор)</string>
     <string name="action_logcat">Сохранить журнал</string>
+    <string name="popup_action_open_book">Открыть\nкнигу</string>
+    <string name="popup_action_go_page">Перейти\nна #</string>
+    <string name="popup_action_go_percent">Перейти\nна %</string>
+    <string name="popup_action_recent_books">Последние\nкниги</string>
+    <string name="popup_action_previous_book">Предыдущая\nкнига</string>
+    <string name="popup_action_read_aloud">Читать\nвслух</string>
+    <string name="popup_action_save_log">Сохранить\nжурнал</string>
+    <string name="popup_action_autoscroll">Авто-\nлистание</string>
+    <string name="popup_action_theme">Тема</string>
     <string name="options_app_scan_book_props">Сканировать свойства книг в директории</string>
     <string name="options_page_titlebar">Настройки колонтитула</string>
     <string name="options_page_show_titlebar_chapter_marks">Метки глав</string>
@@ -163,7 +172,7 @@
     <string name="options_app_double_tap_selection">Выделение текста по двойному щелчку</string>
     <string name="options_app_double_tap_selection_slowdown">(Замедляет время реакции на одиночные нажатия)</string>
     <string name="mi_select_text">Выделить текст</string>
-    <string name="action_toggle_selection_mode">Режим выделения текста</string>
+    <string name="action_toggle_selection_mode">Выделить</string>
     <string name="action_toggle_selection_mode_off">Режим выделения текста отключен</string>
     <string name="action_toggle_selection_mode_on">Режим выделения текста. Выделите текст, используя сенсорный экран.</string>
     <string name="action_go_forward">Вперед</string>
