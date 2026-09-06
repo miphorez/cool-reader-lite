@@ -559,7 +559,7 @@ public class CRToolBar extends ViewGroup {
 		super.onDraw(canvas);
 	}
 	public PopupWindow showAsPopup(View anchor, OnActionHandler onActionHandler, OnOverflowHandler onOverflowHandler) {
-		return showPopup(activity, anchor, actions, onActionHandler, onOverflowHandler, 3, Settings.VIEWER_TOOLBAR_BOTTOM);
+		return showPopup(activity, anchor, actions, onActionHandler, onOverflowHandler, actions.size(), Settings.VIEWER_TOOLBAR_BOTTOM);
 	}
 	
 	private void setMaxLines(int maxLines) {

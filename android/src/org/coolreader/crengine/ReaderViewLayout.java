@@ -82,13 +82,10 @@ public class ReaderViewLayout extends ViewGroup implements Settings {
 		}
 		
 		public void showMenu() {
-			if (isToolbarVisible())
-				toolbarView.showOverflowMenu();
-			else
-				toolbarView.showAsPopup(this, item -> {
-					activity.getReaderView().onAction(item);
-					return true;
-				}, null);
+			toolbarView.showAsPopup(this, item -> {
+				activity.getReaderView().onAction(item);
+				return true;
+			}, null);
 //			new OnOverflowHandler() {
 //					@Override
 //					public boolean onOverflowActions(ArrayList<ReaderAction> actions) {
