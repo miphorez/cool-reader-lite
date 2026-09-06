@@ -130,7 +130,7 @@
     <string name="options_app_trackball_disable">Disable trackball</string>
     <string name="dir_sd_card_2">SD Card 2</string>
     <string name="mi_book_back_to_reading">Current book</string>
-    <string name="mi_book_root">Root</string>
+    <string name="mi_book_root">Home</string>
     <string name="action_none">(No action)</string>
     <string name="action_pagedown">Next page</string>
     <string name="action_pageup">Previous page</string>
@@ -156,6 +156,15 @@
     <string name="action_touch_screen_enabled_toast">Touch screen is unlocked</string>
     <string name="action_repeat">(autorepeat)</string>
     <string name="action_logcat">Save log</string>
+    <string name="popup_action_open_book">Open\nbook</string>
+    <string name="popup_action_go_page">Go to\n#</string>
+    <string name="popup_action_go_percent">Go to\n%</string>
+    <string name="popup_action_recent_books">Recent\nbooks</string>
+    <string name="popup_action_previous_book">Previous\nbook</string>
+    <string name="popup_action_read_aloud">Read\naloud</string>
+    <string name="popup_action_save_log">Save\nlog</string>
+    <string name="popup_action_autoscroll">Auto-\nscroll</string>
+    <string name="popup_action_theme">Theme</string>
     <string name="options_app_scan_book_props">Scan properties of all books in directory</string>
     <string name="options_page_titlebar">Title bar options</string>
     <string name="options_page_show_titlebar_chapter_marks">Chapter bound marks</string>
@@ -173,7 +182,7 @@
     <string name="options_app_double_tap_selection">Text selection with double tap</string>
     <string name="options_app_double_tap_selection_slowdown">(Slows down the reaction time to single taps)</string>
     <string name="mi_select_text">Select text</string>
-    <string name="action_toggle_selection_mode">Toggle selection mode</string>
+    <string name="action_toggle_selection_mode">Select</string>
     <string name="action_toggle_selection_mode_off">Selection mode is off</string>
     <string name="action_toggle_selection_mode_on">Selection mode is on. Select text using touch screen.</string>
     <string name="action_go_forward">Forward</string>

@@ -52,6 +52,12 @@ import android.widget.TextView;
 
 public class CRToolBar extends ViewGroup {
 	private static final Logger log = L.create("tb");
+	private static final float POPUP_ICON_SCALE_BOOKMARKS = 0.84f;
+	private static final float POPUP_ICON_SCALE_EXIT = 0.92f;
+	private static final float POPUP_ICON_SCALE_RECENT_BOOKS = 0.87f;
+	private static final float POPUP_ICON_SCALE_ABOUT = 1.15f;
+	private static final float POPUP_ICON_ALPHA_SCALE_EXIT = 1.35f;
+	private static final int FULL_POPUP_TOP_SPACING_DP = 10;
 	
 	final private BaseActivity activity;
 	private ArrayList<ReaderAction> actions = new ArrayList<>();
@@ -73,6 +79,7 @@ public class CRToolBar extends ViewGroup {
 	private PopupWindow popup;
 	private int popupLocation = Settings.VIEWER_TOOLBAR_BOTTOM;
 	private int maxMultilineLines = 3;
+	private int multilineTopSpacing;
 	private int optionAppearance = 0;
 	private float toolbarScale = 1.0f;
 	private boolean grayIcons = false;
@@ -116,14 +123,63 @@ public class CRToolBar extends ViewGroup {
 		final LinearLayout view = (LinearLayout)inflater.inflate(R.layout.popup_toolbar_item, null);
 		ImageView icon = view.findViewById(R.id.action_icon);
 		TextView label = view.findViewById(R.id.action_label);
-		int iconResId = action != null ? action.iconId : Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
-		Utils.setPatchedIcon(icon, iconResId, R.attr.textColorToolBarLabel);
+		CharSequence labelText = getPopupLabel(action);
+		int iconResId = getPopupIconResource(action);
+		if (action == ReaderAction.EXIT)
+			Utils.setTintedIcon(icon, iconResId, R.attr.textColorToolBarLabel, POPUP_ICON_ALPHA_SCALE_EXIT);
+		else
+			Utils.setTintedIcon(icon, iconResId, R.attr.textColorToolBarLabel);
+		float iconScale = getPopupIconScale(action);
+		icon.setScaleX(iconScale);
+		icon.setScaleY(iconScale);
 		//icon.setMinimumHeight(buttonHeight);
 		icon.setMinimumWidth(buttonWidth);
-		Utils.setContentDescription(icon, activity.getString(action != null ? action.nameId : R.string.btn_toolbar_more));
-		label.setText(action != null ? action.nameId : R.string.btn_toolbar_more);
+		Utils.setContentDescription(icon, labelText.toString());
+		label.setText(labelText);
 		view.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		return view;
+	}
+
+	private CharSequence getPopupLabel(ReaderAction action) {
+		if (action == null)
+			return activity.getText(R.string.btn_toolbar_more);
+		if (action == ReaderAction.FILE_BROWSER)
+			return activity.getText(R.string.popup_action_open_book);
+		if (action == ReaderAction.GO_PAGE)
+			return activity.getText(R.string.popup_action_go_page);
+		if (action == ReaderAction.GO_PERCENT)
+			return activity.getText(R.string.popup_action_go_percent);
+		if (action == ReaderAction.RECENT_BOOKS)
+			return activity.getText(R.string.popup_action_recent_books);
+		if (action == ReaderAction.OPEN_PREVIOUS_BOOK)
+			return activity.getText(R.string.popup_action_previous_book);
+		if (action == ReaderAction.TTS_PLAY)
+			return activity.getText(R.string.popup_action_read_aloud);
+		if (action == ReaderAction.SAVE_LOGCAT)
+			return activity.getText(R.string.popup_action_save_log);
+		if (action == ReaderAction.TOGGLE_AUTOSCROLL)
+			return activity.getText(R.string.popup_action_autoscroll);
+		if (action == ReaderAction.TOGGLE_DAY_NIGHT)
+			return activity.getText(R.string.popup_action_theme);
+		return activity.getText(action.nameId);
+	}
+
+	private int getPopupIconResource(ReaderAction action) {
+		if (action == null)
+			return Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
+		return action.iconId;
+	}
+
+	private float getPopupIconScale(ReaderAction action) {
+		if (action == ReaderAction.BOOKMARKS)
+			return POPUP_ICON_SCALE_BOOKMARKS;
+		if (action == ReaderAction.EXIT)
+			return POPUP_ICON_SCALE_EXIT;
+		if (action == ReaderAction.RECENT_BOOKS)
+			return POPUP_ICON_SCALE_RECENT_BOOKS;
+		if (action == ReaderAction.ABOUT)
+			return POPUP_ICON_SCALE_ABOUT;
+		return 1.0f;
 	}
 	
 	public CRToolBar(BaseActivity context, ArrayList<ReaderAction> actions, boolean multiline) {
@@ -389,7 +445,7 @@ public class CRToolBar extends ViewGroup {
 //        	scroll.setLayoutParams(new LayoutParams(right, bottom));
 //        	AbsoluteLayout content = new AbsoluteLayout(activity);
         	
-        	layoutRect.set(left + getPaddingLeft() + BUTTON_SPACING, top + getPaddingTop() + BUTTON_SPACING, right - getPaddingRight() - BUTTON_SPACING, bottom - getPaddingBottom() - BUTTON_SPACING - y0);
+	        layoutRect.set(left + getPaddingLeft() + BUTTON_SPACING, top + getPaddingTop() + BUTTON_SPACING + multilineTopSpacing, right - getPaddingRight() - BUTTON_SPACING, bottom - getPaddingBottom() - BUTTON_SPACING - y0);
     		int lineH = itemHeight; //rect.height() / lineCount;
     		int spacing = 0;
     		int maxLines = bottom / lineH;
@@ -518,7 +574,7 @@ public class CRToolBar extends ViewGroup {
 	        	int lineCount = calcLineCount(contentWidth);
 	        	if (lineCount > maxMultilineLines)
 	        		lineCount = maxMultilineLines;
-	        	int h = lineCount * itemHeight + BAR_SPACING + BAR_SPACING + windowDividerHeight + 4;
+	        int h = lineCount * itemHeight + BAR_SPACING + BAR_SPACING + windowDividerHeight + 4 + getPaddingTop() + getPaddingBottom() + multilineTopSpacing;
 //	        	if (h > contentHeight - itemHeight)
 //	        		h = contentHeight - itemHeight;
 	        	setMeasuredDimension(contentWidth, h);
@@ -559,16 +615,26 @@ public class CRToolBar extends ViewGroup {
 		super.onDraw(canvas);
 	}
 	public PopupWindow showAsPopup(View anchor, OnActionHandler onActionHandler, OnOverflowHandler onOverflowHandler) {
-		return showPopup(activity, anchor, actions, onActionHandler, onOverflowHandler, actions.size(), Settings.VIEWER_TOOLBAR_BOTTOM);
+		int topSpacing = Math.round(FULL_POPUP_TOP_SPACING_DP * activity.getResources().getDisplayMetrics().density);
+		return showPopup(activity, anchor, actions, onActionHandler, onOverflowHandler, actions.size(), Settings.VIEWER_TOOLBAR_BOTTOM, topSpacing);
 	}
 	
 	private void setMaxLines(int maxLines) {
 		this.maxMultilineLines = maxLines;
 	}
+
+	private void setMultilineTopSpacing(int topSpacing) {
+		this.multilineTopSpacing = topSpacing;
+	}
 	
 	public static PopupWindow showPopup(BaseActivity context, View anchor, ArrayList<ReaderAction> actions, final OnActionHandler onActionHandler, final OnOverflowHandler onOverflowHandler, int maxLines, int popupLocation) {
+		return showPopup(context, anchor, actions, onActionHandler, onOverflowHandler, maxLines, popupLocation, 0);
+	}
+
+	private static PopupWindow showPopup(BaseActivity context, View anchor, ArrayList<ReaderAction> actions, final OnActionHandler onActionHandler, final OnOverflowHandler onOverflowHandler, int maxLines, int popupLocation, int topSpacing) {
 		final ScrollView scroll = new ScrollView(context);
 		final CRToolBar tb = new CRToolBar(context, actions, true);
+		tb.setMultilineTopSpacing(topSpacing);
 		tb.setMaxLines(maxLines);
 		tb.setOnActionHandler(onActionHandler);
 		tb.setVertical(false);

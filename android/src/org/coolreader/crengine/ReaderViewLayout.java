@@ -112,21 +112,20 @@ public class ReaderViewLayout extends ViewGroup implements Settings {
 			toolbarBackground = contentView.createToolbarBackgroundDrawable();
 			ArrayList<ReaderAction> actionsList = ReaderAction.createList(
 					ReaderAction.GO_BACK,
+					ReaderAction.GO_FORWARD,
 					ReaderAction.TOC,
 					ReaderAction.SEARCH,
 					ReaderAction.OPTIONS,
+					ReaderAction.FILE_BROWSER,
 					ReaderAction.BOOKMARKS,
-					ReaderAction.FILE_BROWSER_ROOT,
-					ReaderAction.TOGGLE_DAY_NIGHT,
 					ReaderAction.TOGGLE_SELECTION_MODE,
 					ReaderAction.GO_PAGE,
 					ReaderAction.GO_PERCENT,
-					ReaderAction.FILE_BROWSER,
-					ReaderAction.TTS_PLAY,
-					ReaderAction.GO_FORWARD,
-					ReaderAction.RECENT_BOOKS,
 					ReaderAction.OPEN_PREVIOUS_BOOK,
+					ReaderAction.RECENT_BOOKS,
 					ReaderAction.TOGGLE_AUTOSCROLL,
+					ReaderAction.TTS_PLAY,
+					ReaderAction.TOGGLE_DAY_NIGHT,
 					ReaderAction.SAVE_LOGCAT);
 			if (DeviceInfo.EINK_HAVE_FRONTLIGHT) {
 				if (DeviceInfo.EINK_ONYX && DeviceInfo.ONYX_HAVE_BRIGHTNESS_SYSTEM_DIALOG) {
@@ -141,6 +140,7 @@ public class ReaderViewLayout extends ViewGroup implements Settings {
 				actionsList.add(ReaderAction.GDRIVE_SYNCFROM);
 			}
 			 */
+			actionsList.add(ReaderAction.FILE_BROWSER_ROOT);
 			actionsList.add(ReaderAction.ABOUT);
 			actionsList.add(ReaderAction.EXIT);
 			this.toolbarView = new CRToolBar(context, actionsList, false);
