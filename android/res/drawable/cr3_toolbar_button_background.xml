@@ -6,5 +6,5 @@
           android:drawable="@drawable/toolbar_btn_default_small_selected" /> <!-- focused -->
     <item android:state_long_pressable="true"
           android:drawable="@drawable/toolbar_btn_default_small_selected" /> <!-- hovered -->
-    <item android:drawable="@drawable/toolbar_btn_default_small_transparent" /> <!-- default -->
+    <item android:drawable="@android:color/transparent" /> <!-- default -->
 </selector>
