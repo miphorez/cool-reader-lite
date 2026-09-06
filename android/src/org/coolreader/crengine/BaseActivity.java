@@ -681,6 +681,7 @@ public class BaseActivity extends Activity implements Settings {
 	}
 
 	private boolean mFullscreen = false;
+	private int systemBarBackgroundColor = 0xFFECE3CB;
 	private boolean lightSystemBarBackground = false;
 
 	public boolean isFullscreen() {
@@ -691,38 +692,90 @@ public class BaseActivity extends Activity implements Settings {
 	public void updateSystemBarColors(int backgroundColor) {
 		if (DeviceInfo.getSDKLevel() < Build.VERSION_CODES.LOLLIPOP)
 			return;
-		int systemBarColor = 0xFF000000 | (backgroundColor & 0x00FFFFFF);
-		Window window = getWindow();
-		window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-				| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-		window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
-				| WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
-				| WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
-		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.R)
-			window.setDecorFitsSystemWindows(false);
-		window.setStatusBarColor(Color.TRANSPARENT);
-		window.setNavigationBarColor(Color.TRANSPARENT);
-		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.P)
-			window.setNavigationBarDividerColor(Color.TRANSPARENT);
-		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.Q) {
-			window.setStatusBarContrastEnforced(false);
-			window.setNavigationBarContrastEnforced(false);
-		}
-		int luminance = (299 * Color.red(systemBarColor)
-				+ 587 * Color.green(systemBarColor)
-				+ 114 * Color.blue(systemBarColor)) / 1000;
-		lightSystemBarBackground = luminance >= 128;
-		mDecorView.setBackgroundColor(systemBarColor);
-		applySystemBarInsets();
+		systemBarBackgroundColor = 0xFF000000 | (backgroundColor & 0x00FFFFFF);
+		lightSystemBarBackground = isLightSystemBarBackground(systemBarBackgroundColor);
+		applySystemBarColors(getWindow(), true);
+		if (currentDialog != null)
+			currentDialog.applySystemBarColors();
 		lastSystemUiVisibility = -1;
 		setSystemUiVisibility();
 	}
 
 	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	private void applySystemBarInsets() {
+	void applyDialogSystemBarColors(Window window, boolean windowed) {
+		if (DeviceInfo.getSDKLevel() < Build.VERSION_CODES.LOLLIPOP || window == null)
+			return;
+		applySystemBarColors(window, !windowed);
+	}
+
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void applySystemBarColors(Window window, boolean edgeToEdge) {
+		window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+				| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+		if (edgeToEdge) {
+			window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+					| WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR);
+			if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.R)
+				window.setDecorFitsSystemWindows(false);
+			window.setStatusBarColor(Color.TRANSPARENT);
+			window.setNavigationBarColor(Color.TRANSPARENT);
+			if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.P)
+				window.setNavigationBarDividerColor(Color.TRANSPARENT);
+			window.getDecorView().setBackgroundColor(systemBarBackgroundColor);
+			applySystemBarInsets(window);
+		} else {
+			window.setStatusBarColor(systemBarBackgroundColor);
+			window.setNavigationBarColor(systemBarBackgroundColor);
+			if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.P)
+				window.setNavigationBarDividerColor(systemBarBackgroundColor);
+		}
+		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.Q) {
+			window.setStatusBarContrastEnforced(false);
+			window.setNavigationBarContrastEnforced(false);
+		}
+		applyLegacySystemBarAppearance(window, edgeToEdge);
+		applySystemBarAppearance(window, lightSystemBarBackground);
+	}
+
+	private boolean isLightSystemBarBackground(int backgroundColor) {
+		int luminance = (299 * Color.red(backgroundColor)
+				+ 587 * Color.green(backgroundColor)
+				+ 114 * Color.blue(backgroundColor)) / 1000;
+		return luminance >= 128;
+	}
+
+	@TargetApi(Build.VERSION_CODES.M)
+	private void applyLegacySystemBarAppearance(Window window, boolean edgeToEdge) {
+		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.R)
+			return;
+		View decorView = window.getDecorView();
+		int flags = decorView.getSystemUiVisibility();
+		if (edgeToEdge) {
+			flags |= View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+					| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+					| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+		}
+		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.M) {
+			if (lightSystemBarBackground)
+				flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+			else
+				flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+		}
+		if (DeviceInfo.getSDKLevel() >= Build.VERSION_CODES.O) {
+			if (lightSystemBarBackground)
+				flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+			else
+				flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+		}
+		decorView.setSystemUiVisibility(flags);
+	}
+
+	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
+	private void applySystemBarInsets(Window window) {
 		if (DeviceInfo.getSDKLevel() < Build.VERSION_CODES.LOLLIPOP)
 			return;
-		View contentRoot = getWindow().findViewById(android.R.id.content);
+		View contentRoot = window.findViewById(android.R.id.content);
 		if (contentRoot == null)
 			return;
 		contentRoot.setOnApplyWindowInsetsListener((view, insets) -> {
@@ -749,15 +802,15 @@ public class BaseActivity extends Activity implements Settings {
 	}
 
 	@TargetApi(Build.VERSION_CODES.R)
-	private void applySystemBarAppearance() {
+	private void applySystemBarAppearance(Window window, boolean lightBackground) {
 		if (DeviceInfo.getSDKLevel() < Build.VERSION_CODES.R)
 			return;
-		WindowInsetsController controller = getWindow().getInsetsController();
+		WindowInsetsController controller = window.getInsetsController();
 		if (controller == null)
 			return;
 		int mask = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 				| WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
-		controller.setSystemBarsAppearance(lightSystemBarBackground ? mask : 0, mask);
+		controller.setSystemBarsAppearance(lightBackground ? mask : 0, mask);
 	}
 
 	public void applyFullscreen(Window wnd) {
@@ -891,7 +944,7 @@ public class BaseActivity extends Activity implements Settings {
 			try {
 				Method m = mDecorView.getClass().getMethod("setSystemUiVisibility", int.class);
 				m.invoke(mDecorView, value);
-				applySystemBarAppearance();
+				applySystemBarAppearance(getWindow(), lightSystemBarBackground);
 				return true;
 			} catch (SecurityException e) {
 				// ignore
@@ -1330,7 +1383,7 @@ public class BaseActivity extends Activity implements Settings {
 	public void setContentView(View view) {
 		this.contentView = view;
 		super.setContentView(view);
-		applySystemBarInsets();
+		applySystemBarInsets(getWindow());
 		//systemUiVisibilityListenerIsSet = false;
 		//updateBackground();
 		setCurrentTheme(currentTheme);
