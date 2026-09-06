@@ -20,3 +20,6 @@ obj
 /.idea/caches/
 /.idea/dictionaries/
 /.idea/deploymentTargetDropDown.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/AndroidProjectSystem.xml
+/.idea/runConfigurations.xml
