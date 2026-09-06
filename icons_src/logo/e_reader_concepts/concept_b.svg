@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <title>Open book with e-reader mark, compact launcher concept</title>
+  <g fill="#9C704A">
+    <path fill-rule="evenodd" d="M256 241c-48-41-107-62-188-63v205c74 3 139 27 188 71 49-44 114-68 188-71V178c-81 1-140 22-188 63ZM98 218c55 7 99 25 137 55v122c-39-24-84-40-137-47V218Zm316 0c-55 7-99 25-137 55v122c39-24 84-40 137-47V218Z" clip-rule="evenodd"/>
+    <path transform="translate(37.84 33) scale(.72 .672)" fill-rule="evenodd" d="M302 65c-54 0-89 37-89 92 0 59 37 93 96 93 33 0 60-10 81-29l-23-33c-17 13-34 19-55 19-28 0-46-13-53-36h140v-18c0-55-37-88-97-88Zm-42 72c7-21 21-31 42-31 23 0 38 11 44 31h-86Z" clip-rule="evenodd"/>
+    <rect x="98" y="130" width="142" height="18" rx="9"/>
+  </g>
+</svg>

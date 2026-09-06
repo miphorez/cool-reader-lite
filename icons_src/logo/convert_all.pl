@@ -9,23 +9,22 @@ $TARGET_DIR = "../../android/res/";
 my %ic_actions_sizes  = (ldpi=>24, mdpi=>32,  hdpi=>48,  xhdpi=>64,  xxhdpi=>96,  xxxhdpi=>128);
 my %ic_legacy_sizes   = (ldpi=>36, mdpi=>48,  hdpi=>72,  xhdpi=>96,  xxhdpi=>144, xxxhdpi=>192);
 my %ic_ad_full_sizes  = (ldpi=>81, mdpi=>108, hdpi=>162, xhdpi=>216, xxhdpi=>324, xxxhdpi=>432);
-#my %ic_ad_inner_sizes = (ldpi=>54, mdpi=>72,  hdpi=>108, xhdpi=>144, xxhdpi=>216, xxxhdpi=>288);
-my %ic_ad_inner_sizes = (ldpi=>42, mdpi=>56,  hdpi=>84,  xhdpi=>112, xxhdpi=>168, xxxhdpi=>224);
+my %ic_ad_inner_sizes = (ldpi=>81, mdpi=>108, hdpi=>162, xhdpi=>216, xxhdpi=>324, xxxhdpi=>432);
 
 my %ic_legacy_list=(
-	'cr3_logo-base-300x300-unsharp.png' => 'cr3_logo.png'
+	'cr3_logo.svg' => 'cr3_logo.png'
 );
 
 my %ic_ad_foreground_list=(
-	'cr3_logo-inner-290x290.png' => 'cr3_logo_foreground.png'
+	'cr3_logo_adaptive_foreground.svg' => 'cr3_logo_foreground.png'
 );
 
 my %ic_ad_foreground_background_list=(
-	'cr3_logo-inner-290x290.png' => 'cr3_logo_background2-432x432.png'
+	'cr3_logo_adaptive_foreground.svg' => 'cr3_logo_background2-432x432.png'
 );
 
 my %ic_logo_button_list=(
-	'cr3_logo-base-300x300-unsharp.png' => 'cr3_logo_button.png'
+	'cr3_logo.svg' => 'cr3_logo_button.png'
 );
 
 my ($srcfile, $dstfile);

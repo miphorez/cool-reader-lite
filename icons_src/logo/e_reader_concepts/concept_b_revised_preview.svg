@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+  <title>Revised compact e-reader launcher icon preview</title>
+  <defs>
+    <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f3f0e8"/>
+      <path d="M0 0h12v12H0zm12 12h12v12H12z" fill="#e5e0d6"/>
+    </pattern>
+    <symbol id="icon" viewBox="0 0 512 512">
+      <path fill-rule="evenodd" d="M256 241c-48-41-107-62-188-63v205c74 3 139 27 188 71 49-44 114-68 188-71V178c-81 1-140 22-188 63ZM98 218c55 7 99 25 137 55v122c-39-24-84-40-137-47V218Zm316 0c-55 7-99 25-137 55v122c39-24 84-40 137-47V218Z" clip-rule="evenodd"/>
+      <path transform="translate(37.84 33) scale(.72 .672)" fill-rule="evenodd" d="M302 65c-54 0-89 37-89 92 0 59 37 93 96 93 33 0 60-10 81-29l-23-33c-17 13-34 19-55 19-28 0-46-13-53-36h140v-18c0-55-37-88-97-88Zm-42 72c7-21 21-31 42-31 23 0 38 11 44 31h-86Z" clip-rule="evenodd"/>
+      <rect x="98" y="130" width="142" height="18" rx="9"/>
+    </symbol>
+    <style>
+      .title{font:700 38px Arial,sans-serif;fill:#26231f}.subtitle{font:400 22px Arial,sans-serif;fill:#625c53}.label{font:700 25px Arial,sans-serif;fill:#332f29}.label-dark{font:700 25px Arial,sans-serif;fill:#f7f3e8}.panel{stroke:#d6d0c5;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#faf8f3"/>
+  <text x="70" y="70" class="title">B · Compact — revised</text>
+  <text x="70" y="108" class="subtitle">10% narrower e · aligned brim and crossbar · one-stroke gap · balanced sepia #9C704A</text>
+  <g transform="translate(70 150)">
+    <rect class="panel" width="500" height="500" rx="32" fill="url(#checker)"/>
+    <use href="#icon" x="60" y="45" width="380" height="380" fill="#9C704A"/>
+    <text x="250" y="463" text-anchor="middle" class="label">Transparent</text>
+  </g>
+  <g transform="translate(630 150)">
+    <rect class="panel" width="500" height="240" rx="32" fill="#F7F3E8"/>
+    <use href="#icon" x="150" y="20" width="200" height="200" fill="#9C704A"/>
+    <text x="250" y="220" text-anchor="middle" class="label">Light background</text>
+  </g>
+  <g transform="translate(630 410)">
+    <rect class="panel" width="500" height="240" rx="32" fill="#15130F"/>
+    <use href="#icon" x="150" y="20" width="200" height="200" fill="#9C704A"/>
+    <text x="250" y="220" text-anchor="middle" class="label-dark">Dark background</text>
+  </g>
+  <text x="70" y="710" class="subtitle">Preview only. Android launcher resources remain unchanged.</text>
+</svg>

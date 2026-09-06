@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1160">
+  <title>Cool Reader Lite e-reader icon concepts</title>
+  <defs>
+    <pattern id="checker" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f3f0e8"/>
+      <path d="M0 0h12v12H0zm12 12h12v12H12z" fill="#e5e0d6"/>
+    </pattern>
+    <symbol id="shape-a" viewBox="0 0 512 512">
+      <path fill-rule="evenodd" d="M256 239C211 199 153 177 70 174v210c75 4 139 27 186 70 47-43 111-66 186-70V174c-83 3-141 25-186 65Zm-154-23c55 8 98 25 133 54v125c-38-25-82-42-133-49V216Zm308 0c-55 8-98 25-133 54v125c38-25 82-42 133-49V216Z" clip-rule="evenodd"/>
+      <path fill-rule="evenodd" d="M303 58c-56 0-90 38-90 94 0 60 37 96 98 96 34 0 61-11 82-30l-24-34c-16 14-34 21-55 21-29 0-48-14-54-39h141v-17c0-57-38-91-98-91Zm-42 73c7-22 21-33 42-33 23 0 39 12 45 33h-87Z" clip-rule="evenodd"/>
+      <rect x="48" y="137" width="222" height="26" rx="13"/>
+    </symbol>
+    <symbol id="shape-b" viewBox="0 0 512 512">
+      <path fill-rule="evenodd" d="M256 241c-48-41-107-62-188-63v205c74 3 139 27 188 71 49-44 114-68 188-71V178c-81 1-140 22-188 63ZM98 218c55 7 99 25 137 55v122c-39-24-84-40-137-47V218Zm316 0c-55 7-99 25-137 55v122c39-24 84-40 137-47V218Z" clip-rule="evenodd"/>
+      <path transform="translate(37.84 33) scale(.72 .672)" fill-rule="evenodd" d="M302 65c-54 0-89 37-89 92 0 59 37 93 96 93 33 0 60-10 81-29l-23-33c-17 13-34 19-55 19-28 0-46-13-53-36h140v-18c0-55-37-88-97-88Zm-42 72c7-21 21-31 42-31 23 0 38 11 44 31h-86Z" clip-rule="evenodd"/>
+      <rect x="98" y="130" width="142" height="18" rx="9"/>
+    </symbol>
+    <symbol id="shape-c" viewBox="0 0 512 512">
+      <path fill-rule="evenodd" d="M256 256c-45-45-105-69-186-73v201c73 5 137 29 186 70 49-41 113-65 186-70V183c-81 4-141 28-186 73ZM100 223c51 9 96 29 135 61v111c-39-24-84-40-135-47V223Zm312 0c-51 9-96 29-135 61v111c39-24 84-40 135-47V223Z" clip-rule="evenodd"/>
+      <path fill-rule="evenodd" d="M302 62c-55 0-90 37-90 93 0 60 37 95 97 95 34 0 61-11 82-30l-24-34c-16 14-34 21-55 21-29 0-47-14-54-38h141v-17c0-56-37-90-97-90Zm-42 73c7-21 21-32 42-32 23 0 39 11 45 32h-87Z" clip-rule="evenodd"/>
+      <path d="M56 139h205c10 0 18 8 18 18s-8 18-18 18H56a18 18 0 1 1 0-36Z"/>
+    </symbol>
+    <style>
+      .title{font:700 42px Arial,sans-serif;fill:#26231f}.subtitle{font:400 23px Arial,sans-serif;fill:#635d53}.label{font:700 25px Arial,sans-serif;fill:#332f29}.note{font:400 20px Arial,sans-serif;fill:#6d665c}.hex{font:700 22px Consolas,monospace;fill:#332f29}.panel{fill:url(#checker);stroke:#d6d0c5;stroke-width:2}.theme{stroke:#d6d0c5;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1600" height="1160" fill="#faf8f3"/>
+  <text x="80" y="76" class="title">Cool Reader Lite — e-reader icon concepts</text>
+  <text x="80" y="116" class="subtitle">Transparent artwork · page base #ECE3CB · brown variants derived by darkening and warming</text>
+
+  <text x="80" y="170" class="label">Shape</text>
+  <g transform="translate(80 195)">
+    <rect class="panel" width="440" height="390" rx="28"/>
+    <use href="#shape-a" x="80" y="25" width="280" height="280" fill="#936743"/>
+    <text x="220" y="340" text-anchor="middle" class="label">A · Sketch-aligned</text>
+    <text x="220" y="372" text-anchor="middle" class="note">Wider book, lighter brim</text>
+  </g>
+  <g transform="translate(580 195)">
+    <rect class="panel" width="440" height="390" rx="28"/>
+    <use href="#shape-b" x="80" y="25" width="280" height="280" fill="#9C704A"/>
+    <text x="220" y="340" text-anchor="middle" class="label">B · Compact</text>
+    <text x="220" y="372" text-anchor="middle" class="note">Balanced for launcher size</text>
+  </g>
+  <g transform="translate(1080 195)">
+    <rect class="panel" width="440" height="390" rx="28"/>
+    <use href="#shape-c" x="80" y="25" width="280" height="280" fill="#936743"/>
+    <text x="220" y="340" text-anchor="middle" class="label">C · Reader</text>
+    <text x="220" y="372" text-anchor="middle" class="note">Stronger person silhouette</text>
+  </g>
+
+  <text x="80" y="650" class="label">Color on light and dark backgrounds</text>
+  <g transform="translate(80 680)">
+    <rect class="theme" width="330" height="350" rx="24" fill="#f7f3e8"/>
+    <path d="M0 175h330v151a24 24 0 0 1-24 24H24a24 24 0 0 1-24-24V175Z" fill="#15130f"/>
+    <use href="#shape-b" x="75" y="16" width="180" height="180" fill="#81583A"/>
+    <use href="#shape-b" x="75" y="168" width="180" height="180" fill="#81583A"/>
+    <text x="165" y="390" text-anchor="middle" class="hex">#81583A</text>
+    <text x="165" y="420" text-anchor="middle" class="note">Chestnut</text>
+  </g>
+  <g transform="translate(450 680)">
+    <rect class="theme" width="330" height="350" rx="24" fill="#f7f3e8"/>
+    <path d="M0 175h330v151a24 24 0 0 1-24 24H24a24 24 0 0 1-24-24V175Z" fill="#15130f"/>
+    <use href="#shape-b" x="75" y="16" width="180" height="180" fill="#8A6344"/>
+    <use href="#shape-b" x="75" y="168" width="180" height="180" fill="#8A6344"/>
+    <text x="165" y="390" text-anchor="middle" class="hex">#8A6344</text>
+    <text x="165" y="420" text-anchor="middle" class="note">Warm walnut</text>
+  </g>
+  <g transform="translate(820 680)">
+    <rect class="theme" width="330" height="350" rx="24" fill="#f7f3e8"/>
+    <path d="M0 175h330v151a24 24 0 0 1-24 24H24a24 24 0 0 1-24-24V175Z" fill="#15130f"/>
+    <use href="#shape-b" x="75" y="16" width="180" height="180" fill="#936743"/>
+    <use href="#shape-b" x="75" y="168" width="180" height="180" fill="#936743"/>
+    <text x="165" y="390" text-anchor="middle" class="hex">#936743</text>
+    <text x="165" y="420" text-anchor="middle" class="note">Cocoa</text>
+  </g>
+  <g transform="translate(1190 680)">
+    <rect class="theme" width="330" height="350" rx="24" fill="#f7f3e8"/>
+    <path d="M0 175h330v151a24 24 0 0 1-24 24H24a24 24 0 0 1-24-24V175Z" fill="#15130f"/>
+    <use href="#shape-b" x="75" y="16" width="180" height="180" fill="#9C704A"/>
+    <use href="#shape-b" x="75" y="168" width="180" height="180" fill="#9C704A"/>
+    <text x="165" y="390" text-anchor="middle" class="hex">#9C704A</text>
+    <text x="165" y="420" text-anchor="middle" class="note">Balanced sepia</text>
+  </g>
+  <text x="80" y="1120" class="subtitle">No Android resources are changed in this preview stage.</text>
+</svg>

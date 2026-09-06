@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <title>Open book with e-reader mark, reader silhouette concept</title>
+  <g fill="#936743">
+    <path fill-rule="evenodd" d="M256 256c-45-45-105-69-186-73v201c73 5 137 29 186 70 49-41 113-65 186-70V183c-81 4-141 28-186 73ZM100 223c51 9 96 29 135 61v111c-39-24-84-40-135-47V223Zm312 0c-51 9-96 29-135 61v111c39-24 84-40 135-47V223Z" clip-rule="evenodd"/>
+    <path fill-rule="evenodd" d="M302 62c-55 0-90 37-90 93 0 60 37 95 97 95 34 0 61-11 82-30l-24-34c-16 14-34 21-55 21-29 0-47-14-54-38h141v-17c0-56-37-90-97-90Zm-42 73c7-21 21-32 42-32 23 0 39 11 45 32h-87Z" clip-rule="evenodd"/>
+    <path d="M56 139h205c10 0 18 8 18 18s-8 18-18 18H56a18 18 0 1 1 0-36Z"/>
+  </g>
+</svg>

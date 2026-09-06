@@ -418,9 +418,7 @@
             <p><a href="http://www.coolreader.org/">Страница проекта</a></p>
             <p><a href="https://sourceforge.net/projects/crengine/">Страница проекта на SourceForge</a></p>
             <p><a href="http://sourceforge.net/apps/mediawiki/crengine/index.php?title=Main_Page">Wiki</a> проекта на SourceForge</p>
-            <p><a href="https://sourceforge.net/project/project_donations.php?group_id=191284">Помощь проекту</a> на SourceForge</p>
-            <p><a href="http://4pda.ru/forum/index.php?showtopic=191747&st=8380">Тема на форуме 4PDA</a></p>
-            <p>Вы можете поддержать развитие проекта пожертвованием с помощью покупки "пакета-монетки"  ("Cool Reader Gold Donation", "Cool Reader Silver Donation", "Cool Reader Bronze Donation") на Маркете или покупкой монетки прямо в приложении - на третьей вкладке диалога "О программе"</p>
+            <p><a href="http://4pda.ru/forum/index.php?showtopic=191747&amp;st=8380">Тема на форуме 4PDA</a></p>
             <p>Присылайте сообщения об ошибках и свои пожелания на buggins@fromru.com Не забудьте указать модель устройства и версию Android. В случае падения программы могут сильно помочь системные логи. Логи можно сохранить в файл с помощью программы Android System Info (доступна на Маркете). Если не удается открыть какую-то книгу, хотя остальные книги открываютс нормально, или вы столкнулись с неправильным определением кодировки файла, было бы полезным приложить файл с книгой к письму.</p>
         </section>
 	</body>

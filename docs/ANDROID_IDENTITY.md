@@ -31,9 +31,9 @@ Google Drive implementation code is currently disabled and no active OAuth
 client configuration is present. Re-enabling it requires credentials registered
 for the new application ID and the release signing certificate.
 
-The legacy donation implementation and links belong to the upstream product
-ecosystem. They must be removed or replaced before a Cool Reader Lite public
-binary release. No Cool Reader Lite billing products are configured.
+The legacy donation UI, Android Market links, billing service integration, and
+billing permission have been removed. Cool Reader Lite does not configure or
+offer in-app billing products.
 
 The inherited icon is temporary and remains subject to the asset-license and
 branding audit. A distinct Cool Reader Lite icon is required before the first

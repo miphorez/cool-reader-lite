@@ -54,7 +54,6 @@ android {
     sourceSets {
         main {
             setRoot('src/main')
-            aidl.srcDirs = ['../../android/src']
             java.srcDirs = ['../../android/src']
             res.srcDirs = ['../../android/res']
         }
@@ -155,7 +154,6 @@ android {
     }
 
     buildFeatures {
-        aidl true
         buildConfig true
     }
 

@@ -416,8 +416,6 @@
             <p>(külső internetböngészőben nyílnak meg)</p>
             <p><a href="http://sourceforge.net/projects/crengine/">CoolReader projekt a  SourceForge-on</a></p>
             <p><a href="http://sourceforge.net/apps/mediawiki/crengine/index.php?title=Main_Page">Projekt Wiki</a> a SourceForge-on</p>
-            <p><a href="https://sourceforge.net/project/project_donations.php?group_id=191284">A projekt támogatási oldala</a> a SourceForge-on</p>
-            <p>A projektet legegyszerűbben úgy támogathatja, hogy az alkalmazáson belülről (Menü / Tovább / A CoolReader-ről / harmadik fül), vagy közvetlenül a Google Play-ről vásárol VIP, platina, arany, ezüst, bronz, illetve vas támogatási csomagokat.</p>
             <p>Hibajelentéseit, összeomlás esetén lehetőleg az Android System Info app által gyűjtött hibajelentéssel, az eszköz típusával és az Android verzióval kiegészítve küldje a  buggins@fromru.com e-mail címre. Ha egy könyvet nem sikerül megnyitni, míg más könyveket igen, akkor lehetőség szerint csatolja a meg nem nyitható könyvet is a hatékonyabb hibafelderítés érdekében.</p>
         </section>
 	</body>

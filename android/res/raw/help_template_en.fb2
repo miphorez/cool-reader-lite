@@ -418,8 +418,6 @@
             <p>(will be opened in external browser)</p>
             <p><a href="http://sourceforge.net/projects/crengine/">Project page on SourceForge</a></p>
             <p><a href="http://sourceforge.net/apps/mediawiki/crengine/index.php?title=Main_Page">Project's Wiki</a> on SourceForge</p>
-            <p><a href="https://sourceforge.net/project/project_donations.php?group_id=191284">Project's Donations page</a> on SourceForge</p>
-            <p>To support project, you can make donations. Easy way to donate project is to buy donation package on Market ("Cool Reader Gold Donation", "Cool Reader Silver Donation", "Cool Reader Bronze Donation"), or buy donation items directly in CoolReader - on third tab of "About Cool Reader" menu item</p>
             <p>Send your bug reports to buggins@fromru.com Don't forget to specify your device model, Android version. In case of crash, system logs may help a lot. You can get system logs using Android System Info app (available on market). If some books is failed to open, but other books are being opened ok, or you see that wrong encoding is used to show your book, you can attach book file to bug report email, to simplify investigation.</p>
         </section>
 	</body>
