@@ -4432,5 +4432,14 @@
     "size": { "width": 24, "height": 24 },
     "contentBounds": { "x": 5.54, "y": 0.75, "width": 12.92, "height": 19.96 },
     "elementCount": 5
+  },
+  {
+    "label": "icon:264:book_open_remove_recent",
+    "name": "book_open_remove_recent",
+    "file": "derived/264_book_open_remove_recent.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 2.5, "y": 3.05, "width": 19.5, "height": 18.95 },
+    "elementCount": 6
   }
 ]

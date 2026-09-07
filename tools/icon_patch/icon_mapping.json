@@ -44,7 +44,7 @@
     "cr3_button_next": { "candidates": ["017"], "approved": true },
     "cr3_button_ok": { "candidates": ["189"], "approved": true },
     "cr3_button_prev": { "candidates": ["016"], "approved": true },
-    "cr3_button_recent_book_delete": { "candidates": ["077"], "approved": true },
+    "cr3_button_recent_book_delete": { "candidates": ["264"], "approved": true },
     "cr3_button_remove": { "candidates": ["077"], "approved": true },
     "cr3_button_scroll_go": { "candidates": ["192"], "approved": true },
     "cr3_button_tts": { "candidates": ["195"], "approved": true },

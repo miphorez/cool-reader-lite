@@ -272,8 +272,11 @@ public class BookInfoEditDialog extends BaseDialog {
 		Utils.tintPatchedIcon(btnBack, backIconResId, R.attr.textColorToolBarLabel);
         btnBack.setOnClickListener(v -> onNegativeButtonClick());
         ImageButton btnOpenBook = mainView.findViewById(R.id.btn_open_book);
+		int openBookIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_book_open_drawable, R.drawable.cr3_button_book_open);
+		Utils.tintPatchedIcon(btnOpenBook, openBookIconResId, R.attr.textColorToolBarLabel);
         btnOpenBook.setOnClickListener(v -> onPositiveButtonClick());
         ImageButton btnDeleteBook = mainView.findViewById(R.id.book_delete);
+		Utils.tintPatchedIcon(btnDeleteBook, R.drawable.cr3_button_book_delete, R.attr.textColorToolBarLabel);
         btnDeleteBook.setOnClickListener(v -> {
 			mActivity.askDeleteBook(mBookInfo.getFileInfo());
 			dismiss();
@@ -365,6 +368,9 @@ public class BookInfoEditDialog extends BaseDialog {
 
     	ImageButton btnRemoveRecent = mainView.findViewById(R.id.book_recent_delete);
     	ImageButton btnOpenFolder = mainView.findViewById(R.id.book_folder_open);
+		Utils.tintPatchedIcon(btnRemoveRecent, R.drawable.cr3_button_recent_book_delete, R.attr.textColorToolBarLabel);
+		int openFolderIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_folder_go_drawable, R.drawable.cr3_button_folder_go);
+		Utils.tintPatchedIcon(btnOpenFolder, openFolderIconResId, R.attr.textColorToolBarLabel);
         if (mIsRecentBooksItem) {
         	btnRemoveRecent.setOnClickListener(v -> {
 				mActivity.askDeleteRecent(mBookInfo.getFileInfo());

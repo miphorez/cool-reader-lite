@@ -3028,14 +3028,14 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 
 	private void addTab(String name, int imageDrawable) {
 		TabHost.TabSpec ts = mTabs.newTabSpec(name);
-		Drawable icon = getContext().getResources().getDrawable(imageDrawable);
 		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
 			// replace too small icons in tabs in Theme.Holo
 			View tabIndicator = mInflater.inflate(R.layout.tab_indicator, null);
 			ImageView imageView = tabIndicator.findViewById(R.id.tab_icon);
-			imageView.setImageDrawable(icon);
+			Utils.setTintedIcon(imageView, imageDrawable, R.attr.textColorToolBarLabel);
 			ts.setIndicator(tabIndicator);
 		} else {
+			Drawable icon = getContext().getResources().getDrawable(imageDrawable);
 			ts.setIndicator("", icon);
 		}
 		ts.setContent(this);

@@ -114,6 +114,7 @@ public class BaseDialog extends Dialog {
 	@Override
 	protected void onStart() {
 		super.onStart();
+		applyTopBarStyles();
 		applySystemBarColors();
 	}
 
@@ -131,6 +132,17 @@ public class BaseDialog extends Dialog {
 		contentsLayout.removeAllViews();
 		if (null != view)
 			contentsLayout.addView(view);
+		applyTopBarStyles();
+	}
+
+	private void applyTopBarStyles() {
+		if (layoutView == null)
+			return;
+		View topBar = layoutView.findViewById(R.id.base_dlg_button_panel);
+		activity.applyTopBarStyle(topBar);
+		View optionsBack = layoutView.findViewById(R.id.options_btn_back);
+		if (optionsBack != null && optionsBack.getParent() instanceof View)
+			activity.applyTopBarStyle((View) optionsBack.getParent());
 	}
 	
 	protected void onPositiveButtonClick()
@@ -242,6 +254,7 @@ public class BaseDialog extends Dialog {
         if (buttonsLayout != null) {
             if ( needCancelButton || title != null) {
             	createButtonsPane(layout, buttonsLayout);
+				activity.applyTopBarStyle(buttonsLayout);
             } else {
             	layout.removeView(buttonsLayout);
                 buttonsLayout = null;

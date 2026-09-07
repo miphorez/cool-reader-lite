@@ -579,7 +579,8 @@ public class CRToolBar extends ViewGroup {
 //	        		h = contentHeight - itemHeight;
 	        	setMeasuredDimension(contentWidth, h);
 	        } else {
-	        	setMeasuredDimension(contentWidth, buttonHeight + BUTTON_SPACING * 2 + BAR_SPACING);
+			setMeasuredDimension(contentWidth, Math.max(buttonHeight + BUTTON_SPACING * 2 + BAR_SPACING,
+					activity.getTopBarHeight()));
 	        }
         }
 	}

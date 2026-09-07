@@ -56,6 +56,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -410,6 +411,27 @@ public class BaseActivity extends Activity implements Settings {
 
 	public int getPreferredItemHeight() {
 		return preferredItemHeight;
+	}
+
+	public int getTopBarHeight() {
+		int buttonSpacing = isSmartphone() ? 3 : preferredItemHeight / 20;
+		return preferredItemHeight + buttonSpacing;
+	}
+
+	public void applyTopBarStyle(View topBar) {
+		if (topBar == null)
+			return;
+		int height = getTopBarHeight();
+		ViewGroup.LayoutParams params = topBar.getLayoutParams();
+		if (params != null) {
+			params.height = height;
+			if (params instanceof ViewGroup.MarginLayoutParams)
+				((ViewGroup.MarginLayoutParams) params).bottomMargin = 0;
+			topBar.setLayoutParams(params);
+		}
+		topBar.setMinimumHeight(height);
+		if (currentTheme != null)
+			topBar.setBackgroundResource(currentTheme.getBrowserToolbarBackground(false));
 	}
 
 	private int minFontSize = 9;
