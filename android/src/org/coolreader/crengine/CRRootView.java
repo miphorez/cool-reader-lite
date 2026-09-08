@@ -36,10 +36,6 @@ import android.widget.TextView;
 import org.coolreader.CoolReader;
 import org.coolreader.R;
 import org.coolreader.crengine.CoverpageManager.CoverpageReadyListener;
-import org.coolreader.plugins.OnlineStorePluginManager;
-import org.coolreader.plugins.OnlineStoreWrapper;
-import org.coolreader.plugins.litres.LitresPlugin;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -263,11 +259,6 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 
 	ArrayList<FileInfo> lastCatalogs = new ArrayList<>();
 	private void updateOnlineCatalogs(ArrayList<FileInfo> catalogs) {
-		String lang = mActivity.getCurrentLanguage();
-		boolean defEnableLitres = lang.toLowerCase().startsWith("ru") && !DeviceInfo.POCKETBOOK;
-		boolean enableLitres = mActivity.settings().getBool(Settings.PROP_APP_PLUGIN_ENABLED + "." + OnlineStorePluginManager.PLUGIN_PKG_LITRES, defEnableLitres);
-		if (enableLitres)
-			catalogs.add(0, Scanner.createOnlineLibraryPluginItem(OnlineStorePluginManager.PLUGIN_PKG_LITRES, "LitRes"));
 		if (Services.getScanner() == null)
 			return;
 		FileInfo opdsRoot = Services.getScanner().getOPDSRoot();
@@ -290,53 +281,6 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_add_drawable, R.drawable.cr3_browser_folder_opds_add));
 				label.setText("Add");
 				view.setOnClickListener(v -> mActivity.editOPDSCatalog(null));
-			} else if (item.isOnlineCatalogPluginDir()) {
-				icon.setImageResource(R.drawable.plugins_logo_litres);
-				label.setText(item.filename);
-				view.setOnLongClickListener(v -> {
-					OnlineStoreWrapper plugin = OnlineStorePluginManager.getPlugin(mActivity, FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX + LitresPlugin.PACKAGE_NAME);
-					if (plugin != null) {
-						OnlineStoreLoginDialog dlg = new OnlineStoreLoginDialog(mActivity, plugin, () -> mActivity.showBrowser(FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX + LitresPlugin.PACKAGE_NAME));
-						dlg.show();
-					}
-					return true;
-				});
-				view.setOnClickListener(v -> {
-					mActivity.showBrowser(FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX + LitresPlugin.PACKAGE_NAME);
-//						LitresConnection.instance().loadGenres(new ResultHandler() {
-//							@Override
-//							public void onResponse(LitresResponse response) {
-//								if (response instanceof LitresConnection.LitresGenre) {
-//									LitresConnection.LitresGenre result = (LitresConnection.LitresGenre)response;
-//									log.d("genres found: " + result.getChildCount() + " on top level");
-//								}
-//							}
-//						});
-//						LitresConnection.instance().authorize("login", "password", new ResultHandler() {
-//							@Override
-//							public void onResponse(LitresResponse response) {
-//								if (response instanceof LitresConnection.LitresAuthInfo) {
-//									LitresConnection.LitresAuthInfo result = (LitresConnection.LitresAuthInfo)response;
-//									log.d("authorization successful: " + result);
-//								} else {
-//									log.d("authorization failed");
-//								}
-//							}
-//						});
-//						LitresConnection.instance().loadAuthorsByLastName("л", new ResultHandler() {
-//							@Override
-//							public void onResponse(LitresResponse response) {
-//								if (response instanceof LitresConnection.LitresAuthors) {
-//									LitresConnection.LitresAuthors result = (LitresConnection.LitresAuthors)response;
-//									log.d("authors found: " + result.size());
-//									for (int i=0; i<result.size() && i<10; i++) {
-//										log.d(result.get(i).toString());
-//									}
-//								}
-//							}
-//						});
-//						mActivity.showToast("TODO");
-				});
 			} else {
 				if (label != null) {
 					label.setText(item.getFileNameToDisplay());
