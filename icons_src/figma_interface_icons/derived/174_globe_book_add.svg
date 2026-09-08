@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <defs>
-    <mask id="badgeCutout" style="mask-type:luminance">
-      <rect width="24" height="24" fill="#ffffff"/>
-      <circle cx="19.25" cy="19.25" r="3.7" fill="black"/>
-    </mask>
-  </defs>
-  <g mask="url(#badgeCutout)">
-    <path d="M3.6 13A8.4 10 0 0 1 20.4 13" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M5.1 9H18.9" stroke="white" stroke-width="1.15" stroke-linecap="round"/>
-    <path d="M12 3C9.8 5.7 9 9 9.1 13M12 3C14.2 5.7 15 9 14.9 13" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M2.6 15.5H8C10.2 15.5 12 17.3 12 19.5V21" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M21.4 15.5H16C13.8 15.5 12 17.3 12 19.5" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
+  <path d="M3.6 13A8.4 10 0 0 1 20.4 13" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5.1 9H18.9" stroke="white" stroke-width="1.15" stroke-linecap="round"/>
+  <path d="M12 3C9.8 5.7 9 9 9.1 13M12 3C14.2 5.7 15 9 14.9 13" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2.6 15.5H8C10.2 15.5 12 17.3 12 19.5V21" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 15.5C13.8 15.5 12 17.3 12 19.5" stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="19.25" cy="19.25" r="3" stroke="white" stroke-width="1.15"/>
   <path d="M17.75 19.25H20.75M19.25 17.75V20.75" stroke="white" stroke-width="1.15" stroke-linecap="round"/>
 </svg>
