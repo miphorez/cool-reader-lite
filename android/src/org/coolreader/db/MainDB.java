@@ -57,7 +57,7 @@ public class MainDB extends BaseDB {
 	public static final Logger vlog = L.create("mdb", Log.VERBOSE);
 	
 	private boolean pathCorrectionRequired = false;
-	public final int DB_VERSION = 34;
+	public final int DB_VERSION = 35;
 	@Override
 	protected boolean upgradeSchema() {
 		// When the database is just created, its version is 0.
@@ -181,9 +181,6 @@ public class MainDB extends BaseDB {
                         "username VARCHAR DEFAULT NULL, " +
                         "password VARCHAR DEFAULT NULL" +
                         ")");
-			if (currentVersion < 7) {
-				addOPDSCatalogs(DEF_OPDS_URLS1);
-			}
 			if (currentVersion < 13)
 			    execSQLIgnoreErrors("ALTER TABLE book ADD COLUMN language VARCHAR DEFAULT NULL");
 			if (currentVersion < 14)
@@ -214,10 +211,6 @@ public class MainDB extends BaseDB {
 						")");
 				execSQLIgnoreErrors("CREATE INDEX IF NOT EXISTS " +
 						"search_history_index ON search_history (book_fk) ");
-			}
-			if (currentVersion < 27) {
-				removeOPDSCatalogsByURLs(OBSOLETE_OPDS_URLS);
-				addOPDSCatalogs(DEF_OPDS_URLS3);
 			}
 			if (currentVersion < 28) {
 				execSQLIgnoreErrors("ALTER TABLE book ADD COLUMN crc32 INTEGER DEFAULT NULL");
@@ -317,6 +310,10 @@ public class MainDB extends BaseDB {
 				execSQLIgnoreErrors("ALTER TABLE genre_new RENAME TO genre");
 				if (pragma_foreign_keys != 0L)
 					execSQLIgnoreErrors("PRAGMA foreign_keys=ON");
+			}
+			if (currentVersion < 35) {
+				execSQL("DELETE FROM opds_catalog");
+				addOPDSCatalogs(DEFAULT_OPDS_CATALOGS);
 			}
 
 			//==============================================================
@@ -443,41 +440,8 @@ public class MainDB extends BaseDB {
 	//=======================================================================================
     // OPDS access code
     //=======================================================================================
-	private final static String[] DEF_OPDS_URLS1 = {
-			// feedbooks.com tested 2020.01
-			// offers preview or requires registration
-			//"http://www.feedbooks.com/catalog.atom", "Feedbooks",
-			// tested 2020.01 - error 500
-			"http://bookserver.archive.org/catalog/", "Internet Archive",
-			// obsolete link
-			//		"http://m.gutenberg.org/", "Project Gutenberg",
-			//		"http://ebooksearch.webfactional.com/catalog.atom", "eBookSearch",
-			//"http://bookserver.revues.org/", "Revues.org",
-			//"http://www.legimi.com/opds/root.atom", "Legimi",
-			//https://www.ebooksgratuits.com/opds/index.php
-			// tested 2020.01
-			"http://www.ebooksgratuits.com/opds/", "Ebooks libres et gratuits (fr)",
-	};
-
-	private final static String[] OBSOLETE_OPDS_URLS = {
-			"http://m.gutenberg.org/", // "Project Gutenberg" old URL
-			"http://www.shucang.org/s/index.php", //"ShuCang.org"
-			"http://www.legimi.com/opds/root.atom", //"Legimi",
-			"http://bookserver.revues.org/", //"Revues.org",
-			"http://ebooksearch.webfactional.com/catalog.atom", //
-	};
-
-	private final static String[] DEF_OPDS_URLS3 = {
-			// o'reilly
-			//"http://opds.oreilly.com/opds/", "O'Reilly",
-			"http://m.gutenberg.org/ebooks.opds/", "Project Gutenberg",
-			//"https://api.gitbook.com/opds/catalog.atom", "GitBook",
-			"http://srv.manybooks.net/opds/index.php", "ManyBooks",
-			//"http://opds.openedition.org/", "OpenEdition (fr)",
-			"https://gallica.bnf.fr/opds", "Gallica (fr)",
-			"https://www.textos.info/catalogo.atom", "textos.info (es)",
-			"https://wolnelektury.pl/opds/", "Wolne Lektury (pl)",
-			"http://www.bokselskap.no/wp-content/themes/bokselskap/tekster/opds/root.xml", "Bokselskap (no)",
+	private final static String[] DEFAULT_OPDS_CATALOGS = {
+			"https://flibusta.is/opds", "Flibusta",
 	};
 
 	private void addOPDSCatalogs(String[] catalogs) {
