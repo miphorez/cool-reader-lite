@@ -1985,7 +1985,7 @@ public class CoolReader extends BaseActivity {
 	private void deleteFolder(final FileInfo item) {
 		if (mFolderDeleteRetryCount > 3)
 			return;
-		if (item != null && item.isDirectory && !item.isOPDSDir() && !item.isOnlineCatalogPluginDir()) {
+		if (item != null && item.isDirectory && !item.isOPDSDir()) {
 			FileInfoOperationListener bookDeleteCallback = (fileInfo, errorStatus) -> {
 				if (0 == errorStatus && null != fileInfo.format) {
 					BackgroundThread.instance().executeGUI(() -> {

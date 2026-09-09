@@ -46,13 +46,6 @@ import org.coolreader.crengine.OPDSUtil.DocInfo;
 import org.coolreader.crengine.OPDSUtil.DownloadCallback;
 import org.coolreader.crengine.OPDSUtil.EntryInfo;
 import org.coolreader.db.CRDBService;
-import org.coolreader.plugins.AuthenticationCallback;
-import org.coolreader.plugins.BookInfoCallback;
-import org.coolreader.plugins.FileInfoCallback;
-import org.coolreader.plugins.OnlineStoreBook;
-import org.coolreader.plugins.OnlineStoreBookInfo;
-import org.coolreader.plugins.OnlineStorePluginManager;
-import org.coolreader.plugins.OnlineStoreWrapper;
 import org.koekak.android.ebookdownloader.SonyBookSelector;
 
 import java.io.File;
@@ -98,7 +91,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 				selectedItem = item;
 
 				boolean bookInfoDialogEnabled = true; // TODO: it's for debug
-				if (!item.isDirectory && !item.isOPDSBook() && bookInfoDialogEnabled && !item.isOnlineCatalogPluginDir()) {
+				if (!item.isDirectory && !item.isOPDSBook() && bookInfoDialogEnabled) {
 					mActivity.editBookInfo(currDirectory, item);
 					return true;
 				}
@@ -164,8 +157,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			}
 			if (item.isOPDSDir() || item.isOPDSBook())
 				showOPDSDir(item, null);
-			else if (item.isOnlineCatalogPluginBook())
-				showOnlineCatalogBookDialog(item);
 			else
 				mActivity.loadDocument(item, true);
 			return true;
@@ -478,71 +469,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		showDirectory(mScanner.getRoot(), null);
 	}
 
-	private OnlineStoreWrapper getPlugin(FileInfo dir) {
-		return OnlineStorePluginManager.getPlugin(mActivity, dir.getOnlineCatalogPluginPackage());
-	}
-
-	private void openPluginDirectory(OnlineStoreWrapper plugin, FileInfo dir) {
-		progress.show();
-		plugin.openDirectory(dir, new FileInfoCallback() {
-			@Override
-			public void onFileInfoReady(FileInfo fileInfo) {
-				progress.hide();
-				showDirectoryInternal(fileInfo, null);
-			}
-			@Override
-			public void onError(int errorCode, String description) {
-				progress.hide();
-				mActivity.showToast("Cannot read from server");
-			}
-		});
-	}
-	
-	private void openPluginDirectoryWithLoginDialog(final OnlineStoreWrapper plugin, final FileInfo dir) {
-		OnlineStoreLoginDialog dlg = new OnlineStoreLoginDialog(mActivity, plugin, () -> openPluginDirectory(plugin, dir));
-		dlg.show();
-	}
-
-	public void showOnlineStoreDirectory(final FileInfo dir)
-	{
-		log.v("showOnlineStoreDirectory(" + dir.pathname + ")");
-		final OnlineStoreWrapper plugin = getPlugin(dir);
-		if (plugin != null) {
-			if (dir.fileCount() > 0 || dir.dirCount() > 0) {
-				showDirectoryInternal(dir, null);
-				return;
-			}
-			String path = dir.getOnlineCatalogPluginPath();
-			String id = dir.getOnlineCatalogPluginId();
-			if ("my".equals(path)) {
-				String login = plugin.getLogin();
-				String password = plugin.getPassword();
-				if (login != null && password != null) {
-					progress.show();
-					plugin.authenticate(login, password, new AuthenticationCallback() {
-						@Override
-						public void onError(int errorCode, String errorMessage) {
-							// ignore error 
-							progress.hide();
-							openPluginDirectoryWithLoginDialog(plugin, dir);
-						}
-						@Override
-						public void onSuccess() {
-							progress.hide();
-							openPluginDirectory(plugin, dir);
-						}
-					});
-					return;
-				} else {
-					openPluginDirectoryWithLoginDialog(plugin, dir);
-				}
-			}
-			if ("genres".equals(path) || "popular".equals(path) || "new".equals(path) || (path.startsWith("genre=") && id != null) || (path.startsWith("authors=") && id != null) || (path.startsWith("author=") && id != null)) {
-				openPluginDirectory(plugin, dir);
-			}
-		}
-	}
-
 	public void showOPDSRootDirectory()
 	{
 		log.v("showOPDSRootDirectory()");
@@ -824,34 +750,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 				mActivity.showRootWindow();
 				return;
 			}
-			if (fileOrDir.isOnlineCatalogPluginDir()) {
-				if (fileOrDir.getOnlineCatalogPluginPath() == null) {
-					// root
-					OnlineStoreWrapper plugin = OnlineStorePluginManager.getPlugin(mActivity, fileOrDir.getOnlineCatalogPluginPackage());
-					if (plugin != null) {
-						String login = plugin.getLogin();
-						String password = plugin.getPassword();
-						if (login != null && password != null) {
-							final FileInfo dir = fileOrDir;
-							// just do authentication in background
-							plugin.authenticate(login, password, new AuthenticationCallback() {
-								@Override
-								public void onError(int errorCode, String errorMessage) {
-									// ignore error 
-								}
-								@Override
-								public void onSuccess() {
-									// ignore result
-								}
-							});
-							showOnlineStoreDirectory(dir);
-							return;
-						}
-					}
-				}
-				showOnlineStoreDirectory(fileOrDir);
-				return;
-			}
 			if (fileOrDir.isOPDSRoot()) {
 				showOPDSRootDirectory();
 				return;
@@ -1122,8 +1020,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_authors_drawable, R.drawable.cr3_browser_folder_authors));
 					else if (item.isOPDSRoot() || item.isOPDSDir())
 						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_drawable, R.drawable.cr3_browser_folder_opds));
-					else if (item.isOnlineCatalogPluginDir())
-						setIconResource(R.drawable.plugins_logo_litres);
 					else if (item.isSearchShortcut())
 						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_find_drawable, R.drawable.cr3_browser_find));
 					else if ( item.isRecentDir() )
@@ -1134,9 +1030,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						setIconResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_drawable, R.drawable.cr3_browser_folder));
 
 					String title = item.filename;
-					
-					if (item.isOnlineCatalogPluginDir())
-						title = translateOnlineStorePluginItem(item);
 					
 					setText(name, title);
 
@@ -1172,7 +1065,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 					} else  if (item.isOPDSDir()) {
 						setText(field1, item.title);
 						setText(field2, "");
-					} else  if ( !item.isOPDSDir() && !item.isSearchShortcut() && ((!item.isOPDSRoot() && !item.isBooksByAuthorRoot() && !item.isBooksBySeriesRoot() && !item.isBooksByTitleRoot()) || item.dirCount()>0) && !item.isOnlineCatalogPluginDir()) {
+					} else  if ( !item.isOPDSDir() && !item.isSearchShortcut() && ((!item.isOPDSRoot() && !item.isBooksByAuthorRoot() && !item.isBooksBySeriesRoot() && !item.isBooksByTitleRoot()) || item.dirCount()>0)) {
 						setText(field1, "books: " + String.valueOf(item.fileCount()));
 						setText(field2, "folders: " + String.valueOf(item.dirCount()));
 					} else {
@@ -1214,16 +1107,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						String filename2 = item.isArchive && item.arcname != null /*&& !item.isDirectory */
 								? new File(item.arcname).getName() : null;
 								
-						String onlineBookInfo = "";
-						if (item.getOnlineStoreBookInfo() != null) {
-							OnlineStoreBook book = item.getOnlineStoreBookInfo();
-							onlineBookInfo = "";
-							if (book.rating > 0)
-								onlineBookInfo = onlineBookInfo + "rating:" + book.rating + "  ";
-							if (book.price > 0)
-								onlineBookInfo = onlineBookInfo + "price:" + book.price + "  ";
-							
-						}
 						if ( title==null || title.length()==0 ) {
 							title = filename1;
 							if (seriesName==null)
@@ -1239,7 +1122,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 //						field3.setVisibility(VISIBLE);
 						String state = Utils.formatReadingState(mActivity, item);
 						if (field1 != null)
-							field1.setText(onlineBookInfo + "  " + state + " " + Utils.formatFileInfo(mActivity, item));
+							field1.setText(state + " " + Utils.formatFileInfo(mActivity, item));
 						//field2.setText(formatDate(pos!=null ? pos.getTimeStamp() : item.createTime));
 						if (field2 != null)
 							field2.setText(Utils.formatLastPosition(mActivity, mHistory.getLastPos(item)));
@@ -1320,24 +1203,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 
 	}
 	
-	private String translateOnlineStorePluginItem(FileInfo item) {
-		String path = item.getOnlineCatalogPluginPath();
-		int resourceId = 0;
-		if ("genres".equals(path))
-			resourceId = R.string.online_store_genres;
-		else if ("authors".equals(path))
-			resourceId = R.string.online_store_authors;
-		else if ("my".equals(path))
-			resourceId = R.string.online_store_my;
-		else if ("popular".equals(path))
-			resourceId = R.string.online_store_popular;
-		else if ("new".equals(path))
-			resourceId = R.string.online_store_new;
-		if (resourceId != 0)
-			return mActivity.getString(resourceId);
-		return item.filename;
-	}
-	
 	private void setCurrDirectory(FileInfo newCurrDirectory) {
 		if (currDirectory != null && currDirectory != newCurrDirectory) {
 			ArrayList<CoverpageManager.ImageItem> filesToUqueue = new ArrayList<CoverpageManager.ImageItem>();
@@ -1369,8 +1234,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			title = dir.filename;
 			if (!dir.isSpecialDir())
 				title = dir.getPathName();
-			if (dir.isOnlineCatalogPluginDir())
-				title = translateOnlineStorePluginItem(dir);
 		}
 		
 		mActivity.setBrowserTitle(title);
@@ -1493,30 +1356,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		currentListAdapter.notifyInvalidated();
 	}
 	
-	protected void showOnlineCatalogBookDialog(final FileInfo book) {
-		OnlineStoreWrapper plugin = getPlugin(book);
-		if (plugin == null) {
-			mActivity.showToast("cannot find plugin");
-			return;
-		}
-		String bookId = book.getOnlineCatalogPluginId();
-		progress.show();
-		plugin.loadBookInfo(bookId, new BookInfoCallback() {
-			@Override
-			public void onError(int errorCode, String errorMessage) {
-				progress.hide();
-				mActivity.showToast("Error while loading book info");
-			}
-			
-			@Override
-			public void onBookInfoReady(OnlineStoreBookInfo bookInfo) {
-				progress.hide();
-				OnlineStoreBookInfoDialog dlg = new OnlineStoreBookInfoDialog(mActivity, bookInfo, book);
-				dlg.show();
-			}
-		});
-	}
-
 	@Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 		mActivity.onUserActivity();
