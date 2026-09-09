@@ -62,7 +62,6 @@ import org.coolreader.CoolReader;
 import org.coolreader.Dictionaries;
 import org.coolreader.Dictionaries.DictInfo;
 import org.coolreader.R;
-import org.coolreader.plugins.OnlineStorePluginManager;
 import org.coolreader.tts.OnTTSCreatedListener;
 import org.coolreader.tts.TTSControlBinder;
 
@@ -1037,24 +1036,6 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 			listView.add(new BoolOption(mOwner, getString(R.string.options_page_show_titlebar_percent), PROP_SHOW_POS_PERCENT).setDefaultValue("0"));
 			listView.add(new BoolOption(mOwner, getString(R.string.options_page_show_titlebar_chapter_marks), PROP_STATUS_CHAPTER_MARKS).setDefaultValue("1"));
 			listView.add(new BoolOption(mOwner, getString(R.string.options_page_show_titlebar_battery_percent), PROP_SHOW_BATTERY_PERCENT).setDefaultValue("1"));
-			dlg.setView(listView);
-			dlg.show();
-		}
-
-		public String getValueLabel() { return ">"; }
-	}
-	
-	class PluginsOption extends SubmenuOption {
-		public PluginsOption( OptionOwner owner, String label ) {
-			super(owner, label, PROP_APP_PLUGIN_ENABLED);
-		}
-		public void onSelect() {
-			if (!enabled)
-				return;
-			BaseDialog dlg = new BaseDialog(mActivity, label, false, false);
-			OptionsListView listView = new OptionsListView(getContext());
-			boolean defEnableLitres = activity.getCurrentLanguage().toLowerCase().startsWith("ru") && !DeviceInfo.POCKETBOOK;
-			listView.add(new BoolOption(mOwner, "LitRes", PROP_APP_PLUGIN_ENABLED + "." + OnlineStorePluginManager.PLUGIN_PKG_LITRES).setDefaultValue(defEnableLitres ? "1" : "0"));
 			dlg.setView(listView);
 			dlg.show();
 		}
@@ -2528,7 +2509,6 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 		mOptionsBrowser.add(new BoolOption(this, getString(R.string.options_app_browser_hide_empty_genres), PROP_APP_FILE_BROWSER_HIDE_EMPTY_GENRES).setDefaultValue("0").noIcon());
 		mOptionsBrowser.add(new ListOption(this, getString(R.string.options_app_backlight_screen), PROP_APP_SCREEN_BACKLIGHT).add(mBacklightLevels, mBacklightLevelsTitles).setDefaultValue("-1").noIcon());
 		mOptionsBrowser.add(new LangOption(this).noIcon());
-		mOptionsBrowser.add(new PluginsOption(this, getString(R.string.options_app_plugins)).noIcon());
 		mOptionsBrowser.add(new BoolOption(this, getString(R.string.options_app_fullscreen), PROP_APP_FULLSCREEN).setIconIdByAttr(R.attr.cr3_option_fullscreen_drawable, R.drawable.cr3_option_fullscreen));
 		if ( !DeviceInfo.EINK_SCREEN ) {
 			mOptionsBrowser.add(new NightModeOption(this, getString(R.string.options_inverse_view), PROP_NIGHT_MODE).setIconIdByAttr(R.attr.cr3_option_night_drawable, R.drawable.cr3_option_night));

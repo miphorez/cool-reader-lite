@@ -26,9 +26,6 @@ import android.util.Log;
 
 import org.coolreader.R;
 import org.coolreader.db.CRDBService;
-import org.coolreader.plugins.OnlineStorePluginManager;
-import org.coolreader.plugins.OnlineStoreWrapper;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -532,12 +529,7 @@ public class Scanner extends FileInfoChangeSource {
 			return createBooksByStateToReadRoot();
 		else if (FileInfo.STATE_FINISHED_TAG.equals(path))
 			return createBooksByStateFinishedRoot();
-		else if (path.startsWith(FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX)) {
-			OnlineStoreWrapper w = OnlineStorePluginManager.getPlugin(mActivity, path);
-			if (w != null)
-				return w.createRootDirectory();
-			return null;
-		} else if (path.startsWith(FileInfo.OPDS_DIR_PREFIX))
+		else if (path.startsWith(FileInfo.OPDS_DIR_PREFIX))
 			return createOPDSDir(path);
 		else
 			return new FileInfo(path);
@@ -548,19 +540,6 @@ public class Scanner extends FileInfoChangeSource {
 		dir.isDirectory = true;
 		dir.pathname = FileInfo.OPDS_LIST_TAG;
 		dir.filename = mActivity.getString(R.string.mi_book_opds_root);
-		dir.isListed = true;
-		dir.isScanned = true;
-		return dir;
-	}
-
-	public static FileInfo createOnlineLibraryPluginItem(String packageName, String label) {
-		final FileInfo dir = new FileInfo();
-		dir.isDirectory = true;
-		if (packageName.startsWith(FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX))
-			dir.pathname = packageName;
-		else
-			dir.pathname = FileInfo.ONLINE_CATALOG_PLUGIN_PREFIX + packageName;
-		dir.filename = label;
 		dir.isListed = true;
 		dir.isScanned = true;
 		return dir;

@@ -200,8 +200,6 @@ public interface Settings {
     
     public static final String PROP_APP_STARTUP_ACTION = "app.startup.action";
 
-    public static final String PROP_APP_PLUGIN_ENABLED = "app.plugin.enabled.litres";
-
     /*
       Commented until the appearance of free implementation of the binding to the Google Drive (R)
     String PROP_APP_CLOUDSYNC_GOOGLEDRIVE_ENABLED = "app.cloudsync.googledrive.enabled";

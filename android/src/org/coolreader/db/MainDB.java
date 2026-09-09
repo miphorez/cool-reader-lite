@@ -39,7 +39,6 @@ import org.coolreader.crengine.FileInfo;
 import org.coolreader.crengine.L;
 import org.coolreader.crengine.Logger;
 import org.coolreader.crengine.MountPathCorrector;
-import org.coolreader.crengine.OPDSConst;
 import org.coolreader.crengine.Scanner;
 import org.coolreader.crengine.Services;
 import org.coolreader.crengine.Utils;
@@ -191,9 +190,7 @@ public class MainDB extends BaseDB {
 				execSQLIgnoreErrors("ALTER TABLE bookmark ADD COLUMN time_elapsed INTEGER DEFAULT 0");
 			if (currentVersion < 17)
 				pathCorrectionRequired = true; // chance to correct paths under Android 4.2
-			if (currentVersion < 20)
-				removeOPDSCatalogsFromBlackList(); // BLACK LIST enforcement, by LitRes request
-            if (currentVersion < 21)
+			if (currentVersion < 21)
                 execSQL("CREATE TABLE IF NOT EXISTS favorite_folders (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "path VARCHAR NOT NULL, " +
@@ -458,14 +455,6 @@ public class MainDB extends BaseDB {
 		}
 	}
 
-	public void removeOPDSCatalogsFromBlackList() {
-		if (OPDSConst.BLACK_LIST_MODE != OPDSConst.BLACK_LIST_MODE_FORCE) {
-			removeOPDSCatalogsByURLs("http://flibusta.net/opds/");
-		} else {
-			removeOPDSCatalogsByURLs(OPDSConst.BLACK_LIST);
-		}
-	}
-	
 	public void updateOPDSCatalogLastUsage(String url) {
 		try {
 			Long existingIdByUrl = longQuery("SELECT id FROM opds_catalog WHERE url=" + quoteSqlString(url));

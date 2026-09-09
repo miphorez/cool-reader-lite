@@ -27,8 +27,6 @@ import android.os.Parcelable;
 import android.util.Log;
 
 import org.coolreader.R;
-import org.coolreader.plugins.OnlineStoreBook;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +42,6 @@ public class FileInfo implements Parcelable {
 	public final static String ROOT_DIR_TAG = "@root";
 	public final static String OPDS_LIST_TAG = "@opds";
 	public final static String OPDS_DIR_PREFIX = "@opds:";
-	public final static String ONLINE_CATALOG_PLUGIN_PREFIX = "@plugin:";
 	public final static String GENRES_TAG = "@genresRoot";
 	public final static String GENRES_GROUP_PREFIX = "@genresGroup:";
 	public final static String GENRES_PREFIX = "@genre:";
@@ -450,16 +447,6 @@ public class FileInfo implements Parcelable {
 		return pathname!=null && pathname.startsWith("@");
 	}
 	
-	public boolean isOnlineCatalogPluginDir()
-	{
-		return pathname!=null && pathname.startsWith(ONLINE_CATALOG_PLUGIN_PREFIX);
-	}
-	
-	public boolean isOnlineCatalogPluginBook()
-	{
-		return !isDirectory && pathname != null && pathname.startsWith(ONLINE_CATALOG_PLUGIN_PREFIX) && getOnlineStoreBookInfo() != null;
-	}
-	
 	public boolean isOPDSDir()
 	{
 		return pathname!=null && pathname.startsWith(OPDS_DIR_PREFIX) && (getOPDSEntryInfo() == null || getOPDSEntryInfo().getBestAcquisitionLink() == null);
@@ -473,12 +460,6 @@ public class FileInfo implements Parcelable {
 	private OPDSUtil.EntryInfo getOPDSEntryInfo() {
 		if (tag !=null && tag instanceof OPDSUtil.EntryInfo)
 			return (OPDSUtil.EntryInfo)tag;
-		return null;
-	}
-	
-	public OnlineStoreBook getOnlineStoreBookInfo() {
-		if (tag !=null && tag instanceof OnlineStoreBook)
-			return (OnlineStoreBook)tag;
 		return null;
 	}
 	
@@ -589,42 +570,6 @@ public class FileInfo implements Parcelable {
 		if ( !pathname.startsWith(OPDS_DIR_PREFIX) )
 			return null;
 		return pathname.substring(OPDS_DIR_PREFIX.length());
-	}
-	
-	public String getOnlineCatalogPluginPackage()
-	{
-		if ( !pathname.startsWith(ONLINE_CATALOG_PLUGIN_PREFIX) )
-			return null;
-		String s = pathname.substring(ONLINE_CATALOG_PLUGIN_PREFIX.length());
-		int p = s.indexOf(":");
-		if (p < 0)
-			return s;
-		else
-			return s.substring(0, p);
-	}
-	
-	public String getOnlineCatalogPluginPath()
-	{
-		if ( !pathname.startsWith(ONLINE_CATALOG_PLUGIN_PREFIX) )
-			return null;
-		String s = pathname.substring(ONLINE_CATALOG_PLUGIN_PREFIX.length());
-		int p = s.indexOf(":");
-		if (p < 0)
-			return null;
-		else
-			return s.substring(p + 1);
-	}
-	
-	public String getOnlineCatalogPluginId()
-	{
-		String s = getOnlineCatalogPluginPath();
-		if (s == null)
-			return null;
-		int p = s.indexOf("=");
-		if (p < 0)
-			return null;
-		else
-			return s.substring(p + 1);
 	}
 	
 	/**
