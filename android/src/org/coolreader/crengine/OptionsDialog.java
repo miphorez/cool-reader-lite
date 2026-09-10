@@ -3053,10 +3053,16 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
         
 		setOnCancelListener(dialog -> onPositiveButtonClick());
 
-		ImageButton positiveButton = view.findViewById(R.id.options_btn_back);
-		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
-		Utils.tintPatchedIcon(positiveButton, backIconResId, R.attr.textColorToolBarLabel);
-		positiveButton.setOnClickListener(v -> onPositiveButtonClick());
+		if (mode == Mode.READER) {
+			ScreenTopBar topBar = view.findViewById(R.id.options_top_bar);
+			topBar.setTitle(R.string.win_title_options);
+			topBar.setBackAction(this::onPositiveButtonClick);
+		} else {
+			ImageButton positiveButton = view.findViewById(R.id.options_btn_back);
+			int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
+			Utils.tintPatchedIcon(positiveButton, backIconResId, R.attr.textColorToolBarLabel);
+			positiveButton.setOnClickListener(v -> onPositiveButtonClick());
+		}
 		
 //		ImageButton negativeButton = (ImageButton)mTabs.findViewById(R.id.options_btn_cancel);
 //		negativeButton.setOnClickListener(new View.OnClickListener() {
