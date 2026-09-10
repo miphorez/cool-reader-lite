@@ -706,6 +706,10 @@ public class BaseActivity extends Activity implements Settings {
 	private int systemBarBackgroundColor = 0xFFECE3CB;
 	private boolean lightSystemBarBackground = false;
 
+	public int getSystemBarBackgroundColor() {
+		return systemBarBackgroundColor;
+	}
+
 	public boolean isFullscreen() {
 		return mFullscreen;
 	}
