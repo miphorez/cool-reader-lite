@@ -28,7 +28,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -49,6 +48,7 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 	private LinearLayout mFilesystemScroll;
 	private LinearLayout mLibraryScroll;
 	private LinearLayout mOnlineCatalogsScroll;
+	private ScreenTopBar mTopBar;
 	private CoverpageManager mCoverpageManager;
 	private int coverWidth;
 	private int coverHeight;
@@ -432,6 +432,11 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 		
 		mOnlineCatalogsScroll = mView.findViewById(R.id.scroll_online_catalogs);
 
+		mTopBar = mView.findViewById(R.id.root_top_bar);
+		mTopBar.setTitle(R.string.app_name);
+		mTopBar.setBackAction(null);
+		mTopBar.setReaderActions(getMenuActions(), this::onMenuActionSelected);
+
 		updateCurrentBook(Services.getHistory().getLastBook());
 		
 //		((ImageButton)mView.findViewById(R.id.btn_recent_books)).setOnClickListener(new OnClickListener() {
@@ -454,8 +459,6 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 //				showSettings();
 //			}
 //		});
-
-		((ImageButton)mView.findViewById(R.id.btn_menu)).setOnClickListener(v -> showMenu());
 
 		mView.findViewById(R.id.current_book).setOnClickListener(v -> {
 			if (currentBook != null) {
@@ -567,7 +570,12 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 	}
 
 	public void showMenu() {
-		ReaderAction[] actions = {
+		if (mTopBar != null)
+			mTopBar.showMenu();
+	}
+
+	private ReaderAction[] getMenuActions() {
+		return new ReaderAction[] {
 			ReaderAction.ABOUT,
 			ReaderAction.CURRENT_BOOK,
 			ReaderAction.RECENT_BOOKS,
@@ -576,7 +584,9 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 			ReaderAction.SAVE_LOGCAT,
 			ReaderAction.EXIT,	
 		};
-		mActivity.showActionsPopupMenu(actions, item -> {
+	}
+
+	private boolean onMenuActionSelected(ReaderAction item) {
 			if (item == ReaderAction.EXIT) {
 				mActivity.finish();
 				return true;
@@ -599,6 +609,5 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 				mActivity.createLogcatFile();
 			}
 			return false;
-		});
 	}
 }
