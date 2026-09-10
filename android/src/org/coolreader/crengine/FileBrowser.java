@@ -558,6 +558,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		if ( url!=null ) {
 			try {
 				final URL uri = new URL(url);
+				mActivity.setBrowserProgressStatus(true);
 				DownloadCallback callback = new DownloadCallback() {
 
 					private boolean processNewEntries(DocInfo doc,
@@ -618,12 +619,17 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 					@Override
 					public boolean onFinish(DocInfo doc,
 							Collection<EntryInfo> entries) {
-						return processNewEntries(doc, entries, true);
+						try {
+							return processNewEntries(doc, entries, true);
+						} finally {
+							mActivity.setBrowserProgressStatus(false);
+						}
 					}
 
 					@Override
 					public void onError(String message) {
 						mEngine.hideProgress();
+						mActivity.setBrowserProgressStatus(false);
 						mActivity.showToast(message);
 					}
 
@@ -655,6 +661,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 
 					@Override
 					public void onDownloadEnd(String type, String url, File file) {
+						mActivity.setBrowserProgressStatus(false);
                         if (DeviceInfo.EINK_SONY) {
                             SonyBookSelector selector = new SonyBookSelector(mActivity);
                             selector.notifyScanner(file.getAbsolutePath());
@@ -688,6 +695,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						myCurrDirectory.getOPDSUrl(), callback, fileOrDir.username, fileOrDir.password);
 				downloadTask.run();
 			} catch (MalformedURLException e) {
+				mActivity.setBrowserProgressStatus(false);
 				log.e("MalformedURLException: " + url);
 				mActivity.showToast("Wrong URI: " + url);
 			}
