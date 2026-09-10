@@ -308,11 +308,12 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
             ImageView icon = view.findViewById(R.id.item_icon);
             TextView label = view.findViewById(R.id.item_name);
             if (item.getType() == FileInfo.TYPE_DOWNLOAD_DIR)
-                icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_bookmark_drawable, R.drawable.folder_bookmark));
+				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_bookmark_drawable, R.drawable.folder_bookmark));
             else if (item.getType() == FileInfo.TYPE_FS_ROOT)
-                icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.media_flash_microsd_drawable, R.drawable.media_flash_sd_mmc));
+				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.media_flash_microsd_drawable, R.drawable.media_flash_sd_mmc));
             else
-                icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_drawable, R.drawable.folder_blue));
+				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_drawable, R.drawable.folder_blue));
+			icon.setRotation(item.getType() == FileInfo.TYPE_FS_ROOT ? 90.0f : 0.0f);
             if (item.title != null)
             	label.setText(item.title); //  filename
             else if (item.getType() == FileInfo.TYPE_FS_ROOT || item.getType() == FileInfo.TYPE_DOWNLOAD_DIR)
