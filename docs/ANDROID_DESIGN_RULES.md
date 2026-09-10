@@ -33,3 +33,4 @@ These rules define the shared visual direction for Cool Reader Lite Android UI.
 ## Book covers
 
 - Render cover thumbnails as flat images without decorative drop shadows or depth effects.
+- Give cover thumbnails 8dp of vertical spacing above and below in lists and on the home screen.

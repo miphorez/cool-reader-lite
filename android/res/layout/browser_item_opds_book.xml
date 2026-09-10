@@ -71,6 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
+			android:layout_marginTop="@dimen/cover_thumbnail_vertical_spacing"
+			android:layout_marginBottom="@dimen/cover_thumbnail_vertical_spacing"
             android:layout_marginRight="2dip"
             android:layout_marginLeft="1dip"
             android:layout_weight="1"

@@ -48,6 +48,8 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_gravity="center_vertical|center_horizontal"
+			 android:layout_marginTop="@dimen/cover_thumbnail_vertical_spacing"
+			 android:layout_marginBottom="@dimen/cover_thumbnail_vertical_spacing"
              android:scaleType="center"
              android:gravity="center_vertical|left"
              android:minHeight="120dip"
