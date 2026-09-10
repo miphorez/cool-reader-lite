@@ -544,11 +544,6 @@ public class CoverpageManager {
 		
 		Paint defPaint;
 		final CRDBService.LocalBinder db;
-		final static int alphaLevels = 16;
-		final static int shadowSizePercent = 6;
-		final static int minAlpha = 40;
-		final static int maxAlpha = 180;
-		final Paint[] shadowPaints = new Paint[alphaLevels + 1];
 		
 		public CoverImage(final CRDBService.LocalBinder db, ImageItem book) {
 			super(book);
@@ -556,60 +551,6 @@ public class CoverpageManager {
 			defPaint = new Paint();
 			defPaint.setColor(0xFF000000);
 			defPaint.setFilterBitmap(true);
-			for (int i=0; i <= alphaLevels; i++) {
-				int alpha = (maxAlpha - minAlpha) * i / alphaLevels + minAlpha;
-				shadowPaints[i] = new Paint();
-				shadowPaints[i].setColor((alpha << 24) | 0x101010);
-			}
-		}
-
-		public void drawShadow(Canvas canvas, Rect bookRect, Rect shadowRect) {
-			int d = shadowRect.bottom - bookRect.bottom;
-			if (d <= 0)
-				return;
-			Rect l = new Rect(shadowRect);
-			Rect r = new Rect(shadowRect);
-			Rect t = new Rect(shadowRect);
-			Rect b = new Rect(shadowRect);
-			for (int i = 0; i < d; i++) {
-				shadowRect.left++;
-				shadowRect.right--;
-				shadowRect.top++;
-				shadowRect.bottom--;
-				if (shadowRect.bottom < bookRect.bottom || shadowRect.right < bookRect.right)
-					break;
-				l.set(shadowRect);
-				l.top = bookRect.bottom;
-				l.right = l.left + 1;
-				t.set(shadowRect);
-				t.left = bookRect.right;
-				t.right--;
-				t.bottom = t.top + 1;
-				r.set(shadowRect);
-				r.left = r.right - 1;
-				b.set(shadowRect);
-				b.top = b.bottom - 1;
-				b.left++;
-				b.right--;
-				int index = i * alphaLevels / d;
-				Paint paint = shadowPaints[index];
-				if (!l.isEmpty())
-					canvas.drawRect(l, paint);
-				if (!r.isEmpty())
-					canvas.drawRect(r, paint);
-				if (!t.isEmpty())
-					canvas.drawRect(t, paint);
-				if (!b.isEmpty())
-					canvas.drawRect(b, paint);
-			}
-		}
-		boolean checkShadowSize(int bookSize, int shadowSize) {
-			if (bookSize < 10)
-				return false;
-			int p = 100 * shadowSize / bookSize;
-			if (p >= 0 && p >= shadowSizePercent - 2 && p <= shadowSizePercent + 2)
-				return true;
-			return false;
 		}
 		@Override
 		public void draw(Canvas canvas) {
@@ -617,17 +558,7 @@ public class CoverpageManager {
 				Rect fullrc = getBounds();
 				if (fullrc.width() < 5 || fullrc.height() < 5)
 					return;
-				int w = book.maxWidth;
-				int h = book.maxHeight;
-				int shadowW = fullrc.width() - w;
-				int shadowH = fullrc.height() - h;
-				if (!checkShadowSize(w, shadowW) || !checkShadowSize(h, shadowH)) {
-					w = fullrc.width() * 100 / (100 + shadowSizePercent);
-					h = fullrc.height() * 100 / (100 + shadowSizePercent);
-					shadowW = fullrc.width() - w;
-					shadowH = fullrc.height() - h;
-				}
-				Rect rc = new Rect(fullrc.left, fullrc.top, fullrc.right - shadowW, fullrc.bottom - shadowH);
+				Rect rc = new Rect(fullrc);
 				synchronized (mCache) {
 					Bitmap bitmap = mCache.getBitmap(book);
 					if (bitmap != null) {
@@ -639,10 +570,6 @@ public class CoverpageManager {
 							log.e("Exception thrown while drawing coverpage");
 							// Remove broken bitmap from cache
 							mCache.remove(book);
-						}
-						if (shadowSizePercent > 0) {
-							Rect shadowRect = new Rect(rc.left + shadowW, rc.top + shadowH, rc.right + shadowW, rc.bottom + shadowW);
-							drawShadow(canvas, rc, shadowRect);
 						}
 						return;
 					}
@@ -658,12 +585,12 @@ public class CoverpageManager {
 		
 		@Override
 		public int getIntrinsicHeight() {
-			return book.maxHeight * (100 + shadowSizePercent) / 100;
+			return book.maxHeight;
 		}
 
 		@Override
 		public int getIntrinsicWidth() {
-			return book.maxWidth * (100 + shadowSizePercent) / 100;
+			return book.maxWidth;
 		}
 
 		@Override
