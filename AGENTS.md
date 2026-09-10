@@ -9,6 +9,9 @@
   data, or temporary release files.
 - Use `master` as the protected default branch. Repository changes must reach it
   through a pull request.
+- Follow `docs/ANDROID_DESIGN_RULES.md` for Android UI changes. New or updated
+  screens must use the shared flat visual language, theme-derived colors,
+  disabled transient touch highlights, and the 16dp horizontal content gutter.
 
 ## Build authorization
 
