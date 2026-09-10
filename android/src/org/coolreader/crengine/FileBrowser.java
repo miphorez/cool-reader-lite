@@ -1237,12 +1237,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			throw new IllegalStateException("showDirectoryInternal should be called from GUI thread!");
 		int index = dir!=null ? dir.getItemIndex(file) : -1;
 
-		String title = "";
-		if (dir != null) {
-			title = dir.filename;
-			if (!dir.isSpecialDir())
-				title = dir.getPathName();
-		}
+		String title = getDirectoryTitle(dir);
 		
 		mActivity.setBrowserTitle(title);
 		if (mListView.getAdapter() != currentListAdapter)
@@ -1251,6 +1246,34 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		mListView.setSelection(index);
 		mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		mListView.invalidate();
+	}
+
+	private String getDirectoryTitle(FileInfo dir) {
+		if (dir == null)
+			return "";
+		if (dir.isRecentDir())
+			return mActivity.getString(R.string.dir_recent_books);
+		if (dir.isSearchDir())
+			return mActivity.getString(R.string.dir_search_results);
+		if (dir.isOPDSRoot())
+			return mActivity.getString(R.string.mi_book_opds_root);
+		if (dir.isBooksByGenreRoot())
+			return mActivity.getString(R.string.folder_name_books_by_genre);
+		if (dir.isBooksByAuthorRoot())
+			return mActivity.getString(R.string.folder_name_books_by_author);
+		if (dir.isBooksBySeriesRoot())
+			return mActivity.getString(R.string.folder_name_books_by_series);
+		if (dir.isBooksByTitleRoot())
+			return mActivity.getString(R.string.folder_name_books_by_title);
+		if (dir.isBooksByRatingRoot())
+			return mActivity.getString(R.string.folder_name_books_by_rating);
+		if (dir.isBooksByStateToReadRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_to_read);
+		if (dir.isBooksByStateReadingRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_reading);
+		if (dir.isBooksByStateFinishedRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_finished);
+		return dir.isSpecialDir() ? dir.filename : dir.getPathName();
 	}
 
 	private class MyGestureListener extends SimpleOnGestureListener {
