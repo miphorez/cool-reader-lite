@@ -277,11 +277,13 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 			final View view = inflater.inflate(R.layout.root_item_online_catalog, null);
 			ImageView icon = view.findViewById(R.id.item_icon);
 			TextView label = view.findViewById(R.id.item_name);
+			int iconResId;
 			if (item.isOPDSRoot()) {
-				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_add_drawable, R.drawable.cr3_browser_folder_opds_add));
+				iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_add_drawable, R.drawable.cr3_browser_folder_opds_add);
 				label.setText("Add");
 				view.setOnClickListener(v -> mActivity.editOPDSCatalog(null));
 			} else {
+				iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_browser_folder_opds_drawable, R.drawable.cr3_browser_folder_opds);
 				if (label != null) {
 					label.setText(item.getFileNameToDisplay());
 					label.setMaxWidth(coverWidth * 3 / 2);
@@ -292,6 +294,7 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 					return true;
 				});
 			}
+			Utils.setTintedIcon(icon, iconResId, R.attr.textColorOptionLabel);
 			mOnlineCatalogsScroll.addView(view);
 		}
 		mOnlineCatalogsScroll.invalidate();
@@ -307,12 +310,14 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
             final View view = inflater.inflate(R.layout.root_item_dir, null);
             ImageView icon = view.findViewById(R.id.item_icon);
             TextView label = view.findViewById(R.id.item_name);
+			int iconResId;
             if (item.getType() == FileInfo.TYPE_DOWNLOAD_DIR)
-				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_bookmark_drawable, R.drawable.folder_bookmark));
+				iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_bookmark_drawable, R.drawable.folder_bookmark);
             else if (item.getType() == FileInfo.TYPE_FS_ROOT)
-				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.media_flash_microsd_drawable, R.drawable.media_flash_sd_mmc));
+				iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.media_flash_microsd_drawable, R.drawable.media_flash_sd_mmc);
             else
-				icon.setImageResource(Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_drawable, R.drawable.folder_blue));
+				iconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.folder_big_drawable, R.drawable.folder_blue);
+			Utils.setTintedIcon(icon, iconResId, R.attr.textColorOptionLabel);
 			icon.setRotation(item.getType() == FileInfo.TYPE_FS_ROOT ? 90.0f : 0.0f);
             if (item.title != null)
             	label.setText(item.title); //  filename
