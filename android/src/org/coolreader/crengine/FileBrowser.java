@@ -985,7 +985,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			TextView field1;
 			TextView field2;
 			//TextView field3;
-			ImageView infoButton;
 			void setText( TextView view, String text )
 			{
 				if ( view==null )
@@ -1135,8 +1134,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						if (field2 != null)
 							field2.setText(Utils.formatLastPosition(mActivity, mHistory.getLastPos(item)));
 						//field3.setText(pos!=null ? formatPercent(pos.getPercent()) : null);
-						if (infoButton != null)
-							infoButton.setOnClickListener(v -> mActivity.editBookInfo(Services.getScanner().createRecentRoot(), item));
 					} 
 					
 				}
@@ -1173,7 +1170,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 				holder.field1 = view.findViewById(R.id.browser_item_field1);
 				holder.field2 = view.findViewById(R.id.browser_item_field2);
 				//holder.field3 = (TextView)view.findViewById(R.id.browser_item_field3);
-				holder.infoButton = view.findViewById(R.id.browser_item_button_info);
 				view.setTag(holder);
 			} else {
 				view = convertView;
