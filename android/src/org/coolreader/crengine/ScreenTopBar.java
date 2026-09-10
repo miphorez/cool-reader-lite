@@ -13,6 +13,7 @@ package org.coolreader.crengine;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
@@ -38,6 +39,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class ScreenTopBar extends LinearLayout {
+	private static final int EDGE_SLOT_WIDTH_DP = 48;
+	private static final int TOUCH_TARGET_SIZE_DP = 44;
+	private static final int ICON_PADDING_DP = 10;
+	private static final float TONAL_FOREGROUND_RATIO = 0.06f;
+
 	public static class MenuItem {
 		final CharSequence title;
 		final int iconResId;
@@ -51,6 +57,7 @@ public class ScreenTopBar extends LinearLayout {
 	}
 
 	private final BaseActivity activity;
+	private final FrameLayout startSlot;
 	private final ImageButton backButton;
 	private final TextView titleView;
 	private final FrameLayout endSlot;
@@ -76,9 +83,14 @@ public class ScreenTopBar extends LinearLayout {
 		setOrientation(HORIZONTAL);
 		setGravity(Gravity.CENTER_VERTICAL);
 
-		int slotSize = activity.getPreferredItemHeight();
+		int edgeSlotWidth = dp(EDGE_SLOT_WIDTH_DP);
+		int touchSize = dp(TOUCH_TARGET_SIZE_DP);
+		int iconPadding = dp(ICON_PADDING_DP);
+		startSlot = new FrameLayout(context);
 		backButton = createButton(R.string.dlg_button_back);
-		addView(backButton, new LayoutParams(slotSize, slotSize));
+		backButton.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
+		startSlot.addView(backButton, new FrameLayout.LayoutParams(touchSize, touchSize, Gravity.CENTER));
+		addView(startSlot, new LayoutParams(edgeSlotWidth, LayoutParams.MATCH_PARENT));
 
 		titleView = new TextView(context);
 		titleView.setSingleLine(true);
@@ -91,18 +103,17 @@ public class ScreenTopBar extends LinearLayout {
 
 		endSlot = new FrameLayout(context);
 		moreButton = createButton(R.string.btn_toolbar_more);
-		int moreIconResId = Utils.resolveResourceIdByAttr(activity,
-				R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
-		Utils.setTintedIcon(moreButton, moreIconResId, R.attr.textColorToolBarLabel);
+		moreButton.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
+		Utils.setTintedIcon(moreButton, R.drawable.cr3_screen_topbar_more, R.attr.textColorToolBarLabel);
 		moreButton.setOnClickListener(v -> showMenu());
-		endSlot.addView(moreButton, new FrameLayout.LayoutParams(slotSize, slotSize, Gravity.CENTER));
+		endSlot.addView(moreButton, new FrameLayout.LayoutParams(touchSize, touchSize, Gravity.CENTER));
 
 		progressBar = new ProgressBar(context, null, android.R.attr.progressBarStyleSmall);
 		progressBar.setIndeterminate(true);
 		progressBar.setVisibility(GONE);
 		int progressSize = dp(24);
 		endSlot.addView(progressBar, new FrameLayout.LayoutParams(progressSize, progressSize, Gravity.CENTER));
-		addView(endSlot, new LayoutParams(slotSize, slotSize));
+		addView(endSlot, new LayoutParams(edgeSlotWidth, LayoutParams.MATCH_PARENT));
 
 		setBackAction(null);
 		setMenuItems(Collections.emptyList());
@@ -123,13 +134,14 @@ public class ScreenTopBar extends LinearLayout {
 
 	public void refreshStyle() {
 		activity.applyTopBarStyle(this);
-		int backIconResId = Utils.resolveResourceIdByAttr(activity,
-				R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
-		Utils.setTintedIcon(backButton, backIconResId, R.attr.textColorToolBarLabel);
-		int moreIconResId = Utils.resolveResourceIdByAttr(activity,
-				R.attr.cr3_button_more_drawable, R.drawable.cr3_button_more);
-		Utils.setTintedIcon(moreButton, moreIconResId, R.attr.textColorToolBarLabel);
-		titleView.setTextColor(resolveColor(R.attr.textColorToolBarLabel));
+		int foregroundColor = resolveColor(R.attr.textColorToolBarLabel);
+		int baseColor = activity.getCurrentTheme() != null
+				? activity.getCurrentTheme().getPopupToolbarBackgroundColor()
+				: activity.getSystemBarBackgroundColor();
+		setBackgroundColor(blendColors(baseColor, foregroundColor, TONAL_FOREGROUND_RATIO));
+		Utils.setTintedIcon(backButton, R.drawable.cr3_button_prev, R.attr.textColorToolBarLabel);
+		Utils.setTintedIcon(moreButton, R.drawable.cr3_screen_topbar_more, R.attr.textColorToolBarLabel);
+		titleView.setTextColor(foregroundColor);
 	}
 
 	public void setTitle(int titleResId) {
@@ -142,7 +154,7 @@ public class ScreenTopBar extends LinearLayout {
 	}
 
 	public void setBackAction(Runnable action) {
-		backButton.setVisibility(action != null ? VISIBLE : GONE);
+		startSlot.setVisibility(action != null ? VISIBLE : GONE);
 		backButton.setOnClickListener(action != null ? v -> action.run() : null);
 	}
 
@@ -306,6 +318,14 @@ public class ScreenTopBar extends LinearLayout {
 		int color = values.getColor(0, 0xFF303030);
 		values.recycle();
 		return color;
+	}
+
+	private int blendColors(int baseColor, int foregroundColor, float foregroundRatio) {
+		float baseRatio = 1.0f - foregroundRatio;
+		return Color.rgb(
+				Math.round(Color.red(baseColor) * baseRatio + Color.red(foregroundColor) * foregroundRatio),
+				Math.round(Color.green(baseColor) * baseRatio + Color.green(foregroundColor) * foregroundRatio),
+				Math.round(Color.blue(baseColor) * baseRatio + Color.blue(foregroundColor) * foregroundRatio));
 	}
 
 	private int dp(int value) {
