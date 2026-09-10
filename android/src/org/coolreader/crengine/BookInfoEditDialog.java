@@ -40,7 +40,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -60,6 +59,8 @@ public class BookInfoEditDialog extends BaseDialog {
 	private LayoutInflater mInflater;
 	private int mWindowSize;
 	private boolean mIsRecentBooksItem;
+	private ScreenTopBar mTopBar;
+	private long menuDownTs;
 	public BookInfoEditDialog(CoolReader activity, FileInfo baseDir, BookInfo book, boolean isRecentBooksItem)
 	{
 		super(activity, null, false, false);
@@ -267,20 +268,33 @@ public class BookInfoEditDialog extends BaseDialog {
         FileInfo file = mBookInfo.getFileInfo();
         mainView = (LinearLayout) mInflater.inflate(R.layout.book_info_edit_dialog, null);
 
-        ImageButton btnBack = mainView.findViewById(R.id.base_dlg_btn_back);
-		int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
-		Utils.tintPatchedIcon(btnBack, backIconResId, R.attr.textColorToolBarLabel);
-        btnBack.setOnClickListener(v -> onNegativeButtonClick());
-        ImageButton btnOpenBook = mainView.findViewById(R.id.btn_open_book);
+		mTopBar = mainView.findViewById(R.id.book_info_top_bar);
+		mTopBar.setTitle(R.string.dlg_book_info);
+		mTopBar.setBackAction(this::onNegativeButtonClick);
+		ArrayList<ScreenTopBar.MenuItem> menuItems = new ArrayList<>();
 		int openBookIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_book_open_drawable, R.drawable.cr3_button_book_open);
-		Utils.tintPatchedIcon(btnOpenBook, openBookIconResId, R.attr.textColorToolBarLabel);
-        btnOpenBook.setOnClickListener(v -> onPositiveButtonClick());
-        ImageButton btnDeleteBook = mainView.findViewById(R.id.book_delete);
-		Utils.tintPatchedIcon(btnDeleteBook, R.drawable.cr3_button_book_delete, R.attr.textColorToolBarLabel);
-        btnDeleteBook.setOnClickListener(v -> {
+		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_open_book),
+				openBookIconResId, this::onPositiveButtonClick));
+		if (mIsRecentBooksItem) {
+			int openFolderIconResId = Utils.resolveResourceIdByAttr(mActivity,
+					R.attr.cr3_button_folder_go_drawable, R.drawable.cr3_button_folder_go);
+			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_open_folder),
+					openFolderIconResId, () -> {
+				mActivity.showDirectory(mBookInfo.getFileInfo());
+				dismiss();
+			}));
+			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_recent_delete),
+					R.drawable.cr3_button_recent_book_delete, () -> {
+				mActivity.askDeleteRecent(mBookInfo.getFileInfo());
+				dismiss();
+			}));
+		}
+		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_book_delete),
+				R.drawable.cr3_button_book_delete, () -> {
 			mActivity.askDeleteBook(mBookInfo.getFileInfo());
 			dismiss();
-		});
+		}));
+		mTopBar.setMenuItems(menuItems);
 
         scrollView = mainView.findViewById(R.id.book_scrollview);
         edTitle = mainView.findViewById(R.id.book_title);
@@ -366,26 +380,6 @@ public class BookInfoEditDialog extends BaseDialog {
         authors = new AuthorList(llBookAuthorsList, file.authors);
         rbBookRating.setRating(file.getRate());
 
-    	ImageButton btnRemoveRecent = mainView.findViewById(R.id.book_recent_delete);
-    	ImageButton btnOpenFolder = mainView.findViewById(R.id.book_folder_open);
-		Utils.tintPatchedIcon(btnRemoveRecent, R.drawable.cr3_button_recent_book_delete, R.attr.textColorToolBarLabel);
-		int openFolderIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_folder_go_drawable, R.drawable.cr3_button_folder_go);
-		Utils.tintPatchedIcon(btnOpenFolder, openFolderIconResId, R.attr.textColorToolBarLabel);
-        if (mIsRecentBooksItem) {
-        	btnRemoveRecent.setOnClickListener(v -> {
-				mActivity.askDeleteRecent(mBookInfo.getFileInfo());
-				dismiss();
-			});
-        	btnOpenFolder.setOnClickListener(v -> {
-				mActivity.showDirectory(mBookInfo.getFileInfo());
-				dismiss();
-			});
-        } else {
-        	ViewGroup parent = ((ViewGroup)btnRemoveRecent.getParent());
-        	parent.removeView(btnRemoveRecent);
-        	parent.removeView(btnOpenFolder);
-        }
-
         setView(mainView);
 	}
 
@@ -450,7 +444,11 @@ public class BookInfoEditDialog extends BaseDialog {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (KeyEvent.KEYCODE_PAGE_DOWN == keyCode) {
+		if (KeyEvent.KEYCODE_MENU == keyCode) {
+			if (event.getRepeatCount() == 0)
+				menuDownTs = Utils.timeStamp();
+			return true;
+		} else if (KeyEvent.KEYCODE_PAGE_DOWN == keyCode) {
 			scrollView.pageScroll(View.FOCUS_DOWN);
 			return true;
 		} else if (KeyEvent.KEYCODE_PAGE_UP == keyCode) {
@@ -464,7 +462,12 @@ public class BookInfoEditDialog extends BaseDialog {
 
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		if (KeyEvent.KEYCODE_BACK == keyCode) {
+		if (KeyEvent.KEYCODE_MENU == keyCode) {
+			long duration = Utils.timeInterval(menuDownTs);
+			if (duration <= 700 && mTopBar != null)
+				mTopBar.showMenu();
+			return true;
+		} else if (KeyEvent.KEYCODE_BACK == keyCode) {
 			dismiss();
 			return true;
 		}
