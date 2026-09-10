@@ -571,7 +571,9 @@ public class BaseActivity extends Activity implements Settings {
 		log.i("setCurrentTheme(" + theme + ")");
 		currentTheme = theme;
 		getApplication().setTheme(theme.getThemeId());
+		getApplication().getTheme().applyStyle(R.style.Theme_CoolReaderLite_NoTouchFeedback, true);
 		setTheme(theme.getThemeId());
+		getTheme().applyStyle(R.style.Theme_CoolReaderLite_NoTouchFeedback, true);
 		updateBackground();
 		updateActionsIcons();
 	}

@@ -10,9 +10,18 @@
         <item name="android:windowLightStatusBar">@bool/crl_light_system_bars</item>
         <item name="android:windowLightNavigationBar">@bool/crl_light_system_bars</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name="android:colorControlHighlight">@android:color/transparent</item>
+		<item name="android:selectableItemBackground">@android:color/transparent</item>
+		<item name="android:selectableItemBackgroundBorderless">@android:color/transparent</item>
     </style>
 
     <style name="Theme.CoolReaderLite.Launch" parent="@style/Theme.CoolReaderLite" />
+
+	<style name="Theme.CoolReaderLite.NoTouchFeedback">
+		<item name="android:colorControlHighlight">@android:color/transparent</item>
+		<item name="android:selectableItemBackground">@android:color/transparent</item>
+		<item name="android:selectableItemBackgroundBorderless">@android:color/transparent</item>
+	</style>
 
     <style name="TabWidget" parent="@android:style/Widget.TabWidget">
         <!-- item name="android:textAppearance">@style/TextAppearance.Small</item>
