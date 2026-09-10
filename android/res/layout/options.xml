@@ -35,6 +35,9 @@
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:padding="1dp" />
+            android:paddingStart="@dimen/screen_horizontal_padding"
+            android:paddingTop="1dp"
+            android:paddingEnd="@dimen/screen_horizontal_padding"
+            android:paddingBottom="1dp" />
     </LinearLayout>
 </TabHost>

@@ -258,6 +258,8 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		if (progress != null)
 			progress.hide();
 		mListView = new FileBrowserListView(mActivity);
+		int horizontalPadding = getResources().getDimensionPixelSize(R.dimen.screen_horizontal_padding);
+		mListView.setPadding(horizontalPadding, 0, horizontalPadding, 0);
 		final GestureDetector detector = new GestureDetector(new MyGestureListener());
 		mListView.setOnTouchListener((v, event) -> {
 			try {

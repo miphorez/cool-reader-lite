@@ -156,6 +156,8 @@ public class ScreenTopBar extends LinearLayout {
 	public void setBackAction(Runnable action) {
 		startSlot.setVisibility(action != null ? VISIBLE : GONE);
 		backButton.setOnClickListener(action != null ? v -> action.run() : null);
+		int horizontalPadding = dp(action == null ? 16 : 8);
+		titleView.setPadding(horizontalPadding, 0, horizontalPadding, 0);
 	}
 
 	public void setMenuItems(MenuItem... items) {

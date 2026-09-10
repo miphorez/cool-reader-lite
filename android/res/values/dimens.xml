@@ -2,5 +2,6 @@
 
     <dimen name="activity_horizontal_margin">8dp</dimen>
     <dimen name="activity_vertical_margin">8dp</dimen>
+	<dimen name="screen_horizontal_padding">16dp</dimen>
 
 </resources>
