@@ -2788,6 +2788,7 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 	{
         mInflater = LayoutInflater.from(getContext());
         mTabs = (TabHost)mInflater.inflate(R.layout.options, null);
+		mTabs.findViewById(R.id.option_item_body).setBackgroundColor(mActivity.getSystemBarBackgroundColor());
 		// setup tabs
 		//setView(R.layout.options);
 		//setContentView(R.layout.options);
