@@ -6605,6 +6605,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 	public ReaderView(CoolReader activity, Engine engine, Properties props) {
 		//super(activity);
 		log.i("Creating normal SurfaceView");
+		currentBackgroundColor = props.getColor(PROP_BACKGROUND_COLOR, 0xFFFFFF);
 		surface = new ReaderSurface(activity);
 
 		bookView = (BookView) surface;
