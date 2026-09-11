@@ -426,7 +426,6 @@
     <string name="options_app_locale_uk">Українська</string>
     <string name="options_app_locale_pl">Polski</string>
     <string name="options_app_locale_zh_cn">中文</string>
-    <string name="mi_goto_manual">マニュアルを表示</string>
     <string name="options_view_bookmarks_highlight_underline">下線</string>
     <string name="options_view_color_selection">選択の色</string>
     <string name="options_view_color_bookmark_comment">コメントの色</string>

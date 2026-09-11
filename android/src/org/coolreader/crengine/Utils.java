@@ -64,7 +64,8 @@ public class Utils {
 	private static final int DEFAULT_ICON_TINT = 0xFF323232;
 
 	public static boolean isPatchedIconResource(int resId) {
-		return resId == R.drawable.cr3_browser_back
+		return resId == R.drawable.cr3_about
+				|| resId == R.drawable.cr3_browser_back
 				|| resId == R.drawable.cr3_browser_back_hc
 				|| resId == R.drawable.cr3_browser_book
 				|| resId == R.drawable.cr3_browser_book_hc

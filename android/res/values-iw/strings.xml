@@ -345,7 +345,6 @@
   <string name="folder_name_books_by_title">כותרות</string>
   <string name="options_app_locale_system">מערכת</string>
   <string name="options_app_locale">שפת ממשק</string>
-  <string name="mi_goto_manual">הצג ידנית</string>
   <string name="options_view_bookmarks_highlight_underline">קו תחתון</string>
   <string name="options_view_color_selection">צבע הבחירה</string>
   <string name="options_view_color_bookmark_comment">צבע ההערה</string>

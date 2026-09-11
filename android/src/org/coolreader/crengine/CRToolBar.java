@@ -55,7 +55,6 @@ public class CRToolBar extends ViewGroup {
 	private static final float POPUP_ICON_SCALE_BOOKMARKS = 0.84f;
 	private static final float POPUP_ICON_SCALE_EXIT = 0.92f;
 	private static final float POPUP_ICON_SCALE_RECENT_BOOKS = 0.87f;
-	private static final float POPUP_ICON_SCALE_ABOUT = 1.15f;
 	private static final float POPUP_ICON_ALPHA_SCALE_EXIT = 1.35f;
 	private static final int FULL_POPUP_TOP_SPACING_DP = 10;
 	
@@ -177,8 +176,6 @@ public class CRToolBar extends ViewGroup {
 			return POPUP_ICON_SCALE_EXIT;
 		if (action == ReaderAction.RECENT_BOOKS)
 			return POPUP_ICON_SCALE_RECENT_BOOKS;
-		if (action == ReaderAction.ABOUT)
-			return POPUP_ICON_SCALE_ABOUT;
 		return 1.0f;
 	}
 	

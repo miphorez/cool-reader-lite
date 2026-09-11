@@ -393,7 +393,6 @@
     <string name="options_font_embedded_document_font_enabled">Шрифтове вградени в документа</string>
     <string name="options_app_locale_system">Системен</string>
     <string name="options_app_locale">Език на интерфейса</string>
-    <string name="mi_goto_manual">Покажи ръководството</string>
     <string name="options_view_bookmarks_highlight_underline">Подчертаване</string>
     <string name="options_view_color_selection">Цвят на маркирането</string>
     <string name="options_view_color_bookmark_comment">Цвят на коментарите</string>

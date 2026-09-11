@@ -21,37 +21,24 @@
 package org.coolreader.crengine;
 
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import org.coolreader.R;
 
 public class BrowserViewLayout extends ViewGroup {
 	private BaseActivity activity;
 	private FileBrowser contentView;
-	private View titleView;
-	private CRToolBar toolbarView;
-	public BrowserViewLayout(BaseActivity context, FileBrowser contentView, CRToolBar toolbar, View titleView) {
+	private ScreenTopBar topBar;
+	public BrowserViewLayout(BaseActivity context, FileBrowser contentView, ScreenTopBar topBar) {
 		super(context);
 		this.activity = context;
 		this.contentView = contentView;
-		
-		
-		this.titleView = titleView;
-		this.titleView.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-		this.toolbarView = toolbar;
+		this.topBar = topBar;
+		this.topBar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		this.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
-		this.addView(titleView);
-		this.addView(toolbarView);
+		this.addView(topBar);
 		this.addView(contentView);
 		this.onThemeChanged(context.getCurrentTheme());
-		titleView.setFocusable(false);
-		titleView.setFocusableInTouchMode(false);
-		toolbarView.setFocusable(false);
-		toolbarView.setFocusableInTouchMode(false);
+		topBar.setFocusable(false);
+		topBar.setFocusableInTouchMode(false);
 		contentView.setFocusable(false);
 		contentView.setFocusableInTouchMode(false);
 		setFocusable(true);
@@ -61,27 +48,19 @@ public class BrowserViewLayout extends ViewGroup {
 	private String browserTitle = "";
 	public void setBrowserTitle(String title) {
 		this.browserTitle = title;
-		((TextView)titleView.findViewById(R.id.title)).setText(title);
+		topBar.setTitle(title);
 	}
 
 	private boolean progressStatusEnabled = false;
 	public void setBrowserProgressStatus(boolean enable) {
 		progressStatusEnabled = enable;
-		ProgressBar progressBar = titleView.findViewById(R.id.progress);
-		progressBar.setVisibility(enable ? View.VISIBLE : View.GONE);
+		topBar.setLoading(enable);
 	}
 
 	public void onThemeChanged(InterfaceTheme theme) {
-		//titleView.setBackgroundResource(theme.getBrowserStatusBackground());
-		//toolbarView.setButtonAlpha(theme.getToolbarButtonAlpha());
-		LayoutInflater inflater = LayoutInflater.from(activity);// activity.getLayoutInflater();
-		removeView(titleView);
-		titleView = inflater.inflate(R.layout.browser_status_bar, null);
-		addView(titleView);
+		topBar.refreshStyle();
 		setBrowserTitle(browserTitle);
 		setBrowserProgressStatus(progressStatusEnabled);
-		toolbarView.setBackgroundResource(theme.getBrowserToolbarBackground(toolbarView.isVertical()));
-		toolbarView.onThemeChanged(theme);
 		requestLayout();
 	}
 	
@@ -91,20 +70,9 @@ public class BrowserViewLayout extends ViewGroup {
 		b -= t;
 		t = 0;
 		l = 0;
-		int titleHeight = titleView.getMeasuredHeight();
-		if (toolbarView.isVertical()) {
-			int tbWidth = toolbarView.getMeasuredWidth();
-			titleView.layout(l + tbWidth, t, r, t + titleHeight);
-			toolbarView.layout(l, t, l + tbWidth, b);
-			contentView.layout(l + tbWidth, t + titleHeight, r, b);
-			toolbarView.setBackgroundResource(activity.getCurrentTheme().getBrowserToolbarBackground(true));
-		} else {
-			int tbHeight = toolbarView.getMeasuredHeight();
-			toolbarView.layout(l, t, r, t + tbHeight);
-			titleView.layout(l, t + tbHeight, r, t + titleHeight + tbHeight);
-			contentView.layout(l, t + titleHeight + tbHeight, r, b);
-			toolbarView.setBackgroundResource(activity.getCurrentTheme().getBrowserToolbarBackground(false));
-		}
+		int topBarHeight = topBar.getMeasuredHeight();
+		topBar.layout(l, t, r, t + topBarHeight);
+		contentView.layout(l, t + topBarHeight, r, b);
 	}
 	
 	@Override
@@ -112,31 +80,11 @@ public class BrowserViewLayout extends ViewGroup {
 		int w = MeasureSpec.getSize(widthMeasureSpec);
 		int h = MeasureSpec.getSize(heightMeasureSpec);
 
-		
-		toolbarView.setVertical(w > h);
-		if (w > h) {
-			// landscape
-			toolbarView.setVertical(true);
-			toolbarView.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.AT_MOST),
-					MeasureSpec.makeMeasureSpec(h, MeasureSpec.AT_MOST));
-			int tbWidth = toolbarView.getMeasuredWidth();
-			titleView.measure(MeasureSpec.makeMeasureSpec(w - tbWidth, MeasureSpec.AT_MOST),
-					MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-			int titleHeight = titleView.getMeasuredHeight();
-			contentView.measure(MeasureSpec.makeMeasureSpec(w - tbWidth, MeasureSpec.AT_MOST),
-					MeasureSpec.makeMeasureSpec(h - titleHeight, MeasureSpec.AT_MOST));
-		} else {
-			// portrait
-			toolbarView.setVertical(false);
-			toolbarView.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.AT_MOST),
-					MeasureSpec.makeMeasureSpec(h, MeasureSpec.AT_MOST));
-			int tbHeight = toolbarView.getMeasuredHeight();
-			titleView.measure(widthMeasureSpec, 
-					MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-			int titleHeight = titleView.getMeasuredHeight();
-			contentView.measure(widthMeasureSpec, 
-					MeasureSpec.makeMeasureSpec(h - titleHeight - tbHeight, MeasureSpec.AT_MOST));
-		}
+		topBar.measure(MeasureSpec.makeMeasureSpec(w, MeasureSpec.EXACTLY),
+				MeasureSpec.makeMeasureSpec(activity.getTopBarHeight(), MeasureSpec.EXACTLY));
+		int topBarHeight = topBar.getMeasuredHeight();
+		contentView.measure(widthMeasureSpec,
+				MeasureSpec.makeMeasureSpec(h - topBarHeight, MeasureSpec.EXACTLY));
         setMeasuredDimension(w, h);
 	}
 	
@@ -176,7 +124,7 @@ public class BrowserViewLayout extends ViewGroup {
 			if (duration > 700 && duration < 10000)
 				activity.showBrowserOptionsDialog();
 			else
-				toolbarView.showOverflowMenu();
+				topBar.showMenu();
 			return true;
 		}
 		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {

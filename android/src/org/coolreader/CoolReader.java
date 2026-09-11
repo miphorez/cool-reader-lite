@@ -42,7 +42,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
 import android.provider.DocumentsContract;
-import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +56,6 @@ import org.coolreader.crengine.Bookmark;
 import org.coolreader.crengine.BookmarksDlg;
 import org.coolreader.crengine.BrowserViewLayout;
 import org.coolreader.crengine.CRRootView;
-import org.coolreader.crengine.CRToolBar;
 import org.coolreader.crengine.DeviceInfo;
 import org.coolreader.crengine.DocumentsContractWrapper;
 import org.coolreader.crengine.Engine;
@@ -79,6 +77,7 @@ import org.coolreader.crengine.ReaderCommand;
 import org.coolreader.crengine.ReaderView;
 import org.coolreader.crengine.ReaderViewLayout;
 import org.coolreader.crengine.Services;
+import org.coolreader.crengine.ScreenTopBar;
 import org.coolreader.crengine.Utils;
 import org.coolreader.tts.OnTTSCreatedListener;
 import org.coolreader.tts.TTSControlServiceAccessor;
@@ -101,8 +100,7 @@ public class CoolReader extends BaseActivity {
 	private ReaderView mReaderView;
 	private ReaderViewLayout mReaderFrame;
 	private FileBrowser mBrowser;
-	private View mBrowserTitleBar;
-	private CRToolBar mBrowserToolBar;
+	private ScreenTopBar mBrowserTopBar;
 	private BrowserViewLayout mBrowserFrame;
 	private CRRootView mHomeFrame;
 	private Engine mEngine;
@@ -1223,6 +1221,9 @@ public class CoolReader extends BaseActivity {
 	@Override
 	public void onSettingsChanged(Properties props, Properties oldProps) {
 		Properties changedProps = oldProps != null ? props.diff(oldProps) : props;
+		boolean localeChanged = oldProps != null
+				&& !props.getProperty(PROP_APP_LOCALE, Lang.DEFAULT.code).equals(
+						oldProps.getProperty(PROP_APP_LOCALE, Lang.DEFAULT.code));
 		updateSystemBarColors(props.getColor(ReaderView.PROP_BACKGROUND_COLOR, 0xECE3CB));
 		if (mHomeFrame != null) {
 			mHomeFrame.refreshOnlineCatalogs();
@@ -1236,6 +1237,10 @@ public class CoolReader extends BaseActivity {
 			String key = (String) entry.getKey();
 			String value = (String) entry.getValue();
 			applyAppSetting(key, value);
+		}
+		if (localeChanged) {
+			recreate();
+			return;
 		}
 		// Show/Hide soft navbar after OptionDialog is closed.
 		applyFullscreen(getWindow());
@@ -1400,13 +1405,10 @@ public class CoolReader extends BaseActivity {
 				mBrowser.setSimpleViewMode(settings().getBool(ReaderView.PROP_APP_FILE_BROWSER_SIMPLE_MODE, false));
 				mBrowser.init();
 
-				LayoutInflater inflater = LayoutInflater.from(CoolReader.this);// activity.getLayoutInflater();
-
-				mBrowserTitleBar = inflater.inflate(R.layout.browser_status_bar, null);
-				setBrowserTitle("Cool Reader browser window");
-
-				mBrowserToolBar = new CRToolBar(CoolReader.this, ReaderAction.createList(
-						ReaderAction.FILE_BROWSER_UP,
+				mBrowserTopBar = new ScreenTopBar(CoolReader.this);
+				mBrowserTopBar.setTitle("Cool Reader browser window");
+				mBrowserTopBar.setBackAction(() -> mBrowser.showParentDirectory());
+				mBrowserTopBar.setReaderActions(new ReaderAction[] {
 						ReaderAction.CURRENT_BOOK,
 						ReaderAction.OPTIONS,
 						ReaderAction.FILE_BROWSER_ROOT,
@@ -1418,9 +1420,7 @@ public class CoolReader extends BaseActivity {
 						ReaderAction.FILE_BROWSER_SORT_ORDER,
 						ReaderAction.SAVE_LOGCAT,
 						ReaderAction.EXIT
-				), false);
-				mBrowserToolBar.setBackgroundResource(R.drawable.ui_status_background_browser_dark);
-				mBrowserToolBar.setOnActionHandler(item -> {
+				}, item -> {
 					switch (item.cmd) {
 						case DCMD_EXIT:
 							//
@@ -1444,6 +1444,11 @@ public class CoolReader extends BaseActivity {
 						case DCMD_CURRENT_BOOK:
 							showCurrentBook();
 							break;
+						case DCMD_CURRENT_BOOK_DIRECTORY:
+							BookInfo currentBookInfo = getCurrentBookInfo();
+							if (currentBookInfo != null)
+								showBrowser(currentBookInfo.getFileInfo());
+							break;
 						case DCMD_OPTIONS_DIALOG:
 							showBrowserOptionsDialog();
 							break;
@@ -1462,7 +1467,7 @@ public class CoolReader extends BaseActivity {
 					}
 					return false;
 				});
-				mBrowserFrame = new BrowserViewLayout(CoolReader.this, mBrowser, mBrowserToolBar, mBrowserTitleBar);
+				mBrowserFrame = new BrowserViewLayout(CoolReader.this, mBrowser, mBrowserTopBar);
 
 				//					if (getIntent() == null)
 //						mBrowser.showDirectory(Services.getScanner().getDownloadDirectory(), null);
@@ -1477,10 +1482,6 @@ public class CoolReader extends BaseActivity {
 		runInBrowser(() -> {
 			// do nothing, browser is shown
 		});
-	}
-
-	public void showManual() {
-		loadDocument("@manual", null, null, false);
 	}
 
 	public static final String OPEN_FILE_PARAM = "FILE_TO_OPEN";

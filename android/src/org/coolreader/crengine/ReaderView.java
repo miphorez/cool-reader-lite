@@ -2411,9 +2411,6 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 				if (isBookLoaded())
 					showBookInfo();
 				break;
-			case DCMD_USER_MANUAL:
-				showManual();
-				break;
 			case DCMD_TTS_PLAY: {
 				if(isTTSActive()){
 					log.i("DCMD_TTS_PLAY: skipping re-init of TTS");
@@ -2859,50 +2856,6 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 		}
 	}
 
-	private String getManualFileName() {
-		Scanner s = Services.getScanner();
-		if (s != null) {
-			FileInfo fi = s.getDownloadDirectory();
-			if (fi != null) {
-				File bookDir = new File(fi.getPathName());
-				return HelpFileGenerator.getHelpFileName(bookDir, mActivity.getCurrentLanguage()).getAbsolutePath();
-			}
-		}
-		log.e("cannot get manual file name!");
-		return null;
-	}
-
-	private File generateManual() {
-		HelpFileGenerator generator = new HelpFileGenerator(mActivity, mEngine, getSettings(), mActivity.getCurrentLanguage());
-		FileInfo downloadDir = Services.getScanner().getDownloadDirectory();
-		File bookDir;
-		if (downloadDir != null)
-			bookDir = new File(Services.getScanner().getDownloadDirectory().getPathName());
-		else {
-			log.e("cannot download directory file name!");
-			bookDir = new File("/tmp/");
-		}
-		int settingsHash = generator.getSettingsHash();
-		String helpFileContentId = mActivity.getCurrentLanguage() + settingsHash + "v" + mActivity.getVersion();
-		String lastHelpFileContentId = mActivity.getLastGeneratedHelpFileSignature();
-		File manual = generator.getHelpFileName(bookDir);
-		if (!manual.exists() || lastHelpFileContentId == null || !lastHelpFileContentId.equals(helpFileContentId)) {
-			log.d("Generating help file " + manual.getAbsolutePath());
-			mActivity.setLastGeneratedHelpFileSignature(helpFileContentId);
-			manual = generator.generateHelpFile(bookDir);
-		}
-		return manual;
-	}
-
-	/**
-	 * Generate help file (if necessary) and show it.
-	 *
-	 * @return true if opened successfully
-	 */
-	public boolean showManual() {
-		return loadDocument(getManualFileName(), null, () -> mActivity.showToast("Error while opening manual"));
-	}
-
 	private boolean hiliteTapZoneOnTap = false;
 	private boolean enableVolumeKeys = true;
 	static private final int DEF_PAGE_FLIP_MS = 300;
@@ -3209,10 +3162,6 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 				errorHandler.run();
 			return false;
 		}
-		if ("@manual".equals(fileName)) {
-			fileName = getManualFileName();
-			log.i("Manual document: " + fileName);
-		}
 		String normalized = mEngine.getPathCorrector().normalizeIfPossible(fileName);
 		if (normalized == null) {
 			log.e("Trying to load book from non-standard path " + fileName);
@@ -3224,15 +3173,6 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 		} else if (!normalized.equals(fileName)) {
 			log.w("Filename normalized to " + normalized);
 			fileName = normalized;
-		}
-		if (fileName.equals(getManualFileName())) {
-			// ensure manual file is up to date
-			if (generateManual() == null) {
-				log.v("loadDocument() : no filename specified");
-				if (errorHandler != null)
-					errorHandler.run();
-				return false;
-			}
 		}
 		BookInfo book = Services.getHistory().getBookInfo(fileName);
 		if (book != null)
@@ -3784,7 +3724,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 	public void surfaceCreated(SurfaceHolder holder) {
 		log.i("surfaceCreated()");
 		mSurfaceCreated = true;
-		//draw();
+		bookView.draw(false);
 	}
 
 	@Override
@@ -6665,6 +6605,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 	public ReaderView(CoolReader activity, Engine engine, Properties props) {
 		//super(activity);
 		log.i("Creating normal SurfaceView");
+		currentBackgroundColor = props.getColor(PROP_BACKGROUND_COLOR, 0xFFFFFF);
 		surface = new ReaderSurface(activity);
 
 		bookView = (BookView) surface;

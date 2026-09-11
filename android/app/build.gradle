@@ -39,8 +39,8 @@ android {
         targetSdkVersion 35
         // When new version released, version code must be incremented at least by 8
         // for compatibility with ABI versioning of split apk (see below).
-        versionCode 32610
-        versionName "0.3.1"
+        versionCode 32618
+        versionName "0.3.2"
         buildConfigField "String", "UPSTREAM_VERSION_NAME", '"3.2.59-1"'
         buildConfigField "String", "GIT_COMMIT", "\"${gitCommit}\""
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

@@ -8,7 +8,11 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="0dp">
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <org.coolreader.crengine.ScreenTopBar
+            android:id="@+id/options_top_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
             android:id="@+id/option_item_body"
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -19,17 +23,6 @@
             android:layout_marginRight="0dip"
             android:background="?attr/tabbarBackground"
             >
-	        <ImageButton android:id="@+id/options_btn_back"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-		        android:minHeight="?android:attr/listPreferredItemHeight"
-		        android:minWidth="?android:attr/listPreferredItemHeight"
-	            android:src="?attr/cr3_button_prev_drawable"
-	            android:focusable="false"
-	            android:focusableInTouchMode="false"
-	            android:background="@null"
-	            android:contentDescription="@string/dlg_button_back"/>
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
@@ -42,6 +35,9 @@
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:padding="1dp" />
+            android:paddingStart="@dimen/screen_horizontal_padding"
+            android:paddingTop="1dp"
+            android:paddingEnd="@dimen/screen_horizontal_padding"
+            android:paddingBottom="1dp" />
     </LinearLayout>
 </TabHost>

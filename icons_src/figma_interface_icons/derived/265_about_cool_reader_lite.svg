@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <title>Cool Reader Lite about icon</title>
+  <g stroke="white" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 13.1C9.72 11.15 6.26 10.2 1.25 10.16V18.25C5.83 18.44 9.3 19.56 12 21.6"/>
+    <path d="M12 13.1C14.28 11.15 17.74 10.2 22.75 10.16V18.25C18.17 18.44 14.7 19.56 12 21.6"/>
+    <path d="M12 13.1V21.6"/>
+    <path d="M14.114 8.821C13.6 9.221 12.857 9.45 12.114 9.45C10.309 9.45 9.097 8.193 9.097 6.501C9.097 4.821 10.309 3.85 12.057 3.85C13.783 3.85 14.903 4.901 14.903 6.421H9.223"/>
+    <path d="M9.223 6.421H3.543"/>
+  </g>
+</svg>

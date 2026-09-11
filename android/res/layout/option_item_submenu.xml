@@ -19,6 +19,7 @@
         />
 
     <RelativeLayout
+        android:id="@+id/option_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dip"
@@ -40,14 +41,4 @@
          -->
 
     </RelativeLayout>
-    <TextView android:id="@+id/option_label_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:text=">"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:ellipsize="marquee"
-        android:fadingEdge="horizontal" />
-
 </LinearLayout>
-    

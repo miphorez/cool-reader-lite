@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true"
-          android:drawable="@drawable/toolbar_btn_default_small_pressed_hc" /> <!-- pressed -->
-    <item android:state_focused="true"
-          android:drawable="@drawable/toolbar_btn_default_small_selected_hc" /> <!-- focused -->
-    <item android:state_long_pressable="true"
-          android:drawable="@drawable/toolbar_btn_default_small_selected_hc" /> <!-- hovered -->
-    <item android:drawable="@android:color/transparent" /> <!-- default -->
+	<item android:drawable="@android:color/transparent" />
 </selector>

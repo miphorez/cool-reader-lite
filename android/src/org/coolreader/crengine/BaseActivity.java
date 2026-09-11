@@ -47,6 +47,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.LocaleList;
 import android.os.PowerManager;
 import android.text.ClipboardManager;
 import android.util.DisplayMetrics;
@@ -430,8 +431,7 @@ public class BaseActivity extends Activity implements Settings {
 			topBar.setLayoutParams(params);
 		}
 		topBar.setMinimumHeight(height);
-		if (currentTheme != null)
-			topBar.setBackgroundResource(currentTheme.getBrowserToolbarBackground(false));
+		topBar.setBackgroundColor(ScreenTopBar.resolveBackgroundColor(this));
 	}
 
 	private int minFontSize = 9;
@@ -482,7 +482,7 @@ public class BaseActivity extends Activity implements Settings {
 				R.attr.cr3_browser_folder_root_drawable, R.attr.cr3_option_night_drawable, R.attr.cr3_option_touch_drawable,
 				R.attr.cr3_button_go_page_drawable, R.attr.cr3_button_go_percent_drawable, R.attr.cr3_browser_folder_drawable,
 				R.attr.cr3_button_tts_drawable, R.attr.cr3_browser_folder_recent_drawable, R.attr.cr3_button_scroll_go_drawable,
-				R.attr.cr3_btn_books_swap_drawable, R.attr.cr3_logo_button_drawable, R.attr.cr3_viewer_exit_drawable,
+				R.attr.cr3_btn_books_swap_drawable, R.attr.cr3_about_drawable, R.attr.cr3_viewer_exit_drawable,
 				R.attr.cr3_button_book_open_drawable, R.attr.cr3_browser_folder_current_book_drawable, R.attr.cr3_browser_folder_opds_drawable,
 				/*R.attr.google_drive_drawable,*/ R.attr.cr3_button_log_drawable, R.attr.cr3_button_light_drawable };
 		TypedArray a = getTheme().obtainStyledAttributes(attrs);
@@ -502,7 +502,7 @@ public class BaseActivity extends Activity implements Settings {
 		int brFolderRecentDrawableRes = a.getResourceId(13, 0);
 		int btnScrollGoDrawableRes = a.getResourceId(14, 0);
 		int btnBooksSwapDrawableRes = a.getResourceId(15, 0);
-		int logoBtnDrawableRes = a.getResourceId(16, 0);
+		int aboutDrawableRes = a.getResourceId(16, 0);
 		int viewerExitDrawableRes = a.getResourceId(17, 0);
 		int btnBookOpenDrawableRes = a.getResourceId(18, 0);
 		int brFolderCurrBookDrawableRes = a.getResourceId(19, 0);
@@ -545,8 +545,8 @@ public class BaseActivity extends Activity implements Settings {
 			ReaderAction.TOGGLE_AUTOSCROLL.setIconId(btnScrollGoDrawableRes);
 		if (btnBooksSwapDrawableRes != 0)
 			ReaderAction.OPEN_PREVIOUS_BOOK.setIconId(btnBooksSwapDrawableRes);
-		if (logoBtnDrawableRes != 0)
-			ReaderAction.ABOUT.setIconId(logoBtnDrawableRes);
+		if (aboutDrawableRes != 0)
+			ReaderAction.ABOUT.setIconId(aboutDrawableRes);
 		if (viewerExitDrawableRes != 0)
 			ReaderAction.EXIT.setIconId(viewerExitDrawableRes);
 		if (btnBookOpenDrawableRes != 0)
@@ -571,7 +571,9 @@ public class BaseActivity extends Activity implements Settings {
 		log.i("setCurrentTheme(" + theme + ")");
 		currentTheme = theme;
 		getApplication().setTheme(theme.getThemeId());
+		getApplication().getTheme().applyStyle(R.style.Theme_CoolReaderLite_NoTouchFeedback, true);
 		setTheme(theme.getThemeId());
+		getTheme().applyStyle(R.style.Theme_CoolReaderLite_NoTouchFeedback, true);
 		updateBackground();
 		updateActionsIcons();
 	}
@@ -705,6 +707,10 @@ public class BaseActivity extends Activity implements Settings {
 	private boolean mFullscreen = false;
 	private int systemBarBackgroundColor = 0xFFECE3CB;
 	private boolean lightSystemBarBackground = false;
+
+	public int getSystemBarBackgroundColor() {
+		return systemBarBackgroundColor;
+	}
 
 	public boolean isFullscreen() {
 		return mFullscreen;
@@ -1435,20 +1441,6 @@ public class BaseActivity extends Activity implements Settings {
 	}
 
 
-	private static String PREF_HELP_FILE = "HelpFile";
-
-	public String getLastGeneratedHelpFileSignature() {
-		SharedPreferences pref = getSharedPreferences(PREF_FILE, 0);
-		String res = pref.getString(PREF_HELP_FILE, null);
-		return res;
-	}
-
-	public void setLastGeneratedHelpFileSignature(String v) {
-		SharedPreferences pref = getSharedPreferences(PREF_FILE, 0);
-		pref.edit().putString(PREF_HELP_FILE, v).commit();
-	}
-
-
 	private String currentLanguage;
 
 	public String getCurrentLanguage() {
@@ -1464,10 +1456,14 @@ public class BaseActivity extends Activity implements Settings {
 	public void setLanguage(Lang lang) {
 		try {
 			Resources res = getResources();
-			// Change locale settings in the app.
 			DisplayMetrics dm = res.getDisplayMetrics();
-			android.content.res.Configuration conf = res.getConfiguration();
-			conf.locale = (lang == Lang.DEFAULT) ? defaultLocale : lang.getLocale();
+			Configuration conf = new Configuration(res.getConfiguration());
+			Locale locale = (lang == Lang.DEFAULT) ? defaultLocale : lang.getLocale();
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+				conf.setLocales(new LocaleList(locale));
+			} else {
+				conf.setLocale(locale);
+			}
 			currentLanguage = (lang == Lang.DEFAULT) ? Lang.getCode(defaultLocale) : lang.code;
 			res.updateConfiguration(conf, dm);
 		} catch (Exception e) {

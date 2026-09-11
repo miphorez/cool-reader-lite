@@ -10,9 +10,18 @@
         <item name="android:windowLightStatusBar">@bool/crl_light_system_bars</item>
         <item name="android:windowLightNavigationBar">@bool/crl_light_system_bars</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name="android:colorControlHighlight">@android:color/transparent</item>
+		<item name="android:selectableItemBackground">@android:color/transparent</item>
+		<item name="android:selectableItemBackgroundBorderless">@android:color/transparent</item>
     </style>
 
     <style name="Theme.CoolReaderLite.Launch" parent="@style/Theme.CoolReaderLite" />
+
+	<style name="Theme.CoolReaderLite.NoTouchFeedback">
+		<item name="android:colorControlHighlight">@android:color/transparent</item>
+		<item name="android:selectableItemBackground">@android:color/transparent</item>
+		<item name="android:selectableItemBackgroundBorderless">@android:color/transparent</item>
+	</style>
 
     <style name="TabWidget" parent="@android:style/Widget.TabWidget">
         <!-- item name="android:textAppearance">@style/TextAppearance.Small</item>
@@ -172,7 +181,7 @@
         <item name="cr3_browser_folder_recent_drawable">@drawable/cr3_browser_folder_recent</item>
         <item name="cr3_button_scroll_go_drawable">@drawable/cr3_button_scroll_go</item>
         <item name="cr3_btn_books_swap_drawable">@drawable/cr3_btn_books_swap</item>
-        <item name="cr3_logo_button_drawable">@drawable/cr3_logo_button</item>
+        <item name="cr3_about_drawable">@drawable/cr3_about</item>
         <item name="cr3_viewer_exit_drawable">@drawable/cr3_viewer_exit</item>
         <item name="cr3_button_book_open_drawable">@drawable/cr3_button_book_open</item>
         <item name="cr3_browser_folder_current_book_drawable">@drawable/cr3_browser_folder_current_book</item>
@@ -284,7 +293,7 @@
         <item name="cr3_browser_folder_recent_drawable">@drawable/cr3_browser_folder_recent</item>
         <item name="cr3_button_scroll_go_drawable">@drawable/cr3_button_scroll_go</item>
         <item name="cr3_btn_books_swap_drawable">@drawable/cr3_btn_books_swap</item>
-        <item name="cr3_logo_button_drawable">@drawable/cr3_logo_button</item>
+        <item name="cr3_about_drawable">@drawable/cr3_about</item>
         <item name="cr3_viewer_exit_drawable">@drawable/cr3_viewer_exit</item>
         <item name="cr3_button_book_open_drawable">@drawable/cr3_button_book_open</item>
         <item name="cr3_browser_folder_current_book_drawable">@drawable/cr3_browser_folder_current_book</item>
@@ -422,7 +431,7 @@
         <item name="cr3_browser_folder_recent_drawable">@drawable/cr3_browser_folder_recent_hc</item>
         <item name="cr3_button_scroll_go_drawable">@drawable/cr3_button_scroll_go_hc</item>
         <item name="cr3_btn_books_swap_drawable">@drawable/cr3_btn_books_swap_hc</item>
-        <item name="cr3_logo_button_drawable">@drawable/cr3_logo_button_hc</item>
+        <item name="cr3_about_drawable">@drawable/cr3_about</item>
         <item name="cr3_viewer_exit_drawable">@drawable/cr3_viewer_exit_hc</item>
         <item name="cr3_button_book_open_drawable">@drawable/cr3_button_book_open_hc</item>
         <item name="cr3_browser_folder_current_book_drawable">@drawable/cr3_browser_folder_current_book_hc</item>
@@ -534,7 +543,7 @@
         <item name="cr3_browser_folder_recent_drawable">@drawable/cr3_browser_folder_recent_hc</item>
         <item name="cr3_button_scroll_go_drawable">@drawable/cr3_button_scroll_go_hc</item>
         <item name="cr3_btn_books_swap_drawable">@drawable/cr3_btn_books_swap_hc</item>
-        <item name="cr3_logo_button_drawable">@drawable/cr3_logo_button_hc</item>
+        <item name="cr3_about_drawable">@drawable/cr3_about</item>
         <item name="cr3_viewer_exit_drawable">@drawable/cr3_viewer_exit_hc</item>
         <item name="cr3_button_book_open_drawable">@drawable/cr3_button_book_open_hc</item>
         <item name="cr3_browser_folder_current_book_drawable">@drawable/cr3_browser_folder_current_book_hc</item>

@@ -267,27 +267,27 @@ public interface Settings {
     
     
     public enum Lang {
-    	DEFAULT("system", R.string.options_app_locale_system, R.raw.help_template_en),
-    	EN("en", R.string.options_app_locale_en, R.raw.help_template_en),
-        DE("de", R.string.options_app_locale_de, 0),
-    	ES("es", R.string.options_app_locale_es, 0),
-    	FR("fr", R.string.options_app_locale_fr, 0),
-    	JA("ja", R.string.options_app_locale_ja, 0),
-    	RU("ru", R.string.options_app_locale_ru, R.raw.help_template_ru),
-    	UK("uk", R.string.options_app_locale_uk, R.raw.help_template_ru),
-    	BG("bg", R.string.options_app_locale_bg, 0),
-    	BY("by", R.string.options_app_locale_by, 0),
-    	SK("sk", R.string.options_app_locale_sk, 0),
-    	TR("tr", R.string.options_app_locale_tr, 0),
-    	LT("lt", R.string.options_app_locale_lt, 0),
-    	IT("it", R.string.options_app_locale_it, 0),
-    	HU("hu", R.string.options_app_locale_hu, R.raw.help_template_hu),
-    	NL("nl", R.string.options_app_locale_nl, 0),
-    	PL("pl", R.string.options_app_locale_pl, 0),
-        PT("pt", R.string.options_app_locale_pt, 0),
-        PT_BR("pt_BR", R.string.options_app_locale_pt_rbr, 0),
-    	CS("cs", R.string.options_app_locale_cs, 0),
-    	ZH_CN("zh_CN", R.string.options_app_locale_zh_cn, R.raw.help_template_zh_cn),
+        DEFAULT("system", R.string.options_app_locale_system),
+        EN("en", R.string.options_app_locale_en),
+        DE("de", R.string.options_app_locale_de),
+        ES("es", R.string.options_app_locale_es),
+        FR("fr", R.string.options_app_locale_fr),
+        JA("ja", R.string.options_app_locale_ja),
+        RU("ru", R.string.options_app_locale_ru),
+        UK("uk", R.string.options_app_locale_uk),
+        BG("bg", R.string.options_app_locale_bg),
+        BY("by", R.string.options_app_locale_by),
+        SK("sk", R.string.options_app_locale_sk),
+        TR("tr", R.string.options_app_locale_tr),
+        LT("lt", R.string.options_app_locale_lt),
+        IT("it", R.string.options_app_locale_it),
+        HU("hu", R.string.options_app_locale_hu),
+        NL("nl", R.string.options_app_locale_nl),
+        PL("pl", R.string.options_app_locale_pl),
+        PT("pt", R.string.options_app_locale_pt),
+        PT_BR("pt_BR", R.string.options_app_locale_pt_rbr),
+        CS("cs", R.string.options_app_locale_cs),
+        ZH_CN("zh_CN", R.string.options_app_locale_zh_cn),
     	;
     	
     	public Locale getLocale() {
@@ -323,14 +323,12 @@ public interface Settings {
     		return DEFAULT;
     	}
     	
-    	private Lang(String code, int nameResId, int helpFileResId) {
+        private Lang(String code, int nameResId) {
     		this.code = code;
     		this.nameId = nameResId;
-    		this.helpFileResId = helpFileResId;
     	}
     	public final String code;
     	public final int nameId;
-    	public final int helpFileResId;
     };
     
     

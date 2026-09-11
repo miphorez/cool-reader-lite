@@ -258,6 +258,8 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		if (progress != null)
 			progress.hide();
 		mListView = new FileBrowserListView(mActivity);
+		int horizontalPadding = getResources().getDimensionPixelSize(R.dimen.screen_horizontal_padding);
+		mListView.setPadding(horizontalPadding, 0, horizontalPadding, 0);
 		final GestureDetector detector = new GestureDetector(new MyGestureListener());
 		mListView.setOnTouchListener((v, event) -> {
 			try {
@@ -558,6 +560,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		if ( url!=null ) {
 			try {
 				final URL uri = new URL(url);
+				mActivity.setBrowserProgressStatus(true);
 				DownloadCallback callback = new DownloadCallback() {
 
 					private boolean processNewEntries(DocInfo doc,
@@ -618,12 +621,17 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 					@Override
 					public boolean onFinish(DocInfo doc,
 							Collection<EntryInfo> entries) {
-						return processNewEntries(doc, entries, true);
+						try {
+							return processNewEntries(doc, entries, true);
+						} finally {
+							mActivity.setBrowserProgressStatus(false);
+						}
 					}
 
 					@Override
 					public void onError(String message) {
 						mEngine.hideProgress();
+						mActivity.setBrowserProgressStatus(false);
 						mActivity.showToast(message);
 					}
 
@@ -655,6 +663,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 
 					@Override
 					public void onDownloadEnd(String type, String url, File file) {
+						mActivity.setBrowserProgressStatus(false);
                         if (DeviceInfo.EINK_SONY) {
                             SonyBookSelector selector = new SonyBookSelector(mActivity);
                             selector.notifyScanner(file.getAbsolutePath());
@@ -688,6 +697,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						myCurrDirectory.getOPDSUrl(), callback, fileOrDir.username, fileOrDir.password);
 				downloadTask.run();
 			} catch (MalformedURLException e) {
+				mActivity.setBrowserProgressStatus(false);
 				log.e("MalformedURLException: " + url);
 				mActivity.showToast("Wrong URI: " + url);
 			}
@@ -977,7 +987,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			TextView field1;
 			TextView field2;
 			//TextView field3;
-			ImageView infoButton;
 			void setText( TextView view, String text )
 			{
 				if ( view==null )
@@ -1127,8 +1136,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 						if (field2 != null)
 							field2.setText(Utils.formatLastPosition(mActivity, mHistory.getLastPos(item)));
 						//field3.setText(pos!=null ? formatPercent(pos.getPercent()) : null);
-						if (infoButton != null)
-							infoButton.setOnClickListener(v -> mActivity.editBookInfo(Services.getScanner().createRecentRoot(), item));
 					} 
 					
 				}
@@ -1165,7 +1172,6 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 				holder.field1 = view.findViewById(R.id.browser_item_field1);
 				holder.field2 = view.findViewById(R.id.browser_item_field2);
 				//holder.field3 = (TextView)view.findViewById(R.id.browser_item_field3);
-				holder.infoButton = view.findViewById(R.id.browser_item_button_info);
 				view.setTag(holder);
 			} else {
 				view = convertView;
@@ -1229,12 +1235,7 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 			throw new IllegalStateException("showDirectoryInternal should be called from GUI thread!");
 		int index = dir!=null ? dir.getItemIndex(file) : -1;
 
-		String title = "";
-		if (dir != null) {
-			title = dir.filename;
-			if (!dir.isSpecialDir())
-				title = dir.getPathName();
-		}
+		String title = getDirectoryTitle(dir);
 		
 		mActivity.setBrowserTitle(title);
 		if (mListView.getAdapter() != currentListAdapter)
@@ -1243,6 +1244,34 @@ public class FileBrowser extends LinearLayout implements FileInfoChangeListener 
 		mListView.setSelection(index);
 		mListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		mListView.invalidate();
+	}
+
+	private String getDirectoryTitle(FileInfo dir) {
+		if (dir == null)
+			return "";
+		if (dir.isRecentDir())
+			return mActivity.getString(R.string.dir_recent_books);
+		if (dir.isSearchDir())
+			return mActivity.getString(R.string.dir_search_results);
+		if (dir.isOPDSRoot())
+			return mActivity.getString(R.string.mi_book_opds_root);
+		if (dir.isBooksByGenreRoot())
+			return mActivity.getString(R.string.folder_name_books_by_genre);
+		if (dir.isBooksByAuthorRoot())
+			return mActivity.getString(R.string.folder_name_books_by_author);
+		if (dir.isBooksBySeriesRoot())
+			return mActivity.getString(R.string.folder_name_books_by_series);
+		if (dir.isBooksByTitleRoot())
+			return mActivity.getString(R.string.folder_name_books_by_title);
+		if (dir.isBooksByRatingRoot())
+			return mActivity.getString(R.string.folder_name_books_by_rating);
+		if (dir.isBooksByStateToReadRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_to_read);
+		if (dir.isBooksByStateReadingRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_reading);
+		if (dir.isBooksByStateFinishedRoot())
+			return mActivity.getString(R.string.folder_name_books_by_state_finished);
+		return dir.isSpecialDir() ? dir.filename : dir.getPathName();
 	}
 
 	private class MyGestureListener extends SimpleOnGestureListener {

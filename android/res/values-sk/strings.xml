@@ -420,7 +420,6 @@
     <string name="options_app_locale_uk">Ukrajinčina</string>
     <string name="options_app_locale_pl">Polština</string>
     <string name="options_app_locale_zh_cn">Čínština</string>
-    <string name="mi_goto_manual">Zobraziť príručku</string>
     <string name="options_view_bookmarks_highlight_underline">Podčiarknutie</string>
     <string name="options_view_color_selection">Farba výberu</string>
     <string name="options_view_color_bookmark_comment">Farba poznámky</string>

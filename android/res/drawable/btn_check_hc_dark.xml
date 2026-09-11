@@ -10,20 +10,6 @@
           android:state_enabled="true"
           android:drawable="@drawable/btn_check_off_hc_dark" />
 
-    <item android:state_checked="true" android:state_pressed="true"
-          android:state_enabled="true"
-          android:drawable="@drawable/btn_check_on_pressed_hc_dark" />
-    <item android:state_checked="false" android:state_pressed="true"
-          android:state_enabled="true"
-          android:drawable="@drawable/btn_check_off_pressed_hc_dark" />
-
-    <item android:state_checked="true" android:state_focused="true"
-          android:state_enabled="true"
-          android:drawable="@drawable/btn_check_on_focused_hc_dark" />
-    <item android:state_checked="false" android:state_focused="true"
-          android:state_enabled="true"
-          android:drawable="@drawable/btn_check_off_focused_hc_dark" />
-
     <item android:state_checked="false"
           android:state_enabled="true"
           android:drawable="@drawable/btn_check_off_hc_dark" />
@@ -38,11 +24,6 @@
           android:drawable="@drawable/btn_check_on_disabled_hc_light" />
     <item android:state_checked="false" android:state_window_focused="false"
           android:drawable="@drawable/btn_check_off_disabled_hc_light" />
-
-    <item android:state_checked="true" android:state_focused="true"
-          android:drawable="@drawable/btn_check_on_disabled_focused_hc_dark" />
-    <item android:state_checked="false" android:state_focused="true"
-          android:drawable="@drawable/btn_check_off_disabled_focused_hc_dark" />
 
     <item android:state_checked="false" android:drawable="@drawable/btn_check_off_disabled_hc_light" />
     <item android:state_checked="true" android:drawable="@drawable/btn_check_on_disabled_hc_light" />

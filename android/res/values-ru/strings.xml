@@ -330,8 +330,8 @@
     <string name="mi_bookmark_send">Отправить</string>
     <string name="folder_name_books_by_genre">Жанры</string>
     <string name="folder_name_books_by_author">Авторы</string>
-    <string name="folder_name_books_by_rating">По рейтингу</string>
-    <string name="folder_name_books_by_state_to_read">К прочтению</string>
+    <string name="folder_name_books_by_rating">По&#10;рейтингу</string>
+    <string name="folder_name_books_by_state_to_read">К&#10;прочтению</string>
     <string name="folder_name_books_by_state_reading">Читаю</string>
     <string name="folder_name_books_by_state_finished">Прочитанные</string>
     <string name="options_view_bookmarks_highlight">Подсвечивать закладки</string>
@@ -452,7 +452,6 @@
     <string name="options_font_embedded_document_font_enabled">Встроенные шрифты документа</string>
     <string name="options_app_locale_system">Системный</string>
     <string name="options_app_locale">Язык интерфейса (Interface language)</string>
-    <string name="mi_goto_manual">Руководство пользователя</string>
     <string name="options_view_bookmarks_highlight_underline">Подчеркивание</string>
     <string name="options_view_color_selection">Цвет выделения</string>
     <string name="options_view_color_bookmark_comment">Цвет комментария</string>

@@ -5,78 +5,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
-            android:id="@+id/base_dlg_button_panel"
+    <org.coolreader.crengine.ScreenTopBar
+            android:id="@+id/book_info_top_bar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/tabbarBackground"
-            android:gravity="center_vertical"
-            android:minHeight="?android:attr/listPreferredItemHeight"
-            android:orientation="horizontal">
-
-        <ImageButton
-                android:id="@+id/base_dlg_btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@string/dlg_button_back"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:minWidth="?android:attr/listPreferredItemHeight"
-                android:src="?attr/cr3_button_prev_drawable" />
-
-        <ImageButton
-                android:id="@+id/btn_open_book"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@string/dlg_button_open_book"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:minWidth="?android:attr/listPreferredItemHeight"
-                android:src="?attr/cr3_button_book_open_drawable" />
-
-        <ImageButton
-                android:id="@+id/book_folder_open"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@string/dlg_button_open_folder"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:minWidth="?android:attr/listPreferredItemHeight"
-                android:src="?attr/cr3_button_folder_go_drawable" />
-
-        <ImageButton
-                android:id="@+id/book_recent_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@string/dlg_button_recent_delete"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:gravity="right"
-                android:minWidth="?android:attr/listPreferredItemHeight"
-                android:src="@drawable/cr3_button_recent_book_delete" />
-
-        <ImageButton
-                android:id="@+id/book_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:contentDescription="@string/dlg_button_book_delete"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:gravity="right"
-                android:minWidth="?android:attr/listPreferredItemHeight"
-                android:src="@drawable/cr3_button_book_delete" />
-    </LinearLayout>
+            />
 
     <ScrollView
 			android:id="@+id/book_scrollview"
@@ -89,8 +22,8 @@
         <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="@dimen/screen_horizontal_padding"
+                android:layout_marginEnd="@dimen/screen_horizontal_padding"
                 android:orientation="vertical">
 
             <!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
