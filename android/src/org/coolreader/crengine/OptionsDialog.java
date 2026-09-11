@@ -518,7 +518,9 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 			if (null == icon)
 				return;
 			int resId = 0;
-			if (showIcons) {
+			boolean genericOtherIcon = drawableAttrId == R.attr.cr3_option_other_drawable
+					&& fallbackIconId == R.drawable.cr3_option_other;
+			if (showIcons && !(collapseEmptyIconSpace && genericOtherIcon)) {
 				if (drawableAttrId != 0) {
 					resId = Utils.resolveResourceIdByAttr(mActivity, drawableAttrId, fallbackIconId);
 				} else if (fallbackIconId != 0) {
