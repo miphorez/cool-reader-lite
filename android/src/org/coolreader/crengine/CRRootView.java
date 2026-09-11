@@ -582,11 +582,11 @@ public class CRRootView extends ViewGroup implements CoverpageReadyListener {
 
 	private ReaderAction[] getMenuActions() {
 		return new ReaderAction[] {
-			ReaderAction.ABOUT,
 			ReaderAction.CURRENT_BOOK,
 			ReaderAction.RECENT_BOOKS,
 			ReaderAction.OPTIONS,
 			ReaderAction.SAVE_LOGCAT,
+			ReaderAction.ABOUT,
 			ReaderAction.EXIT,	
 		};
 	}
