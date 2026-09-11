@@ -273,23 +273,23 @@ public class BookInfoEditDialog extends BaseDialog {
 		mTopBar.setBackAction(this::onNegativeButtonClick);
 		ArrayList<ScreenTopBar.MenuItem> menuItems = new ArrayList<>();
 		int openBookIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_book_open_drawable, R.drawable.cr3_button_book_open);
-		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_open_book),
+		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.mi_book_open),
 				openBookIconResId, this::onPositiveButtonClick));
 		if (mIsRecentBooksItem) {
 			int openFolderIconResId = Utils.resolveResourceIdByAttr(mActivity,
 					R.attr.cr3_button_folder_go_drawable, R.drawable.cr3_button_folder_go);
-			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_open_folder),
+			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.mi_book_recent_goto),
 					openFolderIconResId, () -> {
 				mActivity.showDirectory(mBookInfo.getFileInfo());
 				dismiss();
 			}));
-			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_recent_delete),
+			menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.mi_book_recent_remove),
 					R.drawable.cr3_button_recent_book_delete, () -> {
 				mActivity.askDeleteRecent(mBookInfo.getFileInfo());
 				dismiss();
 			}));
 		}
-		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.dlg_button_book_delete),
+		menuItems.add(new ScreenTopBar.MenuItem(getContext().getText(R.string.mi_book_file_remove),
 				R.drawable.cr3_button_book_delete, () -> {
 			mActivity.askDeleteBook(mBookInfo.getFileInfo());
 			dismiss();
