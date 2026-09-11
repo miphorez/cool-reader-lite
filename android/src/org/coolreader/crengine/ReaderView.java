@@ -3724,7 +3724,7 @@ public class ReaderView implements android.view.SurfaceHolder.Callback, Settings
 	public void surfaceCreated(SurfaceHolder holder) {
 		log.i("surfaceCreated()");
 		mSurfaceCreated = true;
-		//draw();
+		bookView.draw(false);
 	}
 
 	@Override
