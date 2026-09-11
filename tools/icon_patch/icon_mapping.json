@@ -4,6 +4,11 @@
     "defaultTint": "#323232"
   },
   "mappings": {
+    "cr3_about": {
+      "candidates": ["265"],
+      "approved": true,
+      "densitySizes": { "ldpi": 18, "mdpi": 24, "hdpi": 36, "xhdpi": 48, "xxhdpi": 72, "xxxhdpi": 96 }
+    },
     "cr3_browser_back": { "candidates": ["016"], "approved": true },
     "cr3_browser_find": { "candidates": ["033"], "approved": true },
     "cr3_browser_folder": { "candidates": ["169"], "approved": true },

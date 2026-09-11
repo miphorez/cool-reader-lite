@@ -4441,5 +4441,14 @@
     "size": { "width": 24, "height": 24 },
     "contentBounds": { "x": 2.5, "y": 3.05, "width": 19.5, "height": 18.95 },
     "elementCount": 6
+  },
+  {
+    "label": "icon:265:about_cool_reader_lite",
+    "name": "about_cool_reader_lite",
+    "file": "derived/265_about_cool_reader_lite.svg",
+    "sourceBounds": { "x": 0, "y": 0, "width": 24, "height": 24 },
+    "size": { "width": 24, "height": 24 },
+    "contentBounds": { "x": 1.25, "y": 3.85, "width": 21.5, "height": 17.75 },
+    "elementCount": 5
   }
 ]

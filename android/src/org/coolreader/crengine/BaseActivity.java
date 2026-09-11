@@ -482,7 +482,7 @@ public class BaseActivity extends Activity implements Settings {
 				R.attr.cr3_browser_folder_root_drawable, R.attr.cr3_option_night_drawable, R.attr.cr3_option_touch_drawable,
 				R.attr.cr3_button_go_page_drawable, R.attr.cr3_button_go_percent_drawable, R.attr.cr3_browser_folder_drawable,
 				R.attr.cr3_button_tts_drawable, R.attr.cr3_browser_folder_recent_drawable, R.attr.cr3_button_scroll_go_drawable,
-				R.attr.cr3_btn_books_swap_drawable, R.attr.cr3_logo_button_drawable, R.attr.cr3_viewer_exit_drawable,
+				R.attr.cr3_btn_books_swap_drawable, R.attr.cr3_about_drawable, R.attr.cr3_viewer_exit_drawable,
 				R.attr.cr3_button_book_open_drawable, R.attr.cr3_browser_folder_current_book_drawable, R.attr.cr3_browser_folder_opds_drawable,
 				/*R.attr.google_drive_drawable,*/ R.attr.cr3_button_log_drawable, R.attr.cr3_button_light_drawable };
 		TypedArray a = getTheme().obtainStyledAttributes(attrs);
@@ -502,7 +502,7 @@ public class BaseActivity extends Activity implements Settings {
 		int brFolderRecentDrawableRes = a.getResourceId(13, 0);
 		int btnScrollGoDrawableRes = a.getResourceId(14, 0);
 		int btnBooksSwapDrawableRes = a.getResourceId(15, 0);
-		int logoBtnDrawableRes = a.getResourceId(16, 0);
+		int aboutDrawableRes = a.getResourceId(16, 0);
 		int viewerExitDrawableRes = a.getResourceId(17, 0);
 		int btnBookOpenDrawableRes = a.getResourceId(18, 0);
 		int brFolderCurrBookDrawableRes = a.getResourceId(19, 0);
@@ -545,8 +545,8 @@ public class BaseActivity extends Activity implements Settings {
 			ReaderAction.TOGGLE_AUTOSCROLL.setIconId(btnScrollGoDrawableRes);
 		if (btnBooksSwapDrawableRes != 0)
 			ReaderAction.OPEN_PREVIOUS_BOOK.setIconId(btnBooksSwapDrawableRes);
-		if (logoBtnDrawableRes != 0)
-			ReaderAction.ABOUT.setIconId(logoBtnDrawableRes);
+		if (aboutDrawableRes != 0)
+			ReaderAction.ABOUT.setIconId(aboutDrawableRes);
 		if (viewerExitDrawableRes != 0)
 			ReaderAction.EXIT.setIconId(viewerExitDrawableRes);
 		if (btnBookOpenDrawableRes != 0)
