@@ -47,6 +47,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.LocaleList;
 import android.os.PowerManager;
 import android.text.ClipboardManager;
 import android.util.DisplayMetrics;
@@ -1456,10 +1457,14 @@ public class BaseActivity extends Activity implements Settings {
 	public void setLanguage(Lang lang) {
 		try {
 			Resources res = getResources();
-			// Change locale settings in the app.
 			DisplayMetrics dm = res.getDisplayMetrics();
-			android.content.res.Configuration conf = res.getConfiguration();
-			conf.locale = (lang == Lang.DEFAULT) ? defaultLocale : lang.getLocale();
+			Configuration conf = new Configuration(res.getConfiguration());
+			Locale locale = (lang == Lang.DEFAULT) ? defaultLocale : lang.getLocale();
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+				conf.setLocales(new LocaleList(locale));
+			} else {
+				conf.setLocale(locale);
+			}
 			currentLanguage = (lang == Lang.DEFAULT) ? Lang.getCode(defaultLocale) : lang.code;
 			res.updateConfiguration(conf, dm);
 		} catch (Exception e) {

@@ -1221,6 +1221,9 @@ public class CoolReader extends BaseActivity {
 	@Override
 	public void onSettingsChanged(Properties props, Properties oldProps) {
 		Properties changedProps = oldProps != null ? props.diff(oldProps) : props;
+		boolean localeChanged = oldProps != null
+				&& !props.getProperty(PROP_APP_LOCALE, Lang.DEFAULT.code).equals(
+						oldProps.getProperty(PROP_APP_LOCALE, Lang.DEFAULT.code));
 		updateSystemBarColors(props.getColor(ReaderView.PROP_BACKGROUND_COLOR, 0xECE3CB));
 		if (mHomeFrame != null) {
 			mHomeFrame.refreshOnlineCatalogs();
@@ -1234,6 +1237,10 @@ public class CoolReader extends BaseActivity {
 			String key = (String) entry.getKey();
 			String value = (String) entry.getValue();
 			applyAppSetting(key, value);
+		}
+		if (localeChanged) {
+			recreate();
+			return;
 		}
 		// Show/Hide soft navbar after OptionDialog is closed.
 		applyFullscreen(getWindow());
