@@ -2837,11 +2837,13 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 				});
 		mEnableMultiLangOption.enabled = !legacyRender;
 		mEnableMultiLangOption.setDisabledNote(getString(R.string.options_legacy_rendering_enabled));
-		mOptionsStyles.add(mEnableMultiLangOption);
+		if (!legacyRender)
+			mOptionsStyles.add(mEnableMultiLangOption);
 		mEnableHyphOption = new BoolOption(this, getString(R.string.options_style_enable_hyphenation), PROP_TEXTLANG_HYPHENATION_ENABLED).setDefaultValue("0").setIconIdByAttr(R.attr.cr3_option_text_hyphenation_drawable, R.drawable.cr3_option_text_hyphenation);
 		mEnableHyphOption.enabled = !legacyRender && mProperties.getBool(PROP_TEXTLANG_EMBEDDED_LANGS_ENABLED, false);
 		mEnableHyphOption.setDisabledNote(getString(R.string.options_multilingual_disabled));
-		mOptionsStyles.add(mEnableHyphOption);
+		if (!legacyRender)
+			mOptionsStyles.add(mEnableHyphOption);
 		mHyphDictOption = new HyphenationOptions(this, getString(R.string.options_hyphenation_dictionary)).setIconIdByAttr(R.attr.cr3_option_text_hyphenation_drawable, R.drawable.cr3_option_text_hyphenation);
 		mHyphDictOption.enabled = legacyRender || !mProperties.getBool(PROP_TEXTLANG_EMBEDDED_LANGS_ENABLED, false);
 		mHyphDictOption.setDisabledNote(getString(R.string.options_multilingual_enabled));
