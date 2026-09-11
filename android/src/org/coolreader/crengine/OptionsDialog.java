@@ -49,7 +49,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -3089,23 +3088,11 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
         
 		setOnCancelListener(dialog -> onPositiveButtonClick());
 
-		if (mode == Mode.READER || mode == Mode.BROWSER) {
-			ScreenTopBar topBar = view.findViewById(R.id.options_top_bar);
-			topBar.setTitle(mode == Mode.READER ? R.string.win_title_options : R.string.mi_options);
-			topBar.setBackAction(this::onPositiveButtonClick);
-		} else {
-			ImageButton positiveButton = view.findViewById(R.id.options_btn_back);
-			int backIconResId = Utils.resolveResourceIdByAttr(mActivity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
-			Utils.tintPatchedIcon(positiveButton, backIconResId, R.attr.textColorToolBarLabel);
-			positiveButton.setOnClickListener(v -> onPositiveButtonClick());
-		}
-		
-//		ImageButton negativeButton = (ImageButton)mTabs.findViewById(R.id.options_btn_cancel);
-//		negativeButton.setOnClickListener(new View.OnClickListener() {
-//			public void onClick(View v) {
-//				onNegativeButtonClick();
-//			}
-//		});
+		ScreenTopBar topBar = view.findViewById(R.id.options_top_bar);
+		int titleResId = mode == Mode.READER ? R.string.win_title_options
+				: mode == Mode.BROWSER ? R.string.mi_options : R.string.mi_options_tts;
+		topBar.setTitle(titleResId);
+		topBar.setBackAction(this::onPositiveButtonClick);
 
 		super.onCreate(savedInstanceState);
 		L.v("OptionsDialog is created");

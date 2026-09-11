@@ -140,9 +140,6 @@ public class BaseDialog extends Dialog {
 			return;
 		View topBar = layoutView.findViewById(R.id.base_dlg_button_panel);
 		activity.applyTopBarStyle(topBar);
-		View optionsBack = layoutView.findViewById(R.id.options_btn_back);
-		if (optionsBack != null && optionsBack.getParent() instanceof View)
-			activity.applyTopBarStyle((View) optionsBack.getParent());
 	}
 	
 	protected void onPositiveButtonClick()
