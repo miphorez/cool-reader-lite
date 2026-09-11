@@ -34,6 +34,7 @@ import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
@@ -79,6 +80,11 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 	String[] mFontFaces;
 
 	TTSControlBinder mTTSBinder;
+
+	private static void disableTransientSelectionHighlight(ListView listView) {
+		listView.setSelector(new ColorDrawable(Color.TRANSPARENT));
+		listView.setDrawSelectorOnTop(false);
+	}
 
 	/*
 	int[] mFontSizes = new int[] {
@@ -1397,6 +1403,7 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 				return;
 			final BaseDialog dlg = new BaseDialog(mActivity, label, false, false);
 			final ListView listView = new BaseListView(mActivity, false);
+			disableTransientSelectionHighlight(listView);
 			ListOptionAdapter listAdapter = new ListOptionAdapter(listView, list);
 			int selItem = getSelectedItemIndex();
 			if ( selItem<0 )
@@ -1494,6 +1501,7 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 				filter_by_lang.setEnabled(false);
 			}
 			final ListView listView = new BaseListView(mActivity, false);
+			disableTransientSelectionHighlight(listView);
 			listAdapter = new ListOptionAdapter(listView, list);
 			int selItem = getSelectedItemIndex();
 			if ( selItem<0 )
@@ -2023,6 +2031,7 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 		public OptionsListView( Context context, boolean collapseEmptyIconSpace )
 		{
 			super(context, false);
+			disableTransientSelectionHighlight(this);
 			this.collapseEmptyIconSpace = collapseEmptyIconSpace;
 			setFocusable(true);
 			setFocusableInTouchMode(true);
