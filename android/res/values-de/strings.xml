@@ -393,7 +393,6 @@
     <string name="options_font_embedded_document_font_enabled">Eingebettete Schriftarten</string>
     <string name="options_app_locale_system">System</string>
     <string name="options_app_locale">Sprache</string>
-    <string name="mi_goto_manual">Handbuch zeigen</string>
     <string name="options_view_bookmarks_highlight_underline">Unterstreichen</string>
     <string name="options_view_color_selection">Farbe der Selektion</string>
     <string name="options_view_color_bookmark_comment">Farbe des Kommentars</string>

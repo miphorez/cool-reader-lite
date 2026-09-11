@@ -452,7 +452,6 @@
     <string name="options_font_embedded_document_font_enabled">Встроенные шрифты документа</string>
     <string name="options_app_locale_system">Системный</string>
     <string name="options_app_locale">Язык интерфейса (Interface language)</string>
-    <string name="mi_goto_manual">Руководство пользователя</string>
     <string name="options_view_bookmarks_highlight_underline">Подчеркивание</string>
     <string name="options_view_color_selection">Цвет выделения</string>
     <string name="options_view_color_bookmark_comment">Цвет комментария</string>

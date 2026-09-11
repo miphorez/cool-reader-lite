@@ -389,7 +389,6 @@
 <string name="options_font_embedded_document_font_enabled">"Použít vložená písma"</string>
 <string name="options_app_locale_system">"Dle systému"</string>
 <string name="options_app_locale">"Jazyk uživatelského rozhraní"</string>
-<string name="mi_goto_manual">"Zobrazit manuál"</string>
 <string name="options_view_bookmarks_highlight_underline">"Podtržení"</string>
 <string name="options_view_color_selection">"Barva výběru"</string>
 <string name="options_view_color_bookmark_comment">"Barva poznámky"</string>

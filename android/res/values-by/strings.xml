@@ -394,7 +394,6 @@
 <string name="options_font_embedded_document_font_enabled">Убудаваныя шрыфты дакумента</string>
 <string name="options_app_locale_system">Сістэмная</string>
 <string name="options_app_locale">Мова інтэрфейсу ( Interface language )</string>
-<string name="mi_goto_manual">Дарадца карыстальніка</string>
 <string name="options_view_bookmarks_highlight_underline">Падкрэсліванне</string>
 <string name="options_view_color_selection">Колер вылучэння</string>
 <string name="options_view_color_bookmark_comment">Колер каментара</string>

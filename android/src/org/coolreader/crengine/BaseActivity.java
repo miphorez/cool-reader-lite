@@ -1441,20 +1441,6 @@ public class BaseActivity extends Activity implements Settings {
 	}
 
 
-	private static String PREF_HELP_FILE = "HelpFile";
-
-	public String getLastGeneratedHelpFileSignature() {
-		SharedPreferences pref = getSharedPreferences(PREF_FILE, 0);
-		String res = pref.getString(PREF_HELP_FILE, null);
-		return res;
-	}
-
-	public void setLastGeneratedHelpFileSignature(String v) {
-		SharedPreferences pref = getSharedPreferences(PREF_FILE, 0);
-		pref.edit().putString(PREF_HELP_FILE, v).commit();
-	}
-
-
 	private String currentLanguage;
 
 	public String getCurrentLanguage() {

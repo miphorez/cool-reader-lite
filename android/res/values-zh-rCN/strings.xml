@@ -407,7 +407,6 @@
     <string name="options_app_locale_tr">Türkçe</string>
     <string name="options_app_locale_uk">Українська</string>
     <string name="options_app_locale_zh_cn">中文</string>
-    <string name="mi_goto_manual">使用说明</string>
     <string name="options_view_bookmarks_highlight_underline">下划线</string>
     <string name="options_view_color_selection">选中颜色</string>
     <string name="options_view_color_bookmark_comment">评论颜色</string>

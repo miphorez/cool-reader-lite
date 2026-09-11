@@ -1477,10 +1477,6 @@ public class CoolReader extends BaseActivity {
 		});
 	}
 
-	public void showManual() {
-		loadDocument("@manual", null, null, false);
-	}
-
 	public static final String OPEN_FILE_PARAM = "FILE_TO_OPEN";
 
 	public void loadDocument(final String item, final Runnable doneCallback, final Runnable errorCallback, final boolean forceSync) {

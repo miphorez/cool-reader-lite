@@ -391,7 +391,6 @@
     <string name="options_font_embedded_document_font_enabled">Beágyazott betűtípusok</string>
     <string name="options_app_locale_system">Rendszer</string>
     <string name="options_app_locale">Kezelőfelület nyelve (Interface language)</string>
-    <string name="mi_goto_manual">Felhasználói útmutató megj.</string>
     <string name="options_view_bookmarks_highlight_underline">Aláhúzás</string>
     <string name="options_view_color_selection">Kijelölés színe</string>
     <string name="options_view_color_bookmark_comment">Megjegyzés színe</string>

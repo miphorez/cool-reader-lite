@@ -403,7 +403,6 @@
     <string name="option_controls_gesture_page_flipping_enabled">Gesto de mudança de página</string>
     <string name="options_font_embedded_document_font_enabled">Fontes embutidas do documento</string>
     <string name="options_app_locale">Língua da interface</string>
-    <string name="mi_goto_manual">Mostrar manual</string>
     <string name="options_view_bookmarks_highlight_underline">Sublinhado</string>
     <string name="options_view_color_selection">Cor da seleção</string>
     <string name="options_view_color_bookmark_comment">Cor de comentário</string>
