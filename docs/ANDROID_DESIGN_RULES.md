@@ -19,6 +19,8 @@ These rules define the shared visual direction for Cool Reader Lite Android UI.
 
 - Use `@dimen/screen_horizontal_padding` as the standard horizontal content gutter.
 - The standard gutter is 16dp on both sides in portrait and landscape.
+- In book-reading and book-list settings, rows without an icon start their text at the shared gutter; do not reserve an empty icon column or an extra leading inset.
+- In those settings, rows with an icon retain the icon column and its existing text spacing.
 - Full-width structural surfaces such as top-bar backgrounds may extend edge to edge.
 - Top-bar action touch targets may occupy their edge slots; align titles and screen content to the shared spacing system.
 
