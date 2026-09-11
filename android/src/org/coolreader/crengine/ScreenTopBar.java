@@ -135,13 +135,19 @@ public class ScreenTopBar extends LinearLayout {
 	public void refreshStyle() {
 		activity.applyTopBarStyle(this);
 		int foregroundColor = resolveColor(R.attr.textColorToolBarLabel);
-		int baseColor = activity.getCurrentTheme() != null
-				? activity.getCurrentTheme().getPopupToolbarBackgroundColor()
-				: activity.getSystemBarBackgroundColor();
-		setBackgroundColor(blendColors(baseColor, foregroundColor, TONAL_FOREGROUND_RATIO));
 		Utils.setTintedIcon(backButton, R.drawable.cr3_button_prev, R.attr.textColorToolBarLabel);
 		Utils.setTintedIcon(moreButton, R.drawable.cr3_screen_topbar_more, R.attr.textColorToolBarLabel);
 		titleView.setTextColor(foregroundColor);
+	}
+
+	static int resolveBackgroundColor(BaseActivity activity) {
+		TypedArray values = activity.getTheme().obtainStyledAttributes(new int[] {R.attr.textColorToolBarLabel});
+		int foregroundColor = values.getColor(0, 0xFF303030);
+		values.recycle();
+		int baseColor = activity.getCurrentTheme() != null
+				? activity.getCurrentTheme().getPopupToolbarBackgroundColor()
+				: activity.getSystemBarBackgroundColor();
+		return blendColors(baseColor, foregroundColor, TONAL_FOREGROUND_RATIO);
 	}
 
 	public void setTitle(int titleResId) {
@@ -322,7 +328,7 @@ public class ScreenTopBar extends LinearLayout {
 		return color;
 	}
 
-	private int blendColors(int baseColor, int foregroundColor, float foregroundRatio) {
+	private static int blendColors(int baseColor, int foregroundColor, float foregroundRatio) {
 		float baseRatio = 1.0f - foregroundRatio;
 		return Color.rgb(
 				Math.round(Color.red(baseColor) * baseRatio + Color.red(foregroundColor) * foregroundRatio),

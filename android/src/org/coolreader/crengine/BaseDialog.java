@@ -169,9 +169,8 @@ public class BaseDialog extends Dialog {
 		ImageButton positiveButton = layout.findViewById(R.id.base_dlg_btn_positive);
 		ImageButton negativeButton = layout.findViewById(R.id.base_dlg_btn_negative);
 		ImageButton backButton = layout.findViewById(R.id.base_dlg_btn_back);
-		int defaultBackIconResId = Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_prev_drawable, R.drawable.cr3_button_prev);
 		int defaultCancelIconResId = Utils.resolveResourceIdByAttr(activity, R.attr.cr3_button_cancel_drawable, R.drawable.cr3_button_cancel);
-		Utils.tintPatchedIcon(backButton, defaultBackIconResId, R.attr.textColorToolBarLabel);
+		Utils.setTintedIcon(backButton, R.drawable.cr3_button_prev, R.attr.textColorToolBarLabel);
 		Utils.tintPatchedIcon(negativeButton, defaultCancelIconResId, R.attr.textColorToolBarLabel);
 		if (positiveButtonImage != 0) {
 			Utils.setPatchedIcon(positiveButton, positiveButtonImage, R.attr.textColorToolBarLabel);

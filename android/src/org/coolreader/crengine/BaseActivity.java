@@ -431,8 +431,7 @@ public class BaseActivity extends Activity implements Settings {
 			topBar.setLayoutParams(params);
 		}
 		topBar.setMinimumHeight(height);
-		if (currentTheme != null)
-			topBar.setBackgroundResource(currentTheme.getBrowserToolbarBackground(false));
+		topBar.setBackgroundColor(ScreenTopBar.resolveBackgroundColor(this));
 	}
 
 	private int minFontSize = 9;
