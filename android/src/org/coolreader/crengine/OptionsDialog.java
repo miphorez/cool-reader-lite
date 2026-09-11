@@ -529,7 +529,7 @@ public class OptionsDialog extends BaseDialog implements TabContentFactory, Opti
 			}
 			if (resId != 0) {
 				icon.setEnabled(enabled);
-				Utils.setPatchedIcon(icon, resId, R.attr.textColorOptionLabel);
+				Utils.setTintedIcon(icon, resId, R.attr.textColorOptionLabel);
 				icon.setVisibility(View.VISIBLE);
 			} else {
 				icon.setImageResource(0);
